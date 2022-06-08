@@ -88,7 +88,7 @@ public class Stringi
 		Arrays.copyOfRange(LATIN, LATIN.length / 2, LATIN.length);
 
 	/**
-	 * Конструктор для {@code Stringi} запрещающий создавать объект.
+	 * Конструктор для {@code Stringi} запрещающий создавать объект класса.
 	 */
 	private Stringi() {}
 
