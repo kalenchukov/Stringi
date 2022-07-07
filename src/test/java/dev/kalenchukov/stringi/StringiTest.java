@@ -282,27 +282,35 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка поиска символа в строке.
+	 * Проверка поиска первого вхождения символа в строке.
 	 */
 	@Test
-	public void testSearch()
+	public void testSearchFirstSymbol()
+	{
+		Integer result = Stringi.searchFirst("Красно-жёлтые дни - песня группы Кино", '-');
+
+		assert result != null;
+
+		assertEquals(6, (int) result);
+	}
+
+	/**
+	 * Проверка поиска первого вхождения одного из символов в строке.
+	 */
+	@Test
+	public void testSearchFirstSymbols()
 	{
 		Integer result = null;
 
-		result = Stringi.search("ПриветмиР", 'Р');
-		assert result != null;
-		assertEquals(8, (int) result);
+		result = Stringi.searchFirst("Мама, мы все тяжело больны - песня группы Кино", List.of());
+		assertNull(result);
 
-		result = Stringi.search("ПРиветмир", List.of(CYRILLIC_LOWER_CASE));
+		result = Stringi.searchFirst("Мама, мы все тяжело больны - песня группы Кино", List.of('ж'));
 		assert result != null;
-		assertEquals(2, (int) result);
+		assertEquals(15, (int) result);
 
-		result = Stringi.search("приветмир", List.of(CYRILLIC_LOWER_CASE));
+		result = Stringi.searchFirst("Мама, мы все тяжело больны - песня группы Кино", List.of('ж', ','));
 		assert result != null;
-		assertEquals(0, (int) result);
-
-		result = Stringi.search("ПРИВЕМИр", List.of(CYRILLIC_LOWER_CASE));
-		assert result != null;
-		assertEquals(7, (int) result);
+		assertEquals(4, (int) result);
 	}
 }

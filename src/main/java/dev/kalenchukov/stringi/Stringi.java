@@ -204,7 +204,7 @@ public class Stringi
 		alphabets.addAll(List.of(CYRILLIC));
 		alphabets.addAll(List.of(LATIN));
 
-		Integer position = Stringi.search(string, alphabets);
+		Integer position = Stringi.searchFirst(string, alphabets);
 
 		if (position != null)
 		{
@@ -239,7 +239,7 @@ public class Stringi
 		alphabets.addAll(List.of(CYRILLIC));
 		alphabets.addAll(List.of(LATIN));
 
-		Integer position = Stringi.search(string, alphabets);
+		Integer position = Stringi.searchFirst(string, alphabets);
 
 		if (position != null)
 		{
@@ -281,29 +281,29 @@ public class Stringi
 	}
 
 	/**
-	 * Выполняет поиск символа в строке.
+	 * Выполняет поиск первого вхождения символа в строке.
 	 *
 	 * @param string Строка.
 	 * @param symbol Искомый символ.
-	 * @return Позицию нахождения символа или {@code null} если символ не найден.
+	 * @return Позицию первого вхождения символа в строке или {@code null} если символ не найден.
 	 */
 	@Nullable
-	public static Integer search(@NotNull final String string, final char symbol)
+	public static Integer searchFirst(@NotNull final String string, final char symbol)
 	{
 		Objects.requireNonNull(string);
 
-		return Stringi.search(string, List.of(symbol));
+		return Stringi.searchFirst(string, List.of(symbol));
 	}
 
 	/**
-	 * Выполняет поиск символа в строке.
+	 * Выполняет поиск первого вхождения одного из символов в строке.
 	 *
 	 * @param string Строка.
 	 * @param symbols Коллекция искомых символов.
-	 * @return Позицию нахождения символа или {@code null} если ни один из символов не найден.
+	 * @return Позицию первого вхождения одного из символов в строке или {@code null} если ни один из символов не найден.
 	 */
 	@Nullable
-	public static Integer search(@NotNull final String string, @NotNull final List<@NotNull Character> symbols)
+	public static Integer searchFirst(@NotNull final String string, @NotNull final List<@NotNull Character> symbols)
 	{
 		Objects.requireNonNull(string);
 		Objects.requireNonNull(symbols);
