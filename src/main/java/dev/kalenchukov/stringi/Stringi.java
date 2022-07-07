@@ -296,6 +296,21 @@ public class Stringi
 	}
 
 	/**
+	 * Выполняет поиск последнего вхождения символа в строке.
+	 *
+	 * @param string Строка.
+	 * @param symbol Искомый символ.
+	 * @return Позицию последнего вхождения символа в строке или {@code null} если символ не найден.
+	 */
+	@Nullable
+	public static Integer searchLast(@NotNull final String string, final char symbol)
+	{
+		Objects.requireNonNull(string);
+
+		return Stringi.searchLast(string, List.of(symbol));
+	}
+
+	/**
 	 * Выполняет поиск первого вхождения одного из символов в строке.
 	 *
 	 * @param string Строка.
@@ -311,6 +326,31 @@ public class Stringi
 		char[] valueCharacters = string.toCharArray();
 
 		for (int position = 0; position < valueCharacters.length; position++)
+		{
+			if (symbols.contains(valueCharacters[position])) {
+				return position;
+			}
+		}
+
+		return null;
+	}
+
+	/**
+	 * Выполняет поиск последнего вхождения одного из символов в строке.
+	 *
+	 * @param string Строка.
+	 * @param symbols Коллекция искомых символов.
+	 * @return Позицию последнего вхождения одного из символов в строке или {@code null} если ни один из символов не найден.
+	 */
+	@Nullable
+	public static Integer searchLast(@NotNull final String string, @NotNull final List<@NotNull Character> symbols)
+	{
+		Objects.requireNonNull(string);
+		Objects.requireNonNull(symbols);
+
+		char[] valueCharacters = string.toCharArray();
+
+		for (int position = valueCharacters.length - 1; position >= 0; position--)
 		{
 			if (symbols.contains(valueCharacters[position])) {
 				return position;

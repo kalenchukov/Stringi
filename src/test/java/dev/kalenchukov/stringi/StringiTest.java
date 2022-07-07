@@ -295,6 +295,19 @@ public class StringiTest
 	}
 
 	/**
+	 * Проверка поиска последнего вхождения символа в строке.
+	 */
+	@Test
+	public void testSearchLastSymbol()
+	{
+		Integer result = Stringi.searchLast("Красно-жёлтые дни - песня группы Кино", '-');
+
+		assert result != null;
+
+		assertEquals(18, (int) result);
+	}
+
+	/**
 	 * Проверка поиска первого вхождения одного из символов в строке.
 	 */
 	@Test
@@ -302,15 +315,51 @@ public class StringiTest
 	{
 		Integer result = null;
 
-		result = Stringi.searchFirst("Мама, мы все тяжело больны - песня группы Кино", List.of());
+		result = Stringi.searchFirst("Мама, мы все тяжело больны - песня группы Кино.", List.of());
 		assertNull(result);
 
-		result = Stringi.searchFirst("Мама, мы все тяжело больны - песня группы Кино", List.of('ж'));
+		result = Stringi.searchFirst("Мама, мы все тяжело больны - песня группы Кино.", List.of('М'));
 		assert result != null;
-		assertEquals(15, (int) result);
+		assertEquals(0, (int) result);
 
-		result = Stringi.searchFirst("Мама, мы все тяжело больны - песня группы Кино", List.of('ж', ','));
+		result = Stringi.searchFirst("Мама, мы все тяжело больны - песня группы Кино.", List.of('.'));
+		assert result != null;
+		assertEquals(46, (int) result);
+
+		result = Stringi.searchFirst("Мама, мы все тяжело больны - песня группы Кино.", List.of('е'));
+		assert result != null;
+		assertEquals(11, (int) result);
+
+		result = Stringi.searchFirst("Мама, мы все тяжело больны - песня группы Кино.", List.of('ж', ','));
 		assert result != null;
 		assertEquals(4, (int) result);
+	}
+
+	/**
+	 * Проверка поиска последнего вхождения одного из символов в строке.
+	 */
+	@Test
+	public void testSearchLastSymbols()
+	{
+		Integer result = null;
+
+		result = Stringi.searchLast("Мама, мы все тяжело больны - песня группы Кино.", List.of());
+		assertNull(result);
+
+		result = Stringi.searchLast("Мама, мы все тяжело больны - песня группы Кино.", List.of('М'));
+		assert result != null;
+		assertEquals(0, (int) result);
+
+		result = Stringi.searchLast("Мама, мы все тяжело больны - песня группы Кино.", List.of('.'));
+		assert result != null;
+		assertEquals(46, (int) result);
+
+		result = Stringi.searchLast("Мама, мы все тяжело больны - песня группы Кино.", List.of('е'));
+		assert result != null;
+		assertEquals(30, (int) result);
+
+		result = Stringi.searchLast("Мама, мы все тяжело больны - песня группы Кино.", List.of('ж', ','));
+		assert result != null;
+		assertEquals(15, (int) result);
 	}
 }
