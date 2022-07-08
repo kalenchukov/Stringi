@@ -370,7 +370,7 @@ public class Stringi
 	 * @throws IllegalArgumentException Если количество повторений ноль или меньше.
 	 */
 	@NotNull
-	public static String repeat(@NotNull final String string, final int count)
+	public static String repeat(@NotNull final String string, @Range(from = 1, to = Long.MAX_VALUE) final int count)
 	{
 		Objects.requireNonNull(string);
 
