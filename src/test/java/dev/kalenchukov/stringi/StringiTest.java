@@ -8,6 +8,7 @@ package dev.kalenchukov.stringi;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -448,6 +449,95 @@ public class StringiTest
 	{
 		String string = "";
 		String result = Stringi.reverse(string);
+
+		assertEquals("", result);
+	}
+
+	/**
+	 * Проверка объединения элементов коллекции из {@code String} в строку.
+	 */
+	@Test
+	public void testJoinListString()
+	{
+		String result = Stringi.join(List.of("Белы", "й д", "ень"));
+
+		assertEquals("Белый день", result);
+	}
+
+	/**
+	 * Проверка объединения элементов коллекции из {@code String} в строку с разделителем.
+	 */
+	@Test
+	public void testJoinListStringSeparator()
+	{
+		String result = Stringi.join(List.of("Белы", "й д", "ень"), "|");
+
+		assertEquals("Белы|й д|ень", result);
+	}
+
+	/**
+	 * Проверка объединения элементов коллекции из {@code String} со значением {@code null} в строку.
+	 */
+	@Test(expected = IllegalArgumentException.class)
+	public void testJoinListStringNull()
+	{
+		List<String> values = new ArrayList<>();
+		values.add("Белы");
+		values.add(null);
+		values.add("ень");
+
+		Stringi.join(values);
+	}
+
+	/**
+	 * Проверка объединения пустой коллекции из {@code String} в строку.
+	 */
+	@Test
+	public void testJoinListStringEmpty()
+	{
+		String result = Stringi.join(List.of());
+
+		assertEquals("", result);
+	}
+
+	/**
+	 * Проверка объединения элементов массива из {@code String} в строку.
+	 */
+	@Test
+	public void testJoinArrayString()
+	{
+		String result = Stringi.join(new String[] {"К", "И", "Н", "О"});
+
+		assertEquals("КИНО", result);
+	}
+
+	/**
+	 * Проверка объединения элементов массива из {@code String} в строку с разделителем.
+	 */
+	@Test
+	public void testJoinArrayStringSeparator()
+	{
+		String result = Stringi.join(new String[] {"К", "И", "Н", "О"}, "|");
+
+		assertEquals("К|И|Н|О", result);
+	}
+
+	/**
+	 * Проверка объединения элементов массива из {@code String} со значением {@code null} в строку.
+	 */
+	@Test(expected = IllegalArgumentException.class)
+	public void testJoinArrayStringNull()
+	{
+		Stringi.join(new String[] {"K", null, "N", "O"});
+	}
+
+	/**
+	 * Проверка объединения пустого массива из {@code String} в строку.
+	 */
+	@Test
+	public void testJoinArrayStringEmpty()
+	{
+		String result = Stringi.join(new String[] {});
 
 		assertEquals("", result);
 	}

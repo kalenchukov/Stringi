@@ -453,8 +453,6 @@ public class Stringi
 
 		char[] valueCharacters = string.toCharArray();
 
-		System.out.println(valueCharacters.length / 2);
-
 		for (int iteration = 0; iteration < valueCharacters.length / 2; iteration++)
 		{
 			char charTemp = valueCharacters[iteration];
@@ -466,4 +464,86 @@ public class Stringi
 		return new String(valueCharacters);
 	}
 
+	/**
+	 * Объединяет элементы коллекции в строку.
+	 *
+	 * @param values Коллекция значений из которого необходимо сделать строку.
+	 * @return Строку из элементов коллекции.
+	 * @throws IllegalArgumentException Если коллекция содержит элемент со значением {@code null}.
+	 */
+	public static String join(@NotNull final List<@NotNull String> values)
+	{
+		Objects.requireNonNull(values);
+
+		return Stringi.join(values, "");
+	}
+
+	/**
+	 * Объединяет элементы коллекции в строку.
+	 *
+	 * @param values Коллекция значений из которого необходимо сделать строку.
+	 * @param separator Разделитель.
+	 * @return Строку из элементов коллекции.
+	 * @throws IllegalArgumentException Если коллекция содержит элемент со значением {@code null}.
+	 */
+	public static String join(@NotNull final List<@NotNull String> values, @NotNull final String separator)
+	{
+		Objects.requireNonNull(values);
+		Objects.requireNonNull(separator);
+
+		return Stringi.join(values.toArray(String[]::new), separator);
+	}
+
+	/**
+	 * Объединяет элементы массива в строку.
+	 *
+	 * @param values Массив значений из которого необходимо сделать строку.
+	 * @return Строку из элементов массива.
+	 * @throws IllegalArgumentException Если массив содержит элемент со значением {@code null}.
+	 */
+	public static String join(@NotNull final String @NotNull [] values)
+	{
+		Objects.requireNonNull(values);
+
+		return Stringi.join(values, "");
+	}
+
+	/**
+	 * Объединяет элементы массива в строку с разделителем.
+	 *
+	 * @param values Массив значений из которого необходимо сделать строку.
+	 * @param separator Разделитель.
+	 * @return Строку из элементов массива.
+	 * @throws IllegalArgumentException Если массив содержит элемент со значением {@code null}.
+	 */
+	public static String join(@NotNull final String @NotNull [] values, @NotNull final String separator)
+	{
+		Objects.requireNonNull(values);
+		Objects.requireNonNull(separator);
+
+		if (values.length == 0) {
+			return "";
+		}
+
+		boolean addedFirstElement = false;
+
+		StringBuilder newString = new StringBuilder();
+
+		for (String string : values)
+		{
+			if (string == null) {
+				throw new IllegalArgumentException();
+			}
+
+			if (addedFirstElement) {
+				newString.append(separator);
+			} else {
+				addedFirstElement = true;
+			}
+
+			newString.append(string);
+		}
+
+		return newString.toString();
+	}
 }
