@@ -354,6 +354,10 @@ public class Stringi
 			return null;
 		}
 
+		if (string.isEmpty()) {
+			return null;
+		}
+
 		char[] valueCharacters = string.toCharArray();
 
 		for (int position = valueCharacters.length - 1; position >= 0; position--)
