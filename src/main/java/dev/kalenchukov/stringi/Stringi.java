@@ -419,4 +419,35 @@ public class Stringi
 
 		return new String(valueCharacters);
 	}
+
+	/**
+	 * Переворачивает строку.
+	 *
+	 * @param string Строка.
+	 * @return Строку в которой все символы расположены в обратном порядке.
+	 */
+	@NotNull
+	public static String reverse(@NotNull final String string)
+	{
+		Objects.requireNonNull(string);
+
+		if (string.length() < 2) {
+			return string;
+		}
+
+		char[] valueCharacters = string.toCharArray();
+
+		System.out.println(valueCharacters.length / 2);
+
+		for (int iteration = 0; iteration < valueCharacters.length / 2; iteration++)
+		{
+			char charTemp = valueCharacters[iteration];
+
+			valueCharacters[iteration] = valueCharacters[valueCharacters.length - iteration - 1];
+			valueCharacters[valueCharacters.length - iteration - 1] = charTemp;
+		}
+
+		return new String(valueCharacters);
+	}
+
 }

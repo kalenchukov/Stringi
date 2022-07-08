@@ -427,4 +427,28 @@ public class StringiTest
 
 		assertEquals(string.length(), result.length());
 	}
+
+	/**
+	 * Проверка переворачивания строки.
+	 */
+	@Test
+	public void testReverse()
+	{
+		String string = "Малыш";
+		String result = Stringi.reverse(string);
+
+		assertEquals("шылаМ", result);
+	}
+
+	/**
+	 * Проверка переворачивания пустой строки.
+	 */
+	@Test
+	public void testReverseEmpty()
+	{
+		String string = "";
+		String result = Stringi.reverse(string);
+
+		assertEquals("", result);
+	}
 }
