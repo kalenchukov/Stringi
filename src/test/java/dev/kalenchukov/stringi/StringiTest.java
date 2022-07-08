@@ -362,4 +362,33 @@ public class StringiTest
 		assert result != null;
 		assertEquals(15, (int) result);
 	}
+
+	/**
+	 * Проверка повторения строки.
+	 */
+	@Test
+	public void testRepeat()
+	{
+		String result = Stringi.repeat("Муравейник", 2);
+
+		assertEquals("МуравейникМуравейник", result);
+	}
+
+	/**
+	 * Проверка повторения строки отрицательное количество раз.
+	 */
+	@Test(expected = IllegalArgumentException.class)
+	public void testRepeatCountNegative()
+	{
+		Stringi.repeat("Муравейник", -1);
+	}
+
+	/**
+	 * Проверка повторения строки 0 раз.
+	 */
+	@Test(expected = IllegalArgumentException.class)
+	public void testRepeatCountZero()
+	{
+		Stringi.repeat("Муравейник", 0);
+	}
 }

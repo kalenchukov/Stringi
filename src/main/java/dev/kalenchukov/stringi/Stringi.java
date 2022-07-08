@@ -359,4 +359,29 @@ public class Stringi
 
 		return null;
 	}
+
+	/**
+	 * Выполняет повтор строки.
+	 *
+	 * @param string Строка.
+	 * @param count Колиество повторений.
+	 * @return Строку, повторенную указанное количество раз.
+	 */
+	@NotNull
+	public static String repeat(@NotNull final String string, final int count)
+	{
+		Objects.requireNonNull(string);
+
+		if (count < 1) {
+			throw new IllegalArgumentException();
+		}
+
+		StringBuilder newString = new StringBuilder(string);
+
+		for (int cnt = 1; cnt < count; cnt++) {
+			newString.append(string);
+		}
+
+		return newString.toString();
+	}
 }
