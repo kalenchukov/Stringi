@@ -8,6 +8,7 @@ package dev.kalenchukov.stringi;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.Range;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -364,8 +365,9 @@ public class Stringi
 	 * Выполняет повтор строки.
 	 *
 	 * @param string Строка.
-	 * @param count Колиество повторений.
+	 * @param count Количество повторений.
 	 * @return Строку, повторенную указанное количество раз.
+	 * @throws IllegalArgumentException Если количество повторений ноль или меньше.
 	 */
 	@NotNull
 	public static String repeat(@NotNull final String string, final int count)
