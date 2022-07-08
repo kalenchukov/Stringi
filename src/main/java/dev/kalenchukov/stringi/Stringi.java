@@ -321,6 +321,10 @@ public class Stringi
 		Objects.requireNonNull(string);
 		Objects.requireNonNull(symbols);
 
+		if (symbols.size() == 0) {
+			return null;
+		}
+
 		char[] valueCharacters = string.toCharArray();
 
 		for (int position = 0; position < valueCharacters.length; position++)
