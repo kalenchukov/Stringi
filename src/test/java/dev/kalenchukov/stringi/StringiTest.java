@@ -391,4 +391,40 @@ public class StringiTest
 	{
 		Stringi.repeat("Муравейник", 0);
 	}
+
+	/**
+	 * Проверка перемешивания символов в строке.
+	 */
+	@Test
+	public void testShuffle()
+	{
+		String string = "Когда твоя девушка больна";
+		String result = Stringi.shuffle(string);
+
+		assertNotEquals(string, result);
+	}
+
+	/**
+	 * Проверка перемешивания символов в пустой строке.
+	 */
+	@Test
+	public void testShuffleEmpty()
+	{
+		String string = "";
+		String result = Stringi.shuffle(string);
+
+		assertEquals(string, result);
+	}
+
+	/**
+	 * Проверка равенства по количеству символов в строке после перемешивания символов в строке.
+	 */
+	@Test
+	public void testShuffleEqualsLength()
+	{
+		String string = "Когда твоя девушка больна";
+		String result = Stringi.shuffle(string);
+
+		assertEquals(string.length(), result.length());
+	}
 }

@@ -10,10 +10,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.Range;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * Класс работы со строками под шуточным названием "стринги".
@@ -385,5 +382,41 @@ public class Stringi
 		}
 
 		return newString.toString();
+	}
+
+	/**
+	 * Перемешивает символы в строке.
+	 *
+	 * @param string Строка.
+	 * @return Строку в которой порядок всех символов изменён случайным образом.
+	 */
+	@NotNull
+	public static String shuffle(@NotNull final String string)
+	{
+		Objects.requireNonNull(string);
+
+		if (string.length() < 2) {
+			return string;
+		}
+
+		char[] valueCharacters = string.toCharArray();
+		Random random = new Random();
+
+		for (int iteration = 0; iteration < valueCharacters.length * 2.5; iteration++)
+		{
+			int indexFrom = random.nextInt(valueCharacters.length);
+			int indexTo = random.nextInt(valueCharacters.length);
+
+			if (indexFrom == indexTo) {
+				continue;
+			}
+
+			char charTemp = valueCharacters[indexTo];
+
+			valueCharacters[indexTo] = valueCharacters[indexFrom];
+			valueCharacters[indexFrom] = charTemp;
+		}
+
+		return new String(valueCharacters);
 	}
 }
