@@ -383,7 +383,8 @@ public class Stringi
 	 * @throws IllegalArgumentException Если {@code count} меньше или равно нулю.
 	 */
 	@NotNull
-	public static String repeat(@NotNull final String string, @Range(from = 1, to = Long.MAX_VALUE) final int count)
+	public static String repeat(@NotNull final String string,
+								@Range(from = 1, to = Long.MAX_VALUE) final int count)
 	{
 		Objects.requireNonNull(string);
 
@@ -421,17 +422,10 @@ public class Stringi
 
 		for (int iterationShuffle = 0; iterationShuffle < coefficientShuffle; iterationShuffle++)
 		{
-			int indexTo = random.nextInt(stringCharacters.length);
 			int indexFrom = random.nextInt(stringCharacters.length);
+			int indexIn = random.nextInt(stringCharacters.length);
 
-			if (indexFrom == indexTo) {
-				continue;
-			}
-
-			char charTemp = stringCharacters[indexTo];
-
-			stringCharacters[indexTo] = stringCharacters[indexFrom];
-			stringCharacters[indexFrom] = charTemp;
+			Stringi.swapValuesInArray(stringCharacters, indexFrom, indexIn);
 		}
 
 		return new String(stringCharacters);
@@ -456,13 +450,10 @@ public class Stringi
 
 		for (int iterationReverse = 0; iterationReverse < stringCharacters.length / 2; iterationReverse++)
 		{
-			int indexTo = iterationReverse;
 			int indexFrom = (stringCharacters.length - iterationReverse) - 1;
+			int indexIn = iterationReverse;
 
-			char charTemp = stringCharacters[indexTo];
-
-			stringCharacters[indexTo] = stringCharacters[indexFrom];
-			stringCharacters[indexFrom] = charTemp;
+			stringCharacters = Stringi.swapValuesInArray(stringCharacters, indexFrom, indexIn);
 		}
 
 		return new String(stringCharacters);
@@ -543,5 +534,38 @@ public class Stringi
 		}
 
 		return newString.toString();
+	}
+
+	/**
+	 * Меняет местами значения в массиве.
+	 *
+	 * @param array Массив.
+	 * @param from Индекс массива из которого необходимо переместить значение.
+	 * @param in Индекс массива в который необходимо переместить значение.
+	 * @return Массив с перемещёнными значениями.
+	 * @throws IllegalArgumentException Если {@code from} или {@code to} меньше нуля.
+	 * @throws IndexOutOfBoundsException Если {@code from} или {@code to} больше размера массива.
+	 */
+	private static char[] swapValuesInArray(final char[] array,
+								 @Range(from = 0, to = Integer.MAX_VALUE) final int from,
+								 @Range(from = 0, to = Integer.MAX_VALUE) final int in)
+	{
+		if (from < 0 || in < 0) {
+			throw new IllegalArgumentException();
+		}
+
+		if (from > array.length || in > array.length) {
+			throw new IndexOutOfBoundsException();
+		}
+
+		if (from != in)
+		{
+			final char charTemp = array[in];
+
+			array[in] = array[from];
+			array[from] = charTemp;
+		}
+
+		return array;
 	}
 }
