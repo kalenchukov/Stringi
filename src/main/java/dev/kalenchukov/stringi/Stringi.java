@@ -329,11 +329,11 @@ public class Stringi
 			return null;
 		}
 
-		char[] valueCharacters = string.toCharArray();
+		final char[] stringCharacters = string.toCharArray();
 
-		for (int position = 0; position < valueCharacters.length; position++)
+		for (int position = 0; position < stringCharacters.length; position++)
 		{
-			if (symbols.contains(valueCharacters[position])) {
+			if (symbols.contains(stringCharacters[position])) {
 				return position;
 			}
 		}
@@ -362,11 +362,11 @@ public class Stringi
 			return null;
 		}
 
-		char[] valueCharacters = string.toCharArray();
+		final char[] stringCharacters = string.toCharArray();
 
-		for (int position = valueCharacters.length - 1; position >= 0; position--)
+		for (int position = stringCharacters.length - 1; position >= 0; position--)
 		{
-			if (symbols.contains(valueCharacters[position])) {
+			if (symbols.contains(stringCharacters[position])) {
 				return position;
 			}
 		}
@@ -415,26 +415,26 @@ public class Stringi
 			return string;
 		}
 
-		char[] valueCharacters = string.toCharArray();
-		int coefficientShuffle = (int) (valueCharacters.length * 2.5);
+		char[] stringCharacters = string.toCharArray();
+		final int coefficientShuffle = (int) (stringCharacters.length * 2.5);
 		Random random = new Random();
 
 		for (int iterationShuffle = 0; iterationShuffle < coefficientShuffle; iterationShuffle++)
 		{
-			int indexTo = random.nextInt(valueCharacters.length);
-			int indexFrom = random.nextInt(valueCharacters.length);
+			int indexTo = random.nextInt(stringCharacters.length);
+			int indexFrom = random.nextInt(stringCharacters.length);
 
 			if (indexFrom == indexTo) {
 				continue;
 			}
 
-			char charTemp = valueCharacters[indexTo];
+			char charTemp = stringCharacters[indexTo];
 
-			valueCharacters[indexTo] = valueCharacters[indexFrom];
-			valueCharacters[indexFrom] = charTemp;
+			stringCharacters[indexTo] = stringCharacters[indexFrom];
+			stringCharacters[indexFrom] = charTemp;
 		}
 
-		return new String(valueCharacters);
+		return new String(stringCharacters);
 	}
 
 	/**
@@ -452,20 +452,20 @@ public class Stringi
 			return string;
 		}
 
-		char[] valueCharacters = string.toCharArray();
+		char[] stringCharacters = string.toCharArray();
 
-		for (int iterationReverse = 0; iterationReverse < valueCharacters.length / 2; iterationReverse++)
+		for (int iterationReverse = 0; iterationReverse < stringCharacters.length / 2; iterationReverse++)
 		{
 			int indexTo = iterationReverse;
-			int indexFrom = (valueCharacters.length - iterationReverse) - 1;
+			int indexFrom = (stringCharacters.length - iterationReverse) - 1;
 
-			char charTemp = valueCharacters[indexTo];
+			char charTemp = stringCharacters[indexTo];
 
-			valueCharacters[indexTo] = valueCharacters[indexFrom];
-			valueCharacters[indexFrom] = charTemp;
+			stringCharacters[indexTo] = stringCharacters[indexFrom];
+			stringCharacters[indexFrom] = charTemp;
 		}
 
-		return new String(valueCharacters);
+		return new String(stringCharacters);
 	}
 
 	/**
