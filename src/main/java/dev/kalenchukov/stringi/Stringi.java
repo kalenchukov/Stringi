@@ -157,7 +157,7 @@ public class Stringi
 	{
 		Objects.requireNonNull(string);
 
-		if (string.length() > 0) {
+		if (!string.isEmpty()) {
 			return String.valueOf(string.charAt(0)).toUpperCase() + string.substring(1);
 		}
 
@@ -175,7 +175,7 @@ public class Stringi
 	{
 		Objects.requireNonNull(string);
 
-		if (string.length() > 0) {
+		if (!string.isEmpty()) {
 			return String.valueOf(string.charAt(0)).toLowerCase() + string.substring(1);
 		}
 
@@ -206,12 +206,12 @@ public class Stringi
 
 		if (position != null)
 		{
-			StringBuilder value = new StringBuilder();
-			value.append(string.substring(0, position));
-			value.append(string.substring(position, position + 1).toUpperCase());
-			value.append(string.substring(position + 1));
+			StringBuilder newString = new StringBuilder();
+			newString.append(string.substring(0, position));
+			newString.append(string.substring(position, position + 1).toUpperCase());
+			newString.append(string.substring(position + 1));
 
-			return value.toString();
+			return newString.toString();
 		}
 
 		return string;
@@ -241,12 +241,12 @@ public class Stringi
 
 		if (position != null)
 		{
-			StringBuilder value = new StringBuilder();
-			value.append(string.substring(0, position));
-			value.append(string.substring(position, position + 1).toLowerCase());
-			value.append(string.substring(position + 1));
+			StringBuilder newString = new StringBuilder();
+			newString.append(string.substring(0, position));
+			newString.append(string.substring(position, position + 1).toLowerCase());
+			newString.append(string.substring(position + 1));
 
-			return value.toString();
+			return newString.toString();
 		}
 
 		return string;
@@ -263,19 +263,19 @@ public class Stringi
 	{
 		Objects.requireNonNull(string);
 
-		StringBuilder value = new StringBuilder();
+		StringBuilder newString = new StringBuilder();
 
 		for (char character : string.toCharArray())
 		{
 			if (Stringi.isLowerCase(character)) {
-				value.append(String.valueOf(character).toUpperCase());
+				newString.append(String.valueOf(character).toUpperCase());
 			}
 			else {
-				value.append(String.valueOf(character).toLowerCase());
+				newString.append(String.valueOf(character).toLowerCase());
 			}
 		}
 
-		return value.toString();
+		return newString.toString();
 	}
 
 	/**
@@ -321,7 +321,7 @@ public class Stringi
 		Objects.requireNonNull(string);
 		Objects.requireNonNull(symbols);
 
-		if (symbols.size() == 0) {
+		if (symbols.isEmpty()) {
 			return null;
 		}
 
@@ -354,7 +354,7 @@ public class Stringi
 		Objects.requireNonNull(string);
 		Objects.requireNonNull(symbols);
 
-		if (symbols.size() == 0) {
+		if (symbols.isEmpty()) {
 			return null;
 		}
 
@@ -380,7 +380,7 @@ public class Stringi
 	 * @param string Строка.
 	 * @param count Количество повторений.
 	 * @return Строку, повторенную указанное количество раз.
-	 * @throws IllegalArgumentException Если количество повторений ноль или меньше.
+	 * @throws IllegalArgumentException Если {@code count} меньше или равно нулю.
 	 */
 	@NotNull
 	public static String repeat(@NotNull final String string, @Range(from = 1, to = Long.MAX_VALUE) final int count)
@@ -393,7 +393,7 @@ public class Stringi
 
 		StringBuilder newString = new StringBuilder(string);
 
-		for (int cnt = 1; cnt < count; cnt++) {
+		for (int iterationRepeat = 1; iterationRepeat < count; iterationRepeat++) {
 			newString.append(string);
 		}
 
@@ -416,12 +416,13 @@ public class Stringi
 		}
 
 		char[] valueCharacters = string.toCharArray();
+		int coefficientShuffle = (int) (valueCharacters.length * 2.5);
 		Random random = new Random();
 
-		for (int iteration = 0; iteration < valueCharacters.length * 2.5; iteration++)
+		for (int iterationShuffle = 0; iterationShuffle < coefficientShuffle; iterationShuffle++)
 		{
-			int indexFrom = random.nextInt(valueCharacters.length);
 			int indexTo = random.nextInt(valueCharacters.length);
+			int indexFrom = random.nextInt(valueCharacters.length);
 
 			if (indexFrom == indexTo) {
 				continue;
@@ -453,12 +454,15 @@ public class Stringi
 
 		char[] valueCharacters = string.toCharArray();
 
-		for (int iteration = 0; iteration < valueCharacters.length / 2; iteration++)
+		for (int iterationReverse = 0; iterationReverse < valueCharacters.length / 2; iterationReverse++)
 		{
-			char charTemp = valueCharacters[iteration];
+			int indexTo = iterationReverse;
+			int indexFrom = (valueCharacters.length - iterationReverse) - 1;
 
-			valueCharacters[iteration] = valueCharacters[valueCharacters.length - iteration - 1];
-			valueCharacters[valueCharacters.length - iteration - 1] = charTemp;
+			char charTemp = valueCharacters[indexTo];
+
+			valueCharacters[indexTo] = valueCharacters[indexFrom];
+			valueCharacters[indexFrom] = charTemp;
 		}
 
 		return new String(valueCharacters);
@@ -469,7 +473,6 @@ public class Stringi
 	 *
 	 * @param values Коллекция значений из которого необходимо сделать строку.
 	 * @return Строку из элементов коллекции.
-	 * @throws IllegalArgumentException Если коллекция содержит элемент со значением {@code null}.
 	 */
 	public static String join(@NotNull final List<@NotNull String> values)
 	{
@@ -484,7 +487,6 @@ public class Stringi
 	 * @param values Коллекция значений из которого необходимо сделать строку.
 	 * @param separator Разделитель.
 	 * @return Строку из элементов коллекции.
-	 * @throws IllegalArgumentException Если коллекция содержит элемент со значением {@code null}.
 	 */
 	public static String join(@NotNull final List<@NotNull String> values, @NotNull final String separator)
 	{
@@ -499,7 +501,6 @@ public class Stringi
 	 *
 	 * @param values Массив значений из которого необходимо сделать строку.
 	 * @return Строку из элементов массива.
-	 * @throws IllegalArgumentException Если массив содержит элемент со значением {@code null}.
 	 */
 	public static String join(@NotNull final String @NotNull [] values)
 	{
@@ -514,7 +515,6 @@ public class Stringi
 	 * @param values Массив значений из которого необходимо сделать строку.
 	 * @param separator Разделитель.
 	 * @return Строку из элементов массива.
-	 * @throws IllegalArgumentException Если массив содержит элемент со значением {@code null}.
 	 */
 	public static String join(@NotNull final String @NotNull [] values, @NotNull final String separator)
 	{
@@ -525,20 +525,18 @@ public class Stringi
 			return "";
 		}
 
-		boolean addedFirstElement = false;
+		boolean addSeparator = false;
 
 		StringBuilder newString = new StringBuilder();
 
 		for (String string : values)
 		{
-			if (string == null) {
-				throw new IllegalArgumentException();
-			}
+			Objects.requireNonNull(string);
 
-			if (addedFirstElement) {
+			if (addSeparator) {
 				newString.append(separator);
 			} else {
-				addedFirstElement = true;
+				addSeparator = true;
 			}
 
 			newString.append(string);

@@ -478,7 +478,7 @@ public class StringiTest
 	/**
 	 * Проверка объединения элементов коллекции из {@code String} со значением {@code null} в строку.
 	 */
-	@Test(expected = IllegalArgumentException.class)
+	@Test(expected = NullPointerException.class)
 	public void testJoinListStringNull()
 	{
 		List<String> values = new ArrayList<>();
@@ -525,7 +525,7 @@ public class StringiTest
 	/**
 	 * Проверка объединения элементов массива из {@code String} со значением {@code null} в строку.
 	 */
-	@Test(expected = IllegalArgumentException.class)
+	@Test(expected = NullPointerException.class)
 	public void testJoinArrayStringNull()
 	{
 		Stringi.join(new String[] {"K", null, "N", "O"});
