@@ -453,7 +453,7 @@ public class Stringi
 			int indexFrom = (stringCharacters.length - iterationReverse) - 1;
 			int indexIn = iterationReverse;
 
-			stringCharacters = Stringi.swapValuesInArray(stringCharacters, indexFrom, indexIn);
+			Stringi.swapValuesInArray(stringCharacters, indexFrom, indexIn);
 		}
 
 		return new String(stringCharacters);
@@ -542,13 +542,12 @@ public class Stringi
 	 * @param array Массив.
 	 * @param from Индекс массива из которого необходимо переместить значение.
 	 * @param in Индекс массива в который необходимо переместить значение.
-	 * @return Массив с перемещёнными значениями.
 	 * @throws IllegalArgumentException Если {@code from} или {@code to} меньше нуля.
 	 * @throws IndexOutOfBoundsException Если {@code from} или {@code to} больше размера массива.
 	 */
-	private static char[] swapValuesInArray(final char[] array,
-								 @Range(from = 0, to = Integer.MAX_VALUE) final int from,
-								 @Range(from = 0, to = Integer.MAX_VALUE) final int in)
+	private static void swapValuesInArray(final char[] array,
+										  @Range(from = 0, to = Integer.MAX_VALUE) final int from,
+										  @Range(from = 0, to = Integer.MAX_VALUE) final int in)
 	{
 		if (from < 0 || in < 0) {
 			throw new IllegalArgumentException();
@@ -558,14 +557,9 @@ public class Stringi
 			throw new IndexOutOfBoundsException();
 		}
 
-		if (from != in)
-		{
-			final char charTemp = array[in];
+		final char charTemp = array[in];
 
-			array[in] = array[from];
-			array[from] = charTemp;
-		}
-
-		return array;
+		array[in] = array[from];
+		array[from] = charTemp;
 	}
 }
