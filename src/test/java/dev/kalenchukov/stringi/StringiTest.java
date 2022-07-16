@@ -70,35 +70,6 @@ public class StringiTest
 	};
 
 	/**
-	 * Проверка принадлежности кириллической буквы к кириллическому алфавиту.
-	 */
-	@Test
-	public void testIsCyrillic1()
-	{
-		for (char character : CYRILLIC)
-		{
-			assertTrue(Stringi.isCyrillic(character));
-		}
-	}
-
-	/**
-	 * Проверка принадлежности не кириллической буквы к кириллическому алфавиту.
-	 */
-	@Test
-	public void testIsCyrillic2()
-	{
-		for (char character : LATIN)
-		{
-			assertFalse(Stringi.isCyrillic(character));
-		}
-
-		for (char character : SYMBOLS)
-		{
-			assertFalse(Stringi.isCyrillic(character));
-		}
-	}
-
-	/**
 	 * Проверка принадлежности латинской буквы к латинскому алфавиту.
 	 */
 	@Test
@@ -107,23 +78,6 @@ public class StringiTest
 		for (char character : LATIN)
 		{
 			assertTrue(Stringi.isLatin(character));
-		}
-	}
-
-	/**
-	 * Проверка принадлежности не латинской буквы к латинскому алфавиту.
-	 */
-	@Test
-	public void testIsLatin2()
-	{
-		for (char character : CYRILLIC)
-		{
-			assertFalse(Stringi.isLatin(character));
-		}
-
-		for (char character : SYMBOLS)
-		{
-			assertFalse(Stringi.isCyrillic(character));
 		}
 	}
 

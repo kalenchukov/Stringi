@@ -91,17 +91,6 @@ public class Stringi
 	private Stringi() {}
 
 	/**
-	 * Проверяет, принадлежит ли буква к кириллическому алфавиту.
-	 *
-	 * @param letter Буква.
-	 * @return {@code True}, если буква принадлежит кириллическому алфавиту, иначе {@code false}.
-	 */
-	public static boolean isCyrillic(final char letter)
-	{
-		return List.of(CYRILLIC).contains(letter);
-	}
-
-	/**
 	 * Проверяет, принадлежит ли буква к латинскому алфавиту.
 	 *
 	 * @param letter Буква.
