@@ -70,18 +70,6 @@ public class StringiTest
 	};
 
 	/**
-	 * Проверка принадлежности латинской буквы к латинскому алфавиту.
-	 */
-	@Test
-	public void testIsLatin1()
-	{
-		for (char character : LATIN)
-		{
-			assertTrue(Stringi.isLatin(character));
-		}
-	}
-
-	/**
 	 * Проверка если передана строчная буква.
 	 */
 	@Test

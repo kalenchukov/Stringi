@@ -91,17 +91,6 @@ public class Stringi
 	private Stringi() {}
 
 	/**
-	 * Проверяет, принадлежит ли буква к латинскому алфавиту.
-	 *
-	 * @param letter Буква.
-	 * @return {@code True}, если буква принадлежит латинскому алфавиту, иначе {@code false}.
-	 */
-	public static boolean isLatin(final char letter)
-	{
-		return List.of(LATIN).contains(letter);
-	}
-
-	/**
 	 * Проверяет, является ли буква строчной.<br>
 	 * Поддерживаемые алфавиты:
 	 * <ul>
