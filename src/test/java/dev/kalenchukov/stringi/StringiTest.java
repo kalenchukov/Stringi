@@ -6,6 +6,8 @@
 
 package dev.kalenchukov.stringi;
 
+import dev.kalenchukov.alphabet.EnglishAlphabet;
+import dev.kalenchukov.alphabet.RussianAlphabet;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -15,54 +17,6 @@ import static org.junit.Assert.*;
 
 public class StringiTest
 {
-	public static final Character[] CYRILLIC = {
-		'а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з',
-		'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р',
-		'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ',
-		'ъ', 'ы', 'ь', 'э', 'ю', 'я',
-
-		'А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З',
-		'И', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р',
-		'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ',
-		'Ъ', 'Ы', 'Ь', 'Э', 'Ю', 'Я'
-	};
-
-	public static final Character[] CYRILLIC_LOWER_CASE = {
-		'а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з',
-		'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р',
-		'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ',
-		'ъ', 'ы', 'ь', 'э', 'ю', 'я'
-	};
-
-	public static final Character[] CYRILLIC_UPPER_CASE = {
-		'А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З',
-		'И', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р',
-		'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ',
-		'Ъ', 'Ы', 'Ь', 'Э', 'Ю', 'Я'
-	};
-
-	public static final Character[] LATIN = {
-		'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i',
-		'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r',
-		's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
-
-		'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',
-		'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
-		'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
-	};
-
-	public static final Character[] LATIN_LOWER_CASE = {
-		'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i',
-		'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r',
-		's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
-	};
-
-	public static final Character[] LATIN_UPPER_CASE = {
-		'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',
-		'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
-		'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
-	};
-
 	public static final Character[] SYMBOLS = {
 		'!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+',
 		',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@',
@@ -75,12 +29,12 @@ public class StringiTest
 	@Test
 	public void testIsLowerCase1()
 	{
-		for (char character : CYRILLIC_LOWER_CASE)
+		for (char character : RussianAlphabet.LETTERS_LOWER_CASE)
 		{
 			assertTrue(Stringi.isLowerCase(character));
 		}
 
-		for (char character : LATIN_LOWER_CASE)
+		for (char character : EnglishAlphabet.LETTERS_LOWER_CASE)
 		{
 			assertTrue(Stringi.isLowerCase(character));
 		}
@@ -92,12 +46,12 @@ public class StringiTest
 	@Test
 	public void testIsLowerCase2()
 	{
-		for (char character : CYRILLIC_UPPER_CASE)
+		for (char character : RussianAlphabet.LETTERS_UPPER_CASE)
 		{
 			assertFalse(Stringi.isLowerCase(character));
 		}
 
-		for (char character : LATIN_UPPER_CASE)
+		for (char character : EnglishAlphabet.LETTERS_UPPER_CASE)
 		{
 			assertFalse(Stringi.isLowerCase(character));
 		}
@@ -121,12 +75,12 @@ public class StringiTest
 	@Test
 	public void testIsUpperCase1()
 	{
-		for (char character : CYRILLIC_UPPER_CASE)
+		for (char character : RussianAlphabet.LETTERS_UPPER_CASE)
 		{
 			assertTrue(Stringi.isUpperCase(character));
 		}
 
-		for (char character : LATIN_UPPER_CASE)
+		for (char character : EnglishAlphabet.LETTERS_UPPER_CASE)
 		{
 			assertTrue(Stringi.isUpperCase(character));
 		}
@@ -138,12 +92,12 @@ public class StringiTest
 	@Test
 	public void testIsUpperCase2()
 	{
-		for (char character : CYRILLIC_LOWER_CASE)
+		for (char character : RussianAlphabet.LETTERS_LOWER_CASE)
 		{
 			assertFalse(Stringi.isUpperCase(character));
 		}
 
-		for (char character : LATIN_LOWER_CASE)
+		for (char character : EnglishAlphabet.LETTERS_LOWER_CASE)
 		{
 			assertFalse(Stringi.isUpperCase(character));
 		}
