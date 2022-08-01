@@ -29,12 +29,12 @@ public class StringiTest
 	@Test
 	public void testIsLowerCase1()
 	{
-		for (char character : RussianAlphabet.LETTERS_LOWER_CASE)
+		for (char character : RussianAlphabet.LowerCase.LETTERS)
 		{
 			assertTrue(Stringi.isLowerCase(character));
 		}
 
-		for (char character : EnglishAlphabet.LETTERS_LOWER_CASE)
+		for (char character : EnglishAlphabet.LowerCase.LETTERS)
 		{
 			assertTrue(Stringi.isLowerCase(character));
 		}
@@ -46,12 +46,12 @@ public class StringiTest
 	@Test
 	public void testIsLowerCase2()
 	{
-		for (char character : RussianAlphabet.LETTERS_UPPER_CASE)
+		for (char character : RussianAlphabet.UpperCase.LETTERS)
 		{
 			assertFalse(Stringi.isLowerCase(character));
 		}
 
-		for (char character : EnglishAlphabet.LETTERS_UPPER_CASE)
+		for (char character : EnglishAlphabet.UpperCase.LETTERS)
 		{
 			assertFalse(Stringi.isLowerCase(character));
 		}
@@ -75,12 +75,12 @@ public class StringiTest
 	@Test
 	public void testIsUpperCase1()
 	{
-		for (char character : RussianAlphabet.LETTERS_UPPER_CASE)
+		for (char character : RussianAlphabet.UpperCase.LETTERS)
 		{
 			assertTrue(Stringi.isUpperCase(character));
 		}
 
-		for (char character : EnglishAlphabet.LETTERS_UPPER_CASE)
+		for (char character : EnglishAlphabet.UpperCase.LETTERS)
 		{
 			assertTrue(Stringi.isUpperCase(character));
 		}
@@ -92,12 +92,12 @@ public class StringiTest
 	@Test
 	public void testIsUpperCase2()
 	{
-		for (char character : RussianAlphabet.LETTERS_LOWER_CASE)
+		for (char character : RussianAlphabet.LowerCase.LETTERS)
 		{
 			assertFalse(Stringi.isUpperCase(character));
 		}
 
-		for (char character : EnglishAlphabet.LETTERS_LOWER_CASE)
+		for (char character : EnglishAlphabet.LowerCase.LETTERS)
 		{
 			assertFalse(Stringi.isUpperCase(character));
 		}

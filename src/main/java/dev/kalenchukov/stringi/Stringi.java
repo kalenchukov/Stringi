@@ -37,8 +37,8 @@ public class Stringi
 	 */
 	public static boolean isLowerCase(final char letter)
 	{
-		return RussianAlphabet.LETTERS_LOWER_CASE.contains(letter) ||
-			EnglishAlphabet.LETTERS_LOWER_CASE.contains(letter);
+		return RussianAlphabet.LowerCase.LETTERS.contains(letter) ||
+			EnglishAlphabet.LowerCase.LETTERS.contains(letter);
 	}
 
 	/**
@@ -54,8 +54,8 @@ public class Stringi
 	 */
 	public static boolean isUpperCase(final char letter)
 	{
-		return RussianAlphabet.LETTERS_UPPER_CASE.contains(letter) ||
-			EnglishAlphabet.LETTERS_UPPER_CASE.contains(letter);
+		return RussianAlphabet.UpperCase.LETTERS.contains(letter) ||
+			EnglishAlphabet.UpperCase.LETTERS.contains(letter);
 	}
 
 	/**
