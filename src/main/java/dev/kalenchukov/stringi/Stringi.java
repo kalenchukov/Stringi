@@ -296,22 +296,66 @@ public class Stringi
 	 * @param string Строка.
 	 * @param count Количество повторений.
 	 * @return Строку, повторенную указанное количество раз.
-	 * @throws IllegalArgumentException Если {@code count} меньше или равно нулю.
+	 * @throws IllegalArgumentException Если {@code count} меньше нуля.
 	 */
 	@NotNull
 	public static String repeat(@NotNull final String string,
-								@Range(from = 1, to = Long.MAX_VALUE) final int count)
+								@NotNull @Range(from = 0, to = Long.MAX_VALUE) final Integer count)
 	{
 		Objects.requireNonNull(string);
+		Objects.requireNonNull(count);
 
-		if (count < 1) {
+		if (count < 0) {
 			throw new IllegalArgumentException();
 		}
 
-		StringBuilder newString = new StringBuilder(string);
+		StringBuilder newString = new StringBuilder();
 
-		for (int iterationRepeat = 1; iterationRepeat < count; iterationRepeat++) {
+		for (int iterationRepeat = 0; iterationRepeat < count; iterationRepeat++) {
 			newString.append(string);
+		}
+
+		return newString.toString();
+	}
+
+	/**
+	 * Выполняет повтор строки до заданного количества символов.
+	 *
+	 * @param string Строка.
+	 * @param length Количество символов.
+	 * @return Строку, повторенную до {@code length} символов.
+	 * @throws IllegalArgumentException Если {@code length} меньше нуля.
+	 */
+	public static String repeatToLength(@NotNull final String string,
+										@NotNull @Range(from = 0, to = Integer.MAX_VALUE) final Integer length)
+	{
+		Objects.requireNonNull(string);
+		Objects.requireNonNull(length);
+
+		if (length < 0) {
+			throw new IllegalArgumentException();
+		}
+
+		if (string.isEmpty()) {
+			return "";
+		}
+
+		StringBuilder newString = new StringBuilder();
+
+		char[] characters = string.toCharArray();
+		int indexCharacter = 0;
+		int needLength = length;
+
+		while (needLength != 0)
+		{
+			newString.append(characters[indexCharacter]);
+
+			indexCharacter++;
+			needLength--;
+
+			if (indexCharacter == characters.length) {
+				indexCharacter = 0;
+			}
 		}
 
 		return newString.toString();
@@ -450,6 +494,94 @@ public class Stringi
 		}
 
 		return newString.toString();
+	}
+
+	/**
+	 * Дополняет строку другой строкой слева до заданного количества символов.
+	 *
+	 * @param string Строка.
+	 * @param filler Наполнитель.
+	 * @param length Количество символов.
+	 * @return Исходную строку, дополненную строкой {@code filler} слева до {@code length} символов.
+	 * @throws IllegalArgumentException Если {@code length} меньше нуля.
+	 */
+	@NotNull
+	public static String fillLeft(@NotNull final String string,
+								  @NotNull final String filler,
+								  @NotNull @Range(from = 0, to = Integer.MAX_VALUE) final Integer length)
+	{
+		Objects.requireNonNull(string);
+		Objects.requireNonNull(filler);
+		Objects.requireNonNull(length);
+
+		if (length < 0) {
+			throw new IllegalArgumentException();
+		}
+
+		if (string.length() >= length) {
+			return string;
+		}
+
+		return Stringi.repeatToLength(filler, length - string.length()) + string;
+	}
+
+	/**
+	 * Дополняет строку другой строкой слева и справа до заданного количества символов.
+	 *
+	 * @param string Строка.
+	 * @param filler Наполнитель.
+	 * @param length Количество символов.
+	 * @return Исходную строку, дополненную строкой {@code filler} слева и справа до {@code length} символов.
+	 * @throws IllegalArgumentException Если {@code length} меньше нуля.
+	 */
+	@NotNull
+	public static String fill(@NotNull final String string,
+							  @NotNull final String filler,
+							  @NotNull @Range(from = 0, to = Integer.MAX_VALUE) final Integer length)
+	{
+		Objects.requireNonNull(string);
+		Objects.requireNonNull(filler);
+		Objects.requireNonNull(length);
+
+		if (length < 0) {
+			throw new IllegalArgumentException();
+		}
+
+		if (string.length() >= length) {
+			return string;
+		}
+
+		return Stringi.repeatToLength(filler, (length - string.length()) / 2) + string +
+			Stringi.repeatToLength(filler, (int) Math.ceil((double) (length - string.length()) / 2));
+	}
+
+	/**
+	 * Дополняет строку другой строкой справа до заданного количества символов.
+	 *
+	 * @param string Строка.
+	 * @param filler Наполнитель.
+	 * @param length Количество символов.
+	 * @return Исходную строку, дополненную строкой {@code filler} справа до {@code length} символов.
+	 * @throws IllegalArgumentException Если {@code length} меньше нуля.
+	 */
+	@NotNull
+	public static String fillRight(@NotNull final String string,
+								   @NotNull final String filler,
+								   @NotNull @Range(from = 0, to = Integer.MAX_VALUE) final Integer length)
+	{
+		Objects.requireNonNull(string);
+		Objects.requireNonNull(filler);
+		Objects.requireNonNull(length);
+
+		if (length < 0) {
+			throw new IllegalArgumentException();
+		}
+
+		if (string.length() >= length) {
+			return string;
+		}
+
+		return string + Stringi.repeatToLength(filler, length - string.length());
 	}
 
 	/**

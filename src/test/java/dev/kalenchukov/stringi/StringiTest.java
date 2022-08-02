@@ -283,10 +283,43 @@ public class StringiTest
 	/**
 	 * Проверка повторения строки 0 раз.
 	 */
-	@Test(expected = IllegalArgumentException.class)
+	@Test
 	public void testRepeatCountZero()
 	{
-		Stringi.repeat("Муравейник", 0);
+		String result = Stringi.repeat("Муравейник", 0);
+
+		assertEquals("", result);
+	}
+
+	/**
+	 * Проверка с корректными параметрами.
+	 */
+	@Test
+	public void testRepeatToLength()
+	{
+		String result = Stringi.repeatToLength("Без десяти", 15);
+
+		assertEquals("Без десятиБез д", result);
+	}
+
+	/**
+	 * Проверка с отрицательным количество раз.
+	 */
+	@Test(expected = IllegalArgumentException.class)
+	public void testRepeatToLengthLengthNegative()
+	{
+		Stringi.repeatToLength("Без десяти", -1);
+	}
+
+	/**
+	 * Проверка с параметром {@code length} = 0.
+	 */
+	@Test
+	public void testRepeatToLengthLengthZero()
+	{
+		String result = Stringi.repeatToLength("Без десяти", 0);
+
+		assertEquals("", result);
 	}
 
 	/**
@@ -436,5 +469,175 @@ public class StringiTest
 		String result = Stringi.join(new String[] {});
 
 		assertEquals("", result);
+	}
+
+	/**
+	 * Проверка с корректными данными.
+	 */
+	@Test
+	public void testFillLeft()
+	{
+		String result = Stringi.fillLeft("КИНО", "#", 10);
+
+		assertEquals("######КИНО", result);
+	}
+
+	/**
+	 * Проверка с параметром {@code length} = 0.
+	 */
+	@Test
+	public void testFillLeftLengthZero()
+	{
+		String result = Stringi.fillLeft("КИНО", "#", 0);
+
+		assertEquals("КИНО", result);
+	}
+
+	/**
+	 * Проверка с параметром {@code filler} = "".
+	 */
+	@Test
+	public void testFillLeftFillerEmpty()
+	{
+		String result = Stringi.fillLeft("КИНО", "", 10);
+
+		assertEquals("КИНО", result);
+	}
+
+	/**
+	 * Проверка с параметром {@code string} = "".
+	 */
+	@Test
+	public void testFillLeftStringEmpty()
+	{
+		String result = Stringi.fillLeft("", "#", 10);
+
+		assertEquals("##########", result);
+	}
+
+	/**
+	 * Проверка с параметром {@code length} = -1.
+	 */
+	@Test(expected = IllegalArgumentException.class)
+	public void testFillLeftLengthNegative()
+	{
+		Stringi.fillLeft("КИНО", "#", -1);
+	}
+
+	/**
+	 * Проверка с корректными данными.
+	 */
+	@Test
+	public void testFill()
+	{
+		String result = Stringi.fill("КИНО", "#", 10);
+
+		assertEquals("###КИНО###", result);
+	}
+
+	/**
+	 * Проверка с параметром {@code length} = 0.
+	 */
+	@Test
+	public void testFillLengthZero()
+	{
+		String result = Stringi.fill("КИНО", "#", 0);
+
+		assertEquals("КИНО", result);
+	}
+
+	/**
+	 * Проверка с параметром {@code filler} = "".
+	 */
+	@Test
+	public void testFillFillerEmpty()
+	{
+		String result = Stringi.fill("КИНО", "", 10);
+
+		assertEquals("КИНО", result);
+	}
+
+	/**
+	 * Проверка с параметром {@code string} = "".
+	 */
+	@Test
+	public void testFillStringEmpty()
+	{
+		String result = Stringi.fill("", "#", 10);
+
+		assertEquals("##########", result);
+	}
+
+	/**
+	 * Проверка с параметром {@code length} = -1.
+	 */
+	@Test(expected = IllegalArgumentException.class)
+	public void testFillLengthNegative()
+	{
+		Stringi.fill("КИНО", "#", -1);
+	}
+
+	/**
+	 * Проверка с нечётным параметром {@code length}.
+	 */
+	@Test
+	public void testFillLengthUneven()
+	{
+		String result = Stringi.fill("КИНО", "#", 9);
+
+		assertEquals("##КИНО###", result);
+	}
+
+	/**
+	 * Проверка с корректными данными.
+	 */
+	@Test
+	public void testFillRight()
+	{
+		String result = Stringi.fillRight("КИНО", "#", 10);
+
+		assertEquals("КИНО######", result);
+	}
+
+	/**
+	 * Проверка с параметром {@code length} = 0.
+	 */
+	@Test
+	public void testFillRightLengthZero()
+	{
+		String result = Stringi.fillRight("КИНО", "#", 0);
+
+		assertEquals("КИНО", result);
+	}
+
+	/**
+	 * Проверка с параметром {@code filler} = "".
+	 */
+	@Test
+	public void testFillRightFillerEmpty()
+	{
+		String result = Stringi.fillRight("КИНО", "", 10);
+
+		assertEquals("КИНО", result);
+	}
+
+	/**
+	 * Проверка с параметром {@code string} = "".
+	 */
+	@Test
+	public void testFillRightStringEmpty()
+	{
+		String result = Stringi.fillRight("", "#", 10);
+
+		assertEquals("##########", result);
+	}
+
+	/**
+	 * Проверка с параметром {@code length} = -1.
+	 */
+	@Test(expected = IllegalArgumentException.class)
+	public void testFillRightLengthNegative()
+	{
+		Stringi.fillRight("КИНО", "#", -1);
 	}
 }
