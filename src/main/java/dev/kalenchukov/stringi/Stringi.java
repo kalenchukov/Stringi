@@ -35,8 +35,10 @@ public class Stringi
 	 * @param letter Буква.
 	 * @return {@code True}, если буква строчная, иначе {@code false}.
 	 */
-	public static boolean isLowerCase(final char letter)
+	public static boolean isLowerCase(@NotNull final Character letter)
 	{
+		Objects.requireNonNull(letter);
+
 		return RussianAlphabet.LowerCase.LETTERS.contains(letter) ||
 			EnglishAlphabet.LowerCase.LETTERS.contains(letter);
 	}
@@ -52,8 +54,10 @@ public class Stringi
 	 * @param letter Буква.
 	 * @return {@code True}, если буква прописная, иначе {@code false}.
 	 */
-	public static boolean isUpperCase(final char letter)
+	public static boolean isUpperCase(@NotNull final Character letter)
 	{
+		Objects.requireNonNull(letter);
+
 		return RussianAlphabet.UpperCase.LETTERS.contains(letter) ||
 			EnglishAlphabet.UpperCase.LETTERS.contains(letter);
 	}
@@ -203,9 +207,10 @@ public class Stringi
 	 * @return Позицию первого вхождения символа в строке или {@code null} если символ не найден.
 	 */
 	@Nullable
-	public static Integer searchFirst(@NotNull final String string, final char symbol)
+	public static Integer searchFirst(@NotNull final String string, @NotNull final Character symbol)
 	{
 		Objects.requireNonNull(string);
+		Objects.requireNonNull(symbol);
 
 		return Stringi.searchFirst(string, List.of(symbol));
 	}
@@ -218,9 +223,10 @@ public class Stringi
 	 * @return Позицию последнего вхождения символа в строке или {@code null} если символ не найден.
 	 */
 	@Nullable
-	public static Integer searchLast(@NotNull final String string, final char symbol)
+	public static Integer searchLast(@NotNull final String string, @NotNull final Character symbol)
 	{
 		Objects.requireNonNull(string);
+		Objects.requireNonNull(symbol);
 
 		return Stringi.searchLast(string, List.of(symbol));
 	}
@@ -263,7 +269,7 @@ public class Stringi
 	 *
 	 * @param string Строка.
 	 * @param symbols Коллекция искомых символов.
-	 * @return Позицию последнего вхождения одного из символов в строке или {@code null} если ни один из символов не найден.
+	 * @return Позицию последнего вхождения одного из символов в строке или {@code null}, если ни один из символов не найден.
 	 */
 	@Nullable
 	public static Integer searchLast(@NotNull final String string, @NotNull final List<@NotNull Character> symbols)
