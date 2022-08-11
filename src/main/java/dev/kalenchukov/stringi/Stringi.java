@@ -11,9 +11,9 @@ import dev.kalenchukov.alphabet.RussianAlphabet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.Range;
+import org.jetbrains.annotations.Unmodifiable;
 
 import java.util.*;
-
 /**
  * Класс работы со строками под шуточным названием "стринги".
  */
@@ -116,7 +116,7 @@ public class Stringi
 		alphabets.addAll(RussianAlphabet.LETTERS);
 		alphabets.addAll(EnglishAlphabet.LETTERS);
 
-		Integer position = Stringi.searchFirst(string, alphabets);
+		final Integer position = Stringi.searchFirst(string, alphabets);
 
 		if (position != null)
 		{
@@ -153,7 +153,7 @@ public class Stringi
 		alphabets.addAll(RussianAlphabet.LETTERS);
 		alphabets.addAll(EnglishAlphabet.LETTERS);
 
-		Integer position = Stringi.searchFirst(string, alphabets);
+		final Integer position = Stringi.searchFirst(string, alphabets);
 
 		if (position != null)
 		{
@@ -179,9 +179,10 @@ public class Stringi
 	{
 		Objects.requireNonNull(string);
 
-		StringBuilder newString = new StringBuilder();
+		final Character[] characters = Stringi.toCharArray(string);
+		final StringBuilder newString = new StringBuilder();
 
-		for (char character : string.toCharArray())
+		for (char character : characters)
 		{
 			if (Stringi.isLowerCase(character)) {
 				newString.append(String.valueOf(character).toUpperCase());
@@ -245,11 +246,11 @@ public class Stringi
 			return null;
 		}
 
-		final char[] stringCharacters = string.toCharArray();
+		final Character[] characters = Stringi.toCharArray(string);
 
-		for (int position = 0; position < stringCharacters.length; position++)
+		for (int position = 0; position < characters.length; position++)
 		{
-			if (symbols.contains(stringCharacters[position])) {
+			if (symbols.contains(characters[position])) {
 				return position;
 			}
 		}
@@ -278,44 +279,16 @@ public class Stringi
 			return null;
 		}
 
-		final char[] stringCharacters = string.toCharArray();
+		final Character[] characters = Stringi.toCharArray(string);
 
-		for (int position = stringCharacters.length - 1; position >= 0; position--)
+		for (int position = characters.length - 1; position >= 0; position--)
 		{
-			if (symbols.contains(stringCharacters[position])) {
+			if (symbols.contains(characters[position])) {
 				return position;
 			}
 		}
 
 		return null;
-	}
-
-	/**
-	 * Выполняет повтор строки.
-	 *
-	 * @param string Строка.
-	 * @param count Количество повторений.
-	 * @return Строку, повторенную указанное количество раз.
-	 * @throws IllegalArgumentException Если {@code count} меньше нуля.
-	 */
-	@NotNull
-	public static String repeat(@NotNull final String string,
-								@NotNull @Range(from = 0, to = Long.MAX_VALUE) final Integer count)
-	{
-		Objects.requireNonNull(string);
-		Objects.requireNonNull(count);
-
-		if (count < 0) {
-			throw new IllegalArgumentException();
-		}
-
-		StringBuilder newString = new StringBuilder();
-
-		for (int iterationRepeat = 0; iterationRepeat < count; iterationRepeat++) {
-			newString.append(string);
-		}
-
-		return newString.toString();
 	}
 
 	/**
@@ -342,7 +315,7 @@ public class Stringi
 
 		StringBuilder newString = new StringBuilder();
 
-		char[] characters = string.toCharArray();
+		final Character[] characters = Stringi.toCharArray(string);
 		int indexCharacter = 0;
 		int needLength = length;
 
@@ -376,19 +349,19 @@ public class Stringi
 			return string;
 		}
 
-		char[] stringCharacters = string.toCharArray();
-		final int coefficientShuffle = (int) (stringCharacters.length * 2.5);
-		Random random = new Random();
+		Character[] characters = Stringi.toCharArray(string);
+		final int coefficient = (int) (characters.length * 2.5);
+		final Random random = new Random();
 
-		for (int iterationShuffle = 0; iterationShuffle < coefficientShuffle; iterationShuffle++)
+		for (int iterationShuffle = 0; iterationShuffle < coefficient; iterationShuffle++)
 		{
-			int indexFrom = random.nextInt(stringCharacters.length);
-			int indexIn = random.nextInt(stringCharacters.length);
+			int indexFrom = random.nextInt(characters.length);
+			int indexIn = random.nextInt(characters.length);
 
-			Stringi.swapValuesInArray(stringCharacters, indexFrom, indexIn);
+			Stringi.swapValuesInArray(characters, indexFrom, indexIn);
 		}
 
-		return new String(stringCharacters);
+		return Stringi.glue(characters);
 	}
 
 	/**
@@ -406,73 +379,133 @@ public class Stringi
 			return string;
 		}
 
-		char[] stringCharacters = string.toCharArray();
+		Character[] characters = Stringi.toCharArray(string);
 
-		for (int iterationReverse = 0; iterationReverse < stringCharacters.length / 2; iterationReverse++)
+		for (int iterationReverse = 0; iterationReverse < characters.length / 2; iterationReverse++)
 		{
-			int indexFrom = (stringCharacters.length - iterationReverse) - 1;
+			int indexFrom = (characters.length - iterationReverse) - 1;
 			int indexIn = iterationReverse;
 
-			Stringi.swapValuesInArray(stringCharacters, indexFrom, indexIn);
+			Stringi.swapValuesInArray(characters, indexFrom, indexIn);
 		}
 
-		return new String(stringCharacters);
+		return Stringi.glue(characters);
 	}
 
 	/**
-	 * Объединяет элементы коллекции в строку.
+	 * Склеивает символы в строку.
 	 *
-	 * @param values Коллекция значений из которого необходимо сделать строку.
+	 * @param symbols Коллекция символов.
 	 * @return Строку из элементов коллекции.
 	 */
-	public static String join(@NotNull final List<@NotNull String> values)
+	public static String glue(@NotNull final List<@Nullable Character> symbols)
 	{
-		Objects.requireNonNull(values);
+		Objects.requireNonNull(symbols);
 
-		return Stringi.join(values, "");
+		return Stringi.glue(symbols, "");
 	}
 
 	/**
-	 * Объединяет элементы коллекции в строку.
+	 * Склеивает символы в строку с разделителем.
 	 *
-	 * @param values Коллекция значений из которого необходимо сделать строку.
+	 * @param symbols Коллекция символов.
 	 * @param separator Разделитель.
 	 * @return Строку из элементов коллекции.
 	 */
-	public static String join(@NotNull final List<@NotNull String> values, @NotNull final String separator)
+	public static String glue(@NotNull final List<@Nullable Character> symbols, @NotNull final String separator)
 	{
-		Objects.requireNonNull(values);
+		Objects.requireNonNull(symbols);
 		Objects.requireNonNull(separator);
 
-		return Stringi.join(values.toArray(String[]::new), separator);
+		return Stringi.glue(symbols.toArray(Character[]::new), separator);
 	}
 
 	/**
-	 * Объединяет элементы массива в строку.
+	 * Склеивает символы в строку.
 	 *
-	 * @param values Массив значений из которого необходимо сделать строку.
+	 * @param symbols Массив символов.
 	 * @return Строку из элементов массива.
 	 */
-	public static String join(@NotNull final String @NotNull [] values)
+	public static String glue(@Nullable final Character @NotNull [] symbols)
 	{
-		Objects.requireNonNull(values);
+		Objects.requireNonNull(symbols);
 
-		return Stringi.join(values, "");
+		return Stringi.glue(symbols, "");
 	}
 
 	/**
-	 * Объединяет элементы массива в строку с разделителем.
+	 * Склеивает символы в строку.
 	 *
-	 * @param values Массив значений из которого необходимо сделать строку.
+	 * @param symbols Массив символов.
+	 * @return Строку из элементов массива.
+	 */
+	public static String glue(@Nullable final Character @NotNull [] symbols, @NotNull final String separator)
+	{
+		Objects.requireNonNull(symbols);
+		Objects.requireNonNull(separator);
+
+		final String[] strings = Arrays.stream(symbols)
+									   .filter(Objects::nonNull)
+									   .map(String::valueOf)
+									   .toArray(String[]::new);
+
+		return Stringi.join(strings, separator);
+	}
+
+	/**
+	 * Объединяет строки.
+	 *
+	 * @param strings Коллекция строк.
+	 * @return Строку из элементов коллекции.
+	 */
+	public static String join(@NotNull final List<@Nullable String> strings)
+	{
+		Objects.requireNonNull(strings);
+
+		return Stringi.join(strings, "");
+	}
+
+	/**
+	 * Объединяет строки с разделителем.
+	 *
+	 * @param strings Коллекция строк.
+	 * @param separator Разделитель.
+	 * @return Строку из элементов коллекции.
+	 */
+	public static String join(@NotNull final List<@Nullable String> strings, @NotNull final String separator)
+	{
+		Objects.requireNonNull(strings);
+		Objects.requireNonNull(separator);
+
+		return Stringi.join(strings.toArray(String[]::new), separator);
+	}
+
+	/**
+	 * Объединяет строки.
+	 *
+	 * @param strings Массив строк.
+	 * @return Строку из элементов массива.
+	 */
+	public static String join(@Nullable final String @NotNull [] strings)
+	{
+		Objects.requireNonNull(strings);
+
+		return Stringi.join(strings, "");
+	}
+
+	/**
+	 * Объединяет строки с разделителем.
+	 *
+	 * @param strings Массив строк.
 	 * @param separator Разделитель.
 	 * @return Строку из элементов массива.
 	 */
-	public static String join(@NotNull final String @NotNull [] values, @NotNull final String separator)
+	public static String join(@Nullable final String @NotNull [] strings, @NotNull final String separator)
 	{
-		Objects.requireNonNull(values);
+		Objects.requireNonNull(strings);
 		Objects.requireNonNull(separator);
 
-		if (values.length == 0) {
+		if (strings.length == 0) {
 			return "";
 		}
 
@@ -480,9 +513,11 @@ public class Stringi
 
 		StringBuilder newString = new StringBuilder();
 
-		for (String string : values)
+		for (String string : strings)
 		{
-			Objects.requireNonNull(string);
+			if (string == null) {
+				continue;
+			}
 
 			if (addSeparator) {
 				newString.append(separator);
@@ -585,6 +620,35 @@ public class Stringi
 	}
 
 	/**
+	 * Возвращает коллекцию из символов строки.
+	 *
+	 * @param string Строка.
+	 * @return Коллекцию символов.
+	 */
+	@Unmodifiable
+	@NotNull
+	public static  List<Character> toCharList(@NotNull final String string)
+	{
+		Objects.requireNonNull(string);
+
+		return string.chars().mapToObj(i -> (char) i).toList();
+	}
+
+	/**
+	 * Возвращает массив из символов строки.
+	 *
+	 * @param string Строка.
+	 * @return Массив символов.
+	 */
+	@NotNull
+	public static Character @NotNull [] toCharArray(@NotNull final String string)
+	{
+		Objects.requireNonNull(string);
+
+		return string.chars().mapToObj(i -> (char) i).toArray(Character[]::new);
+	}
+
+	/**
 	 * Меняет местами значения в массиве.
 	 *
 	 * @param array Массив.
@@ -593,10 +657,14 @@ public class Stringi
 	 * @throws IllegalArgumentException Если {@code from} или {@code to} меньше нуля.
 	 * @throws IndexOutOfBoundsException Если {@code from} или {@code to} больше размера массива.
 	 */
-	private static void swapValuesInArray(final char[] array,
-										  @Range(from = 0, to = Integer.MAX_VALUE) final int from,
-										  @Range(from = 0, to = Integer.MAX_VALUE) final int in)
+	private static void swapValuesInArray(@Nullable final Character @NotNull [] array,
+										  @NotNull @Range(from = 0, to = Integer.MAX_VALUE) final Integer from,
+										  @NotNull @Range(from = 0, to = Integer.MAX_VALUE) final Integer in)
 	{
+		Objects.requireNonNull(array);
+		Objects.requireNonNull(from);
+		Objects.requireNonNull(in);
+
 		if (from < 0 || in < 0) {
 			throw new IllegalArgumentException();
 		}

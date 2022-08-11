@@ -11,6 +11,7 @@ import dev.kalenchukov.alphabet.RussianAlphabet;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -261,37 +262,6 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка повторения строки.
-	 */
-	@Test
-	public void testRepeat()
-	{
-		String result = Stringi.repeat("Муравейник", 2);
-
-		assertEquals("МуравейникМуравейник", result);
-	}
-
-	/**
-	 * Проверка повторения строки отрицательное количество раз.
-	 */
-	@Test(expected = IllegalArgumentException.class)
-	public void testRepeatCountNegative()
-	{
-		Stringi.repeat("Муравейник", -1);
-	}
-
-	/**
-	 * Проверка повторения строки 0 раз.
-	 */
-	@Test
-	public void testRepeatCountZero()
-	{
-		String result = Stringi.repeat("Муравейник", 0);
-
-		assertEquals("", result);
-	}
-
-	/**
 	 * Проверка с корректными параметрами.
 	 */
 	@Test
@@ -407,15 +377,17 @@ public class StringiTest
 	/**
 	 * Проверка объединения элементов коллекции из {@code String} со значением {@code null} в строку.
 	 */
-	@Test(expected = NullPointerException.class)
+	@Test
 	public void testJoinListStringNull()
 	{
 		List<String> values = new ArrayList<>();
-		values.add("Белы");
+		values.add("Белый");
 		values.add(null);
-		values.add("ень");
+		values.add("день");
 
-		Stringi.join(values);
+		String result = Stringi.join(values);
+
+		assertEquals("Белыйдень", result);
 	}
 
 	/**
@@ -454,10 +426,12 @@ public class StringiTest
 	/**
 	 * Проверка объединения элементов массива из {@code String} со значением {@code null} в строку.
 	 */
-	@Test(expected = NullPointerException.class)
+	@Test
 	public void testJoinArrayStringNull()
 	{
-		Stringi.join(new String[] {"K", null, "N", "O"});
+		String result = Stringi.join(new String[] {"K", "I", null, "N", "O"});
+
+		assertEquals("KINO", result);
 	}
 
 	/**
@@ -639,5 +613,148 @@ public class StringiTest
 	public void testFillRightLengthNegative()
 	{
 		Stringi.fillRight("КИНО", "#", -1);
+	}
+
+	/**
+	 * Проверка с наличием букв.
+	 */
+	@Test
+	public void testToCharList()
+	{
+		List<Character> symbols = List.of(
+			'W', 'a', 'l', 'k', ' ', 'a', 'l', 'l', ' ', 'o', 'v', 'e', 'r', ' ', 'y', 'o', 'u'
+		);
+
+		assertEquals(symbols, Stringi.toCharList("Walk all over you"));
+	}
+
+	/**
+	 * Проверка без букв.
+	 */
+	@Test
+	public void testToCharListEmpty()
+	{
+		List<Character> symbols = List.of();
+
+		assertEquals(symbols, Stringi.toCharList(""));
+	}
+
+	/**
+	 * Проверка с наличием букв.
+	 */
+	@Test
+	public void testToCharArray()
+	{
+		Character[] symbols = {
+			'W', 'a', 'l', 'k', ' ', 'a', 'l', 'l', ' ', 'o', 'v', 'e', 'r', ' ', 'y', 'o', 'u'
+		};
+
+		assertArrayEquals(symbols, Stringi.toCharArray("Walk all over you"));
+	}
+
+	/**
+	 * Проверка без букв.
+	 */
+	@Test
+	public void testToCharArrayEmpty()
+	{
+		Character[] symbols = {};
+
+		assertArrayEquals(symbols, Stringi.toCharArray(""));
+	}
+
+	/**
+	 * Проверка склеивания элементов коллекции из {@code Character} в строку.
+	 */
+	@Test
+	public void testGlueListString()
+	{
+		String result = Stringi.glue(List.of('A', 'C', '/', 'D', 'C'));
+
+		assertEquals("AC/DC", result);
+	}
+
+	/**
+	 * Проверка склеивания элементов коллекции из {@code Character} в строку с разделителем.
+	 */
+	@Test
+	public void testGlueListStringSeparator()
+	{
+		String result = Stringi.glue(List.of('T', 'N', 'T'), ".");
+
+		assertEquals("T.N.T", result);
+	}
+
+	/**
+	 * Проверка склеивания элементов коллекции из {@code Character} со значением {@code null} в строку.
+	 */
+	@Test
+	public void testGlueListStringNull()
+	{
+		List<Character> values = new ArrayList<>();
+		values.add('A');
+		values.add('C');
+		values.add(null);
+		values.add('D');
+		values.add('C');
+
+		String result = Stringi.glue(values);
+
+		assertEquals("ACDC", result);
+	}
+
+	/**
+	 * Проверка склеивания пустой коллекции из {@code Character} в строку.
+	 */
+	@Test
+	public void testGlueListStringEmpty()
+	{
+		String result = Stringi.glue(List.of());
+
+		assertEquals("", result);
+	}
+
+	/**
+	 * Проверка склеивания элементов массива из {@code Character} в строку.
+	 */
+	@Test
+	public void testGlueArrayString()
+	{
+		String result = Stringi.glue(new Character[] {'A', 'C', '/', 'D', 'C'});
+
+		assertEquals("AC/DC", result);
+	}
+
+	/**
+	 * Проверка склеивания элементов массива из {@code Character} в строку с разделителем.
+	 */
+	@Test
+	public void testGlueArrayStringSeparator()
+	{
+		String result = Stringi.glue(new Character[] {'T', 'N', 'T'}, ".");
+
+		assertEquals("T.N.T", result);
+	}
+
+	/**
+	 * Проверка склеивания элементов массива из {@code Character} со значением {@code null} в строку.
+	 */
+	@Test
+	public void testGlueArrayStringNull()
+	{
+		String result = Stringi.glue(new Character[] {'T', null, 'N', 'T'});
+
+		assertEquals("TNT", result);
+	}
+
+	/**
+	 * Проверка склеивания пустого массива из {@code Character} в строку.
+	 */
+	@Test
+	public void testGlueArrayStringEmpty()
+	{
+		String result = Stringi.glue(new Character[] {});
+
+		assertEquals("", result);
 	}
 }
