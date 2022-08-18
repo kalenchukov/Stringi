@@ -25,44 +25,6 @@ public class Stringi
 	private Stringi() {}
 
 	/**
-	 * Проверяет, является ли буква строчной.<br>
-	 * Поддерживаемые алфавиты:
-	 * <ul>
-	 *     <li>Русский</li>
-	 *     <li>Английский</li>
-	 * </ul>
-	 *
-	 * @param letter Буква.
-	 * @return {@code True}, если буква строчная, иначе {@code false}.
-	 */
-	public static boolean isLowerCase(@NotNull final Character letter)
-	{
-		Objects.requireNonNull(letter);
-
-		return RussianAlphabet.LowerCase.LETTERS.contains(letter) ||
-			EnglishAlphabet.LowerCase.LETTERS.contains(letter);
-	}
-
-	/**
-	 * Проверяет, является ли буква прописной.<br>
-	 * Поддерживаемые алфавиты:
-	 * <ul>
-	 *     <li>Русский</li>
-	 *     <li>Английский</li>
-	 * </ul>
-	 *
-	 * @param letter Буква.
-	 * @return {@code True}, если буква прописная, иначе {@code false}.
-	 */
-	public static boolean isUpperCase(@NotNull final Character letter)
-	{
-		Objects.requireNonNull(letter);
-
-		return RussianAlphabet.UpperCase.LETTERS.contains(letter) ||
-			EnglishAlphabet.UpperCase.LETTERS.contains(letter);
-	}
-
-	/**
 	 * Преобразовывает регистр первого символа к прописному.
 	 *
 	 * @param string Строка.
@@ -188,11 +150,11 @@ public class Stringi
 
 		for (char character : characters)
 		{
-			if (Stringi.isLowerCase(character)) {
-				newString.append(String.valueOf(character).toUpperCase());
+			if (Character.isLowerCase(character)) {
+				newString.append(Character.toUpperCase(character));
 			}
 			else {
-				newString.append(String.valueOf(character).toLowerCase());
+				newString.append(Character.toLowerCase(character));
 			}
 		}
 
