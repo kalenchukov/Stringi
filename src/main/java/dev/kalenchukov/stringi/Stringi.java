@@ -6,8 +6,6 @@
 
 package dev.kalenchukov.stringi;
 
-import dev.kalenchukov.alphabet.EnglishAlphabet;
-import dev.kalenchukov.alphabet.RussianAlphabet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.Range;
@@ -87,12 +85,7 @@ public class Stringi
 	}
 
 	/**
-	 * Преобразовывает регистр первой найденной буквы к строчному.<br>
-	 * Поддерживаемые алфавиты:
-	 * <ul>
-	 *     <li>Русский</li>
-	 *     <li>Английский</li>
-	 * </ul>
+	 * Преобразовывает регистр первой найденной буквы к строчному.
 	 *
 	 * @param string Строка.
 	 * @return Возвращает строку в которой регистр первой буквы строчный.
@@ -102,13 +95,7 @@ public class Stringi
 	{
 		Objects.requireNonNull(string);
 
-		List<Character> alphabets = new ArrayList<>(
-			RussianAlphabet.LETTERS.size() + EnglishAlphabet.LETTERS.size()
-		);
-		alphabets.addAll(RussianAlphabet.LETTERS);
-		alphabets.addAll(EnglishAlphabet.LETTERS);
-
-		final Integer position = Stringi.searchFirst(string, alphabets);
+		final Integer position = Stringi.searchFirstLetter(string);
 
 		if (position != null)
 		{
