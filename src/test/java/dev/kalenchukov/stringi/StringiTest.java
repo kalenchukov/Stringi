@@ -6,12 +6,9 @@
 
 package dev.kalenchukov.stringi;
 
-import dev.kalenchukov.alphabet.EnglishAlphabet;
-import dev.kalenchukov.alphabet.RussianAlphabet;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.*;
