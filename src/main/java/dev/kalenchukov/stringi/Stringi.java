@@ -61,12 +61,7 @@ public class Stringi
 	}
 
 	/**
-	 * Преобразовывает регистр первой найденной буквы к прописному.<br>
-	 * Поддерживаемые алфавиты:
-	 * <ul>
-	 *     <li>Русский</li>
-	 *     <li>Английский</li>
-	 * </ul>
+	 * Преобразовывает регистр первой найденной буквы к прописному.
 	 *
 	 * @param string Строка.
 	 * @return Возвращает строку в которой регистр первой буквы прописной.
@@ -76,13 +71,7 @@ public class Stringi
 	{
 		Objects.requireNonNull(string);
 
-		List<Character> alphabets = new ArrayList<>(
-			RussianAlphabet.LETTERS.size() + EnglishAlphabet.LETTERS.size()
-		);
-		alphabets.addAll(RussianAlphabet.LETTERS);
-		alphabets.addAll(EnglishAlphabet.LETTERS);
-
-		final Integer position = Stringi.searchFirst(string, alphabets);
+		final Integer position = Stringi.searchFirstLetter(string);
 
 		if (position != null)
 		{
@@ -219,6 +208,60 @@ public class Stringi
 		for (int position = 0; position < characters.length; position++)
 		{
 			if (symbols.contains(characters[position])) {
+				return position;
+			}
+		}
+
+		return null;
+	}
+
+	/**
+	 * Выполняет поиск первой буквы в строке.
+	 *
+	 * @param string Строка.
+	 * @return Позицию первой буквы в строке или {@code null} если ни один из символов не найден.
+	 */
+	@Nullable
+	public static Integer searchFirstLetter(@NotNull final String string)
+	{
+		Objects.requireNonNull(string);
+
+		if (string.isEmpty()) {
+			return null;
+		}
+
+		final Character[] characters = Stringi.toCharArray(string);
+
+		for (int position = 0; position < characters.length; position++)
+		{
+			if (Character.isLetter(characters[position])) {
+				return position;
+			}
+		}
+
+		return null;
+	}
+
+	/**
+	 * Выполняет поиск последней буквы в строке.
+	 *
+	 * @param string Строка.
+	 * @return Позицию последней буквы в строке или {@code null} если ни один из символов не найден.
+	 */
+	@Nullable
+	public static Integer searchLastLetter(@NotNull final String string)
+	{
+		Objects.requireNonNull(string);
+
+		if (string.isEmpty()) {
+			return null;
+		}
+
+		final Character[] characters = Stringi.toCharArray(string);
+
+		for (int position = characters.length - 1; position >= 0; position--)
+		{
+			if (Character.isLetter(characters[position])) {
 				return position;
 			}
 		}

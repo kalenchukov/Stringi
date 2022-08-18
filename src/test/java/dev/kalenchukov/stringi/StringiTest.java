@@ -170,6 +170,32 @@ public class StringiTest
 	}
 
 	/**
+	 * Проверка поиска первой буквы в строке.
+	 */
+	@Test
+	public void testSearchFirstLetter()
+	{
+		Integer result = Stringi.searchFirstLetter("+Когда твоя девушка больна+");
+
+		assert result != null;
+
+		assertEquals(1, (int) result);
+	}
+
+	/**
+	 * Проверка поиска первой буквы в строке.
+	 */
+	@Test
+	public void testSearchLastLetter()
+	{
+		Integer result = Stringi.searchLastLetter("###Ночь###");
+
+		assert result != null;
+
+		assertEquals(6, (int) result);
+	}
+
+	/**
 	 * Проверка с корректными параметрами.
 	 */
 	@Test
