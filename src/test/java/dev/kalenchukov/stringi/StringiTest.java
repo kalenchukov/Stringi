@@ -302,6 +302,26 @@ public class StringiTest
 	}
 
 	/**
+	 * Проверка строки палиндрома.
+	 */
+	@Test
+	public void testIsPalindrome()
+	{
+		assertTrue("ШАЛАШ", Stringi.isPalindrome("ШАЛАШ"));
+		assertFalse("МАЛЫШ", Stringi.isPalindrome("МАЛЫШ"));
+	}
+
+	/**
+	 * Проверка строки палиндрома без учёта регистра букв.
+	 */
+	@Test
+	public void testIsPalindromeIgnoreCase()
+	{
+		assertTrue("Шалаш", Stringi.isPalindromeIgnoreCase("Шалаш"));
+		assertFalse("Малыш", Stringi.isPalindromeIgnoreCase("Малыш"));
+	}
+
+	/**
 	 * Проверка объединения элементов коллекции из {@code String} в строку.
 	 */
 	@Test

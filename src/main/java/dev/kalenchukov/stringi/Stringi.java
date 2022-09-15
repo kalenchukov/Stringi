@@ -409,6 +409,28 @@ public class Stringi
 	}
 
 	/**
+	 * Проверяет, является ли строка палиндромом.
+	 *
+	 * @param string Строка.
+	 * @return {@code True}, если строка является палиндромом, иначе {@code False}.
+	 */
+	public static boolean isPalindrome(@NotNull final String string)
+	{
+		return string.equals(Stringi.reverse(string));
+	}
+
+	/**
+	 * Проверяет, является ли строка палиндромом без учёта регистра букв.
+	 *
+	 * @param string Строка.
+	 * @return {@code True}, если строка является палиндромом, иначе {@code False}.
+	 */
+	public static boolean isPalindromeIgnoreCase(@NotNull final String string)
+	{
+		return string.equalsIgnoreCase(Stringi.reverse(string));
+	}
+
+	/**
 	 * Склеивает символы в строку.
 	 *
 	 * @param symbols Коллекция символов.
