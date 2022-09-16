@@ -315,6 +315,7 @@ public class Stringi
 	 * @return Строку, повторенную до {@code length} символов.
 	 * @throws IllegalArgumentException Если {@code length} меньше нуля.
 	 */
+	@NotNull
 	public static String repeatToLength(@NotNull final String string,
 										@NotNull @Range(from = 0, to = Integer.MAX_VALUE) final Integer length)
 	{
@@ -436,6 +437,7 @@ public class Stringi
 	 * @param symbols Коллекция символов.
 	 * @return Строку из элементов коллекции.
 	 */
+	@NotNull
 	public static String glue(@NotNull final List<@Nullable Character> symbols)
 	{
 		Objects.requireNonNull(symbols);
@@ -450,6 +452,7 @@ public class Stringi
 	 * @param separator Разделитель.
 	 * @return Строку из элементов коллекции.
 	 */
+	@NotNull
 	public static String glue(@NotNull final List<@Nullable Character> symbols, @NotNull final String separator)
 	{
 		Objects.requireNonNull(symbols);
@@ -464,6 +467,7 @@ public class Stringi
 	 * @param symbols Массив символов.
 	 * @return Строку из элементов массива.
 	 */
+	@NotNull
 	public static String glue(@Nullable final Character @NotNull [] symbols)
 	{
 		Objects.requireNonNull(symbols);
@@ -477,6 +481,7 @@ public class Stringi
 	 * @param symbols Массив символов.
 	 * @return Строку из элементов массива.
 	 */
+	@NotNull
 	public static String glue(@Nullable final Character @NotNull [] symbols, @NotNull final String separator)
 	{
 		Objects.requireNonNull(symbols);
@@ -496,6 +501,7 @@ public class Stringi
 	 * @param strings Коллекция строк.
 	 * @return Строку из элементов коллекции.
 	 */
+	@NotNull
 	public static String join(@NotNull final List<@Nullable String> strings)
 	{
 		Objects.requireNonNull(strings);
@@ -510,6 +516,7 @@ public class Stringi
 	 * @param separator Разделитель.
 	 * @return Строку из элементов коллекции.
 	 */
+	@NotNull
 	public static String join(@NotNull final List<@Nullable String> strings, @NotNull final String separator)
 	{
 		Objects.requireNonNull(strings);
@@ -524,6 +531,7 @@ public class Stringi
 	 * @param strings Массив строк.
 	 * @return Строку из элементов массива.
 	 */
+	@NotNull
 	public static String join(@Nullable final String @NotNull [] strings)
 	{
 		Objects.requireNonNull(strings);
@@ -538,6 +546,7 @@ public class Stringi
 	 * @param separator Разделитель.
 	 * @return Строку из элементов массива.
 	 */
+	@NotNull
 	public static String join(@Nullable final String @NotNull [] strings, @NotNull final String separator)
 	{
 		Objects.requireNonNull(strings);
