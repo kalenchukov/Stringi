@@ -479,10 +479,12 @@ public class Stringi
 	 * Склеивает символы в строку.
 	 *
 	 * @param symbols Массив символов.
+	 * @param separator Разделитель символов.
 	 * @return Строку из элементов массива.
 	 */
 	@NotNull
-	public static String glue(@Nullable final Character @NotNull [] symbols, @NotNull final String separator)
+	public static String glue(@Nullable final Character @NotNull [] symbols,
+							  @NotNull final String separator)
 	{
 		Objects.requireNonNull(symbols);
 		Objects.requireNonNull(separator);
