@@ -36,7 +36,7 @@ import java.util.*;
 public class Stringi
 {
 	/**
-	 * Конструктор для {@code Stringi} запрещающий создавать объект класса.
+	 * Конструктор для {@code Stringi}.
 	 */
 	private Stringi() {}
 
