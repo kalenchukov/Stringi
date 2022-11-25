@@ -175,14 +175,6 @@ Stringi.toCharArray();
 */ 
 ```
 
-## Установка
-
-Для установки этого проекта, введите в терминале:
-
-```bash
-git clone https://github.com/kalenchukov/Stringi.git
-```
-
 ## Версии
 
 Доступные [версии](https://github.com/kalenchukov/Stringi/releases).
