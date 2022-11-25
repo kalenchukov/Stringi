@@ -174,11 +174,3 @@ Stringi.toCharArray();
 ]
 */ 
 ```
-
-## Версии
-
-Доступные [версии](https://github.com/kalenchukov/Stringi/releases).
-
-## Лицензия
-
-[MIT](https://opensource.org/licenses/MIT)
