@@ -43,8 +43,8 @@ public class Stringi
 	/**
 	 * Преобразовывает регистр первого символа к прописному.
 	 *
-	 * @param string Строка.
-	 * @return Строку, в которой регистр первого символа преобразован в прописной.
+	 * @param string строка.
+	 * @return строку, в которой регистр первого символа преобразован в прописной.
 	 */
 	@NotNull
 	public static String firstToUpperCase(@NotNull final String string)
@@ -61,8 +61,8 @@ public class Stringi
 	/**
 	 * Преобразовывает регистр первого символа к строчному.
 	 *
-	 * @param string Строка.
-	 * @return Строку, в которой регистр первого символа преобразован в строчный.
+	 * @param string строка.
+	 * @return строку, в которой регистр первого символа преобразован в строчный.
 	 */
 	@NotNull
 	public static String firstToLowerCase(@NotNull final String string)
@@ -79,8 +79,8 @@ public class Stringi
 	/**
 	 * Преобразовывает регистр первой найденной буквы к прописному.
 	 *
-	 * @param string Строка.
-	 * @return Возвращает строку в которой регистр первой буквы прописной.
+	 * @param string строка.
+	 * @return возвращает строку, в которой регистр первой буквы прописной.
 	 */
 	@NotNull
 	public static String firstLetterToUpperCase(@NotNull final String string)
@@ -105,8 +105,8 @@ public class Stringi
 	/**
 	 * Преобразовывает регистр первой найденной буквы к строчному.
 	 *
-	 * @param string Строка.
-	 * @return Возвращает строку в которой регистр первой буквы строчный.
+	 * @param string строка.
+	 * @return возвращает строку, в которой регистр первой буквы строчный.
 	 */
 	@NotNull
 	public static String firstLetterToLowerCase(@NotNull final String string)
@@ -131,8 +131,8 @@ public class Stringi
 	/**
 	 * Преобразовывает регистр букв в противоположный.
 	 *
-	 * @param string Строка.
-	 * @return Строку в которой регистр букв преобразован в противоположный.
+	 * @param string строка.
+	 * @return строку, в которой регистр букв преобразован в противоположный.
 	 */
 	@NotNull
 	public static String reverseCase(@NotNull final String string)
@@ -158,9 +158,9 @@ public class Stringi
 	/**
 	 * Выполняет поиск первого вхождения символа в строке.
 	 *
-	 * @param string Строка.
-	 * @param symbol Искомый символ.
-	 * @return Позицию первого вхождения символа в строке или {@code null} если символ не найден.
+	 * @param string строка.
+	 * @param symbol искомый символ.
+	 * @return позицию первого вхождения символа в строке или {@code null} если символ не найден.
 	 */
 	@Nullable
 	public static Integer searchFirst(@NotNull final String string, @NotNull final Character symbol)
@@ -174,9 +174,9 @@ public class Stringi
 	/**
 	 * Выполняет поиск последнего вхождения символа в строке.
 	 *
-	 * @param string Строка.
-	 * @param symbol Искомый символ.
-	 * @return Позицию последнего вхождения символа в строке или {@code null} если символ не найден.
+	 * @param string строка.
+	 * @param symbol искомый символ.
+	 * @return позицию последнего вхождения символа в строке или {@code null} если символ не найден.
 	 */
 	@Nullable
 	public static Integer searchLast(@NotNull final String string, @NotNull final Character symbol)
@@ -190,9 +190,9 @@ public class Stringi
 	/**
 	 * Выполняет поиск первого вхождения одного из символов в строке.
 	 *
-	 * @param string Строка.
-	 * @param symbols Коллекция искомых символов.
-	 * @return Позицию первого вхождения одного из символов в строке или {@code null} если ни один из символов не найден.
+	 * @param string строка.
+	 * @param symbols коллекция искомых символов.
+	 * @return позицию первого вхождения одного из символов в строке или {@code null} если ни один из символов не найден.
 	 */
 	@Nullable
 	public static Integer searchFirst(@NotNull final String string, @NotNull final List<@NotNull Character> symbols)
@@ -223,8 +223,8 @@ public class Stringi
 	/**
 	 * Выполняет поиск первой буквы в строке.
 	 *
-	 * @param string Строка.
-	 * @return Позицию первой буквы в строке или {@code null} если ни один из символов не найден.
+	 * @param string строка.
+	 * @return позицию первой буквы в строке или {@code null} если ни один из символов не найден.
 	 */
 	@Nullable
 	public static Integer searchFirstLetter(@NotNull final String string)
@@ -250,8 +250,8 @@ public class Stringi
 	/**
 	 * Выполняет поиск последней буквы в строке.
 	 *
-	 * @param string Строка.
-	 * @return Позицию последней буквы в строке или {@code null} если ни один из символов не найден.
+	 * @param string строка.
+	 * @return позицию последней буквы в строке или {@code null} если ни один из символов не найден.
 	 */
 	@Nullable
 	public static Integer searchLastLetter(@NotNull final String string)
@@ -277,9 +277,9 @@ public class Stringi
 	/**
 	 * Выполняет поиск последнего вхождения одного из символов в строке.
 	 *
-	 * @param string Строка.
-	 * @param symbols Коллекция искомых символов.
-	 * @return Позицию последнего вхождения одного из символов в строке или {@code null}, если ни один из символов не найден.
+	 * @param string строка.
+	 * @param symbols коллекция искомых символов.
+	 * @return позицию последнего вхождения одного из символов в строке или {@code null}, если ни один из символов не найден.
 	 */
 	@Nullable
 	public static Integer searchLast(@NotNull final String string, @NotNull final List<@NotNull Character> symbols)
@@ -310,10 +310,10 @@ public class Stringi
 	/**
 	 * Выполняет повтор строки до заданного количества символов.
 	 *
-	 * @param string Строка.
-	 * @param length Количество символов.
-	 * @return Строку, повторенную до {@code length} символов.
-	 * @throws IllegalArgumentException Если {@code length} меньше нуля.
+	 * @param string строка.
+	 * @param length количество символов.
+	 * @return строку, повторенную до {@code length} символов.
+	 * @throws IllegalArgumentException если {@code length} меньше нуля.
 	 */
 	@NotNull
 	public static String repeatToLength(@NotNull final String string,
@@ -354,8 +354,8 @@ public class Stringi
 	/**
 	 * Перемешивает символы в строке.
 	 *
-	 * @param string Строка.
-	 * @return Строку в которой порядок всех символов изменён случайным образом.
+	 * @param string строка.
+	 * @return строку, в которой порядок всех символов изменён случайным образом.
 	 */
 	@NotNull
 	public static String shuffle(@NotNull final String string)
@@ -384,8 +384,8 @@ public class Stringi
 	/**
 	 * Переворачивает строку.
 	 *
-	 * @param string Строка.
-	 * @return Строку в которой все символы расположены в обратном порядке.
+	 * @param string строка.
+	 * @return строку, в которой все символы расположены в обратном порядке.
 	 */
 	@NotNull
 	public static String reverse(@NotNull final String string)
@@ -412,8 +412,8 @@ public class Stringi
 	/**
 	 * Проверяет, является ли строка палиндромом.
 	 *
-	 * @param string Строка.
-	 * @return {@code True}, если строка является палиндромом, иначе {@code False}.
+	 * @param string строка.
+	 * @return {@code true}, если строка является палиндромом, иначе {@code False}.
 	 */
 	public static boolean isPalindrome(@NotNull final String string)
 	{
@@ -423,8 +423,8 @@ public class Stringi
 	/**
 	 * Проверяет, является ли строка палиндромом без учёта регистра букв.
 	 *
-	 * @param string Строка.
-	 * @return {@code True}, если строка является палиндромом, иначе {@code False}.
+	 * @param string строка.
+	 * @return {@code true}, если строка является палиндромом, иначе {@code False}.
 	 */
 	public static boolean isPalindromeIgnoreCase(@NotNull final String string)
 	{
@@ -434,8 +434,8 @@ public class Stringi
 	/**
 	 * Склеивает символы в строку.
 	 *
-	 * @param symbols Коллекция символов.
-	 * @return Строку из элементов коллекции.
+	 * @param symbols коллекция символов.
+	 * @return строку из элементов коллекции.
 	 */
 	@NotNull
 	public static String glue(@NotNull final List<@Nullable Character> symbols)
@@ -448,9 +448,9 @@ public class Stringi
 	/**
 	 * Склеивает символы в строку с разделителем.
 	 *
-	 * @param symbols Коллекция символов.
-	 * @param separator Разделитель.
-	 * @return Строку из элементов коллекции.
+	 * @param symbols коллекция символов.
+	 * @param separator разделитель.
+	 * @return строку из элементов коллекции.
 	 */
 	@NotNull
 	public static String glue(@NotNull final List<@Nullable Character> symbols, @NotNull final String separator)
@@ -464,8 +464,8 @@ public class Stringi
 	/**
 	 * Склеивает символы в строку.
 	 *
-	 * @param symbols Массив символов.
-	 * @return Строку из элементов массива.
+	 * @param symbols массив символов.
+	 * @return строку из элементов массива.
 	 */
 	@NotNull
 	public static String glue(@Nullable final Character @NotNull [] symbols)
@@ -478,9 +478,9 @@ public class Stringi
 	/**
 	 * Склеивает символы в строку.
 	 *
-	 * @param symbols Массив символов.
-	 * @param separator Разделитель символов.
-	 * @return Строку из элементов массива.
+	 * @param symbols массив символов.
+	 * @param separator разделитель символов.
+	 * @return строку из элементов массива.
 	 */
 	@NotNull
 	public static String glue(@Nullable final Character @NotNull [] symbols,
@@ -500,8 +500,8 @@ public class Stringi
 	/**
 	 * Объединяет строки.
 	 *
-	 * @param strings Коллекция строк.
-	 * @return Строку из элементов коллекции.
+	 * @param strings коллекция строк.
+	 * @return строку из элементов коллекции.
 	 */
 	@NotNull
 	public static String join(@NotNull final List<@Nullable String> strings)
@@ -514,9 +514,9 @@ public class Stringi
 	/**
 	 * Объединяет строки с разделителем.
 	 *
-	 * @param strings Коллекция строк.
-	 * @param separator Разделитель.
-	 * @return Строку из элементов коллекции.
+	 * @param strings коллекция строк.
+	 * @param separator разделитель.
+	 * @return строку из элементов коллекции.
 	 */
 	@NotNull
 	public static String join(@NotNull final List<@Nullable String> strings, @NotNull final String separator)
@@ -530,8 +530,8 @@ public class Stringi
 	/**
 	 * Объединяет строки.
 	 *
-	 * @param strings Массив строк.
-	 * @return Строку из элементов массива.
+	 * @param strings массив строк.
+	 * @return строку из элементов массива.
 	 */
 	@NotNull
 	public static String join(@Nullable final String @NotNull [] strings)
@@ -544,9 +544,9 @@ public class Stringi
 	/**
 	 * Объединяет строки с разделителем.
 	 *
-	 * @param strings Массив строк.
-	 * @param separator Разделитель.
-	 * @return Строку из элементов массива.
+	 * @param strings массив строк.
+	 * @param separator разделитель.
+	 * @return строку из элементов массива.
 	 */
 	@NotNull
 	public static String join(@Nullable final String @NotNull [] strings, @NotNull final String separator)
@@ -583,11 +583,11 @@ public class Stringi
 	/**
 	 * Дополняет строку другой строкой слева до заданного количества символов.
 	 *
-	 * @param string Строка.
-	 * @param filler Наполнитель.
-	 * @param length Количество символов.
-	 * @return Исходную строку, дополненную строкой {@code filler} слева до {@code length} символов.
-	 * @throws IllegalArgumentException Если {@code length} меньше нуля.
+	 * @param string строка.
+	 * @param filler наполнитель.
+	 * @param length количество символов.
+	 * @return исходную строку, дополненную строкой {@code filler} слева до {@code length} символов.
+	 * @throws IllegalArgumentException если {@code length} меньше нуля.
 	 */
 	@NotNull
 	public static String fillLeft(@NotNull final String string,
@@ -612,11 +612,11 @@ public class Stringi
 	/**
 	 * Дополняет строку другой строкой слева и справа до заданного количества символов.
 	 *
-	 * @param string Строка.
-	 * @param filler Наполнитель.
-	 * @param length Количество символов.
-	 * @return Исходную строку, дополненную строкой {@code filler} слева и справа до {@code length} символов.
-	 * @throws IllegalArgumentException Если {@code length} меньше нуля.
+	 * @param string строка.
+	 * @param filler наполнитель.
+	 * @param length количество символов.
+	 * @return исходную строку, дополненную строкой {@code filler} слева и справа до {@code length} символов.
+	 * @throws IllegalArgumentException если {@code length} меньше нуля.
 	 */
 	@NotNull
 	public static String fill(@NotNull final String string,
@@ -642,11 +642,11 @@ public class Stringi
 	/**
 	 * Дополняет строку другой строкой справа до заданного количества символов.
 	 *
-	 * @param string Строка.
-	 * @param filler Наполнитель.
-	 * @param length Количество символов.
-	 * @return Исходную строку, дополненную строкой {@code filler} справа до {@code length} символов.
-	 * @throws IllegalArgumentException Если {@code length} меньше нуля.
+	 * @param string строка.
+	 * @param filler наполнитель.
+	 * @param length количество символов.
+	 * @return исходную строку, дополненную строкой {@code filler} справа до {@code length} символов.
+	 * @throws IllegalArgumentException если {@code length} меньше нуля.
 	 */
 	@NotNull
 	public static String fillRight(@NotNull final String string,
@@ -671,8 +671,8 @@ public class Stringi
 	/**
 	 * Возвращает коллекцию из символов строки.
 	 *
-	 * @param string Строка.
-	 * @return Коллекцию символов.
+	 * @param string строка.
+	 * @return коллекцию символов.
 	 */
 	@Unmodifiable
 	@NotNull
@@ -686,8 +686,8 @@ public class Stringi
 	/**
 	 * Возвращает массив из символов строки.
 	 *
-	 * @param string Строка.
-	 * @return Массив символов.
+	 * @param string строка.
+	 * @return массив символов.
 	 */
 	@NotNull
 	public static Character @NotNull [] toCharArray(@NotNull final String string)
@@ -700,11 +700,11 @@ public class Stringi
 	/**
 	 * Меняет местами значения в массиве.
 	 *
-	 * @param array Массив.
-	 * @param from Индекс массива из которого необходимо переместить значение.
-	 * @param in Индекс массива в который необходимо переместить значение.
-	 * @throws IllegalArgumentException Если {@code from} или {@code to} меньше нуля.
-	 * @throws IndexOutOfBoundsException Если {@code from} или {@code to} больше размера массива.
+	 * @param array массив.
+	 * @param from индекс массива из которого необходимо переместить значение.
+	 * @param in индекс массива в который необходимо переместить значение.
+	 * @throws IllegalArgumentException если {@code from} или {@code to} меньше нуля.
+	 * @throws IndexOutOfBoundsException если {@code from} или {@code to} больше размера массива.
 	 */
 	private static void swapValuesInArray(@Nullable final Character @NotNull [] array,
 										  @NotNull @Range(from = 0, to = Integer.MAX_VALUE) final Integer from,
