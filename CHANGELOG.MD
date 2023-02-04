@@ -1,7 +1,5 @@
 # Журнал изменений
-
 ## vX.X.X - XX.XX.XXXX
-
 ### Добавлено
 * Добавлен AUTHOR.MD.
 * Добавлен INSTALL.MD.
@@ -14,7 +12,6 @@
 *
 
 ## v1.3.0 - 16.10.2022
-
 ### Добавлено
 * Добавлен метод Stringi.isPalindrome(String).
 * Добавлен метод Stringi.isPalindromeIgnoreCase(String).
@@ -26,7 +23,6 @@
 * Добавлена аннотация NotNull для возвращаемых значений.
 
 ## v1.2.0 - 31.08.2022
-
 ### Добавлено
 * Добавлен метод Stringi.searchFirstLetter(String).
 * Добавлен метод Stringi.searchLastLetter(String).
@@ -40,7 +36,6 @@
 * Удалён метод Stringi.isLowerCase(String).
 
 ## v1.1.0 - 02.08.2022
-
 ### Добавлено
 * Добавлен метод Stringi.searchLast(String, Character).
 * Добавлен метод Stringi.searchLast(String, List<Character>).
