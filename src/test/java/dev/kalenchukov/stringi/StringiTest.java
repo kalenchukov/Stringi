@@ -24,12 +24,12 @@
 
 package dev.kalenchukov.stringi;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class StringiTest
 {
@@ -224,10 +224,12 @@ public class StringiTest
 	/**
 	 * Проверка с отрицательным количество раз.
 	 */
-	@Test(expected = IllegalArgumentException.class)
+	@Test
 	public void testRepeatToLengthLengthNegative()
 	{
-		Stringi.repeatToLength("Без десяти", -1);
+		assertThrows(IllegalArgumentException.class, () -> {
+			Stringi.repeatToLength("Без десяти", -1);
+		});
 	}
 
 	/**
@@ -307,8 +309,8 @@ public class StringiTest
 	@Test
 	public void testIsPalindrome()
 	{
-		assertTrue("ШАЛАШ", Stringi.isPalindrome("ШАЛАШ"));
-		assertFalse("МАЛЫШ", Stringi.isPalindrome("МАЛЫШ"));
+		assertTrue(Stringi.isPalindrome("ШАЛАШ"));
+		assertFalse(Stringi.isPalindrome("МАЛЫШ"));
 	}
 
 	/**
@@ -317,8 +319,8 @@ public class StringiTest
 	@Test
 	public void testIsPalindromeIgnoreCase()
 	{
-		assertTrue("Шалаш", Stringi.isPalindromeIgnoreCase("Шалаш"));
-		assertFalse("Малыш", Stringi.isPalindromeIgnoreCase("Малыш"));
+		assertTrue(Stringi.isPalindromeIgnoreCase("Шалаш"));
+		assertFalse(Stringi.isPalindromeIgnoreCase("Малыш"));
 	}
 
 	/**
@@ -461,10 +463,12 @@ public class StringiTest
 	/**
 	 * Проверка с параметром {@code length} = -1.
 	 */
-	@Test(expected = IllegalArgumentException.class)
+	@Test
 	public void testFillLeftLengthNegative()
 	{
-		Stringi.fillLeft("КИНО", "#", -1);
+		assertThrows(IllegalArgumentException.class, () -> {
+			Stringi.fillLeft("КИНО", "#", -1);
+		});
 	}
 
 	/**
@@ -514,10 +518,12 @@ public class StringiTest
 	/**
 	 * Проверка с параметром {@code length} = -1.
 	 */
-	@Test(expected = IllegalArgumentException.class)
+	@Test
 	public void testFillLengthNegative()
 	{
-		Stringi.fill("КИНО", "#", -1);
+		assertThrows(IllegalArgumentException.class, () -> {
+			Stringi.fill("КИНО", "#", -1);
+		});
 	}
 
 	/**
@@ -578,10 +584,12 @@ public class StringiTest
 	/**
 	 * Проверка с параметром {@code length} = -1.
 	 */
-	@Test(expected = IllegalArgumentException.class)
+	@Test
 	public void testFillRightLengthNegative()
 	{
-		Stringi.fillRight("КИНО", "#", -1);
+		assertThrows(IllegalArgumentException.class, () -> {
+			Stringi.fillRight("КИНО", "#", -1);
+		});
 	}
 
 	/**
