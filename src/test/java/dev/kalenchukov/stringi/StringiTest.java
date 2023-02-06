@@ -31,6 +31,9 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Класс проверки методов класса {@link Stringi}.
+ */
 public class StringiTest
 {
 	public static final Character[] SYMBOLS = {
@@ -40,7 +43,7 @@ public class StringiTest
 	};
 
 	/**
-	 * Проверка преобразования первого символа к строчному.
+	 * Проверка метода {@link Stringi#firstToLowerCase(String)}.
 	 */
 	@Test
 	public void testFirstToLowerCase()
@@ -52,7 +55,7 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка преобразования первого символа к прописному.
+	 * Проверка метода {@link Stringi#firstToUpperCase(String)}.
 	 */
 	@Test
 	public void testFirstToUpperCase()
@@ -64,10 +67,10 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка преобразования регистра первой найденной буквы к прописному.
+	 * Проверка метода {@link Stringi#firstLetterToUpperCase(String)}.
 	 */
 	@Test
-	public void firstLetterToUpperCase()
+	public void testFirstLetterToUpperCase()
 	{
 		assertEquals("", Stringi.firstLetterToUpperCase(""));
 		assertEquals("П", Stringi.firstLetterToUpperCase("п"));
@@ -78,10 +81,10 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка преобразования регистра первой найденной буквы к строчному.
+	 * Проверка метода {@link Stringi#firstLetterToLowerCase(String)}.
 	 */
 	@Test
-	public void firstLetterToLowerCase()
+	public void testFirstLetterToLowerCase()
 	{
 		assertEquals("", Stringi.firstLetterToLowerCase(""));
 		assertEquals("п", Stringi.firstLetterToLowerCase("П"));
@@ -92,7 +95,7 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка преобразования регистра букв в противоположный.
+	 * Проверка метода {@link Stringi#reverseCase(String)}.
 	 */
 	@Test
 	public void testReverseCase()
@@ -103,7 +106,7 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка поиска первого вхождения символа в строке.
+	 * Проверка метода {@link Stringi#searchFirst(String, Character)}.
 	 */
 	@Test
 	public void testSearchFirstSymbol()
@@ -116,7 +119,7 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка поиска последнего вхождения символа в строке.
+	 * Проверка метода {@link Stringi#searchLast(String, Character)}.
 	 */
 	@Test
 	public void testSearchLastSymbol()
@@ -129,7 +132,7 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка поиска первого вхождения одного из символов в строке.
+	 * Проверка метода {@link Stringi#searchFirst(String, List)}.
 	 */
 	@Test
 	public void testSearchFirstSymbols()
@@ -157,7 +160,7 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка поиска последнего вхождения одного из символов в строке.
+	 * Проверка метода {@link Stringi#searchLast(String, List)}.
 	 */
 	@Test
 	public void testSearchLastSymbols()
@@ -185,7 +188,7 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка поиска первой буквы в строке.
+	 * Проверка метода {@link Stringi#searchFirstLetter(String)}.
 	 */
 	@Test
 	public void testSearchFirstLetter()
@@ -198,7 +201,7 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка поиска первой буквы в строке.
+	 * Проверка метода {@link Stringi#searchLastLetter(String)}.
 	 */
 	@Test
 	public void testSearchLastLetter()
@@ -211,7 +214,7 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка с корректными параметрами.
+	 * Проверка метода {@link Stringi#repeatToLength(String, Integer)}.
 	 */
 	@Test
 	public void testRepeatToLength()
@@ -222,7 +225,7 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка с отрицательным количество раз.
+	 * Проверка метода {@link Stringi#repeatToLength(String, Integer)} с отрицательным значением.
 	 */
 	@Test
 	public void testRepeatToLengthLengthNegative()
@@ -233,7 +236,7 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка с параметром {@code length} = 0.
+	 * Проверка метода {@link Stringi#repeatToLength(String, Integer)} с нулевым значением.
 	 */
 	@Test
 	public void testRepeatToLengthLengthZero()
@@ -244,7 +247,7 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка перемешивания символов в строке.
+	 * Проверка метода {@link Stringi#shuffle(String)}.
 	 */
 	@Test
 	public void testShuffle()
@@ -256,7 +259,7 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка перемешивания символов в пустой строке.
+	 * Проверка метода {@link Stringi#shuffle(String)} с пустым значением.
 	 */
 	@Test
 	public void testShuffleEmpty()
@@ -268,7 +271,7 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка равенства по количеству символов в строке после перемешивания символов в строке.
+	 * Проверка метода {@link Stringi#shuffle(String)} по количеству символов в строке после перемешивания символов в строке.
 	 */
 	@Test
 	public void testShuffleEqualsLength()
@@ -280,7 +283,7 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка переворачивания строки.
+	 * Проверка метода {@link Stringi#reverse(String)}.
 	 */
 	@Test
 	public void testReverse()
@@ -292,7 +295,7 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка переворачивания пустой строки.
+	 * Проверка метода {@link Stringi#reverse(String)} с пустым значением.
 	 */
 	@Test
 	public void testReverseEmpty()
@@ -304,7 +307,7 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка строки палиндрома.
+	 * Проверка метода {@link Stringi#isPalindrome(String)}.
 	 */
 	@Test
 	public void testIsPalindrome()
@@ -314,7 +317,7 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка строки палиндрома без учёта регистра букв.
+	 * Проверка метода {@link Stringi#isPalindromeIgnoreCase(String)}.
 	 */
 	@Test
 	public void testIsPalindromeIgnoreCase()
@@ -324,10 +327,10 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка объединения элементов коллекции из {@code String} в строку.
+	 * Проверка метода {@link Stringi#join(List)}.
 	 */
 	@Test
-	public void testJoinListString()
+	public void testJoinList()
 	{
 		String result = Stringi.join(List.of("Белы", "й д", "ень"));
 
@@ -335,10 +338,10 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка объединения элементов коллекции из {@code String} в строку с разделителем.
+	 * Проверка метода {@link Stringi#join(List, String)}.
 	 */
 	@Test
-	public void testJoinListStringSeparator()
+	public void testJoinListSeparator()
 	{
 		String result = Stringi.join(List.of("Белы", "й д", "ень"), "|");
 
@@ -346,10 +349,10 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка объединения элементов коллекции из {@code String} со значением {@code null} в строку.
+	 * Проверка метода {@link Stringi#join(List)} со значением {@code null}.
 	 */
 	@Test
-	public void testJoinListStringNull()
+	public void testJoinListNull()
 	{
 		List<String> values = new ArrayList<>();
 		values.add("Белый");
@@ -362,10 +365,10 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка объединения пустой коллекции из {@code String} в строку.
+	 * Проверка метода {@link Stringi#join(List)} без значений.
 	 */
 	@Test
-	public void testJoinListStringEmpty()
+	public void testJoinListEmpty()
 	{
 		String result = Stringi.join(List.of());
 
@@ -373,10 +376,10 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка объединения элементов массива из {@code String} в строку.
+	 * Проверка метода {@link Stringi#join(String[])}.
 	 */
 	@Test
-	public void testJoinArrayString()
+	public void testJoinArray()
 	{
 		String result = Stringi.join(new String[] {"К", "И", "Н", "О"});
 
@@ -384,10 +387,10 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка объединения элементов массива из {@code String} в строку с разделителем.
+	 * Проверка метода {@link Stringi#join(String[], String)}.
 	 */
 	@Test
-	public void testJoinArrayStringSeparator()
+	public void testJoinArraySeparator()
 	{
 		String result = Stringi.join(new String[] {"К", "И", "Н", "О"}, "|");
 
@@ -395,10 +398,10 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка объединения элементов массива из {@code String} со значением {@code null} в строку.
+	 * Проверка метода {@link Stringi#join(String[])} со значением {@code null}.
 	 */
 	@Test
-	public void testJoinArrayStringNull()
+	public void testJoinArrayNull()
 	{
 		String result = Stringi.join(new String[] {"K", "I", null, "N", "O"});
 
@@ -406,10 +409,10 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка объединения пустого массива из {@code String} в строку.
+	 * Проверка метода {@link Stringi#join(String[])} без значений.
 	 */
 	@Test
-	public void testJoinArrayStringEmpty()
+	public void testJoinArrayEmpty()
 	{
 		String result = Stringi.join(new String[] {});
 
@@ -417,7 +420,7 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка с корректными данными.
+	 * Проверка метода {@link Stringi#fillLeft(String, String, Integer)}.
 	 */
 	@Test
 	public void testFillLeft()
@@ -428,7 +431,7 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка с параметром {@code length} = 0.
+	 * Проверка метода {@link Stringi#fillLeft(String, String, Integer)} с нулевым значением.
 	 */
 	@Test
 	public void testFillLeftLengthZero()
@@ -439,7 +442,7 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка с параметром {@code filler} = "".
+	 * Проверка метода {@link Stringi#fillLeft(String, String, Integer)} с пустым значением.
 	 */
 	@Test
 	public void testFillLeftFillerEmpty()
@@ -450,7 +453,7 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка с параметром {@code string} = "".
+	 * Проверка метода {@link Stringi#fillLeft(String, String, Integer)} с пустым значением.
 	 */
 	@Test
 	public void testFillLeftStringEmpty()
@@ -461,7 +464,7 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка с параметром {@code length} = -1.
+	 * Проверка метода {@link Stringi#fillLeft(String, String, Integer)} с отрицательным значением.
 	 */
 	@Test
 	public void testFillLeftLengthNegative()
@@ -472,7 +475,7 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка с корректными данными.
+	 * Проверка метода {@link Stringi#fill(String, String, Integer)}.
 	 */
 	@Test
 	public void testFill()
@@ -483,7 +486,7 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка с параметром {@code length} = 0.
+	 * Проверка метода {@link Stringi#fill(String, String, Integer)} нулевым значением.
 	 */
 	@Test
 	public void testFillLengthZero()
@@ -494,7 +497,7 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка с параметром {@code filler} = "".
+	 * Проверка метода {@link Stringi#fill(String, String, Integer)} с пустым значением.
 	 */
 	@Test
 	public void testFillFillerEmpty()
@@ -505,7 +508,7 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка с параметром {@code string} = "".
+	 * Проверка метода {@link Stringi#fill(String, String, Integer)} с пустым значением.
 	 */
 	@Test
 	public void testFillStringEmpty()
@@ -516,7 +519,7 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка с параметром {@code length} = -1.
+	 * Проверка метода {@link Stringi#fill(String, String, Integer)} с отрицательным значением.
 	 */
 	@Test
 	public void testFillLengthNegative()
@@ -527,7 +530,7 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка с нечётным параметром {@code length}.
+	 * Проверка метода {@link Stringi#fill(String, String, Integer)} с нечётным значением.
 	 */
 	@Test
 	public void testFillLengthUneven()
@@ -538,7 +541,7 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка с корректными данными.
+	 * Проверка метода {@link Stringi#fillRight(String, String, Integer)}.
 	 */
 	@Test
 	public void testFillRight()
@@ -549,7 +552,7 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка с параметром {@code length} = 0.
+	 * Проверка метода {@link Stringi#fillRight(String, String, Integer)} с нулевым значением.
 	 */
 	@Test
 	public void testFillRightLengthZero()
@@ -560,7 +563,7 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка с параметром {@code filler} = "".
+	 * Проверка метода {@link Stringi#fillRight(String, String, Integer)} с пустым значением.
 	 */
 	@Test
 	public void testFillRightFillerEmpty()
@@ -571,7 +574,7 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка с параметром {@code string} = "".
+	 * Проверка метода {@link Stringi#fillRight(String, String, Integer)} с пустым значением.
 	 */
 	@Test
 	public void testFillRightStringEmpty()
@@ -582,7 +585,7 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка с параметром {@code length} = -1.
+	 * Проверка метода {@link Stringi#fillRight(String, String, Integer)} с отрицательным значением.
 	 */
 	@Test
 	public void testFillRightLengthNegative()
@@ -593,7 +596,7 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка с наличием букв.
+	 * Проверка метода {@link Stringi#toCharList(String)}.
 	 */
 	@Test
 	public void testToCharList()
@@ -606,7 +609,7 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка без букв.
+	 * Проверка метода {@link Stringi#toCharList(String)}.
 	 */
 	@Test
 	public void testToCharListEmpty()
@@ -617,7 +620,7 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка с наличием букв.
+	 * Проверка метода {@link Stringi#toCharArray(String)}.
 	 */
 	@Test
 	public void testToCharArray()
@@ -630,7 +633,7 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка без букв.
+	 * Проверка метода {@link Stringi#toCharArray(String)} с пустым значением.
 	 */
 	@Test
 	public void testToCharArrayEmpty()
@@ -641,10 +644,10 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка склеивания элементов коллекции из {@code Character} в строку.
+	 * Проверка метода {@link Stringi#glue(List)}.
 	 */
 	@Test
-	public void testGlueListString()
+	public void testGlueList()
 	{
 		String result = Stringi.glue(List.of('A', 'C', '/', 'D', 'C'));
 
@@ -652,10 +655,10 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка склеивания элементов коллекции из {@code Character} в строку с разделителем.
+	 * Проверка метода {@link Stringi#glue(List, String)}.
 	 */
 	@Test
-	public void testGlueListStringSeparator()
+	public void testGlueListSeparator()
 	{
 		String result = Stringi.glue(List.of('T', 'N', 'T'), ".");
 
@@ -663,10 +666,10 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка склеивания элементов коллекции из {@code Character} со значением {@code null} в строку.
+	 * Проверка метода {@link Stringi#glue(List)} со значением {@code null}.
 	 */
 	@Test
-	public void testGlueListStringNull()
+	public void testGlueListNull()
 	{
 		List<Character> values = new ArrayList<>();
 		values.add('A');
@@ -679,23 +682,23 @@ public class StringiTest
 
 		assertEquals("ACDC", result);
 	}
-
+	
 	/**
-	 * Проверка склеивания пустой коллекции из {@code Character} в строку.
+	 * Проверка метода {@link Stringi#glue(List)} без значений.
 	 */
 	@Test
-	public void testGlueListStringEmpty()
+	public void testGlueListEmpty()
 	{
 		String result = Stringi.glue(List.of());
 
 		assertEquals("", result);
 	}
-
+	
 	/**
-	 * Проверка склеивания элементов массива из {@code Character} в строку.
+	 * Проверка метода {@link Stringi#glue(Character[])}.
 	 */
 	@Test
-	public void testGlueArrayString()
+	public void testGlueArray()
 	{
 		String result = Stringi.glue(new Character[] {'A', 'C', '/', 'D', 'C'});
 
@@ -703,10 +706,10 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка склеивания элементов массива из {@code Character} в строку с разделителем.
+	 * Проверка метода {@link Stringi#glue(Character[], String)}.
 	 */
 	@Test
-	public void testGlueArrayStringSeparator()
+	public void testGlueArraySeparator()
 	{
 		String result = Stringi.glue(new Character[] {'T', 'N', 'T'}, ".");
 
@@ -714,10 +717,10 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка склеивания элементов массива из {@code Character} со значением {@code null} в строку.
+	 * Проверка метода {@link Stringi#glue(Character[])} со значением {@code null}.
 	 */
 	@Test
-	public void testGlueArrayStringNull()
+	public void testGlueArrayNull()
 	{
 		String result = Stringi.glue(new Character[] {'T', null, 'N', 'T'});
 
@@ -725,10 +728,10 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка склеивания пустого массива из {@code Character} в строку.
+	 * Проверка метода {@link Stringi#glue(Character[])} без значений.
 	 */
 	@Test
-	public void testGlueArrayStringEmpty()
+	public void testGlueArrayEmpty()
 	{
 		String result = Stringi.glue(new Character[] {});
 
