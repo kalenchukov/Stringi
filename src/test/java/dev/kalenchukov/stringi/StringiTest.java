@@ -28,6 +28,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -215,9 +216,7 @@ public class StringiTest
 	{
 		Integer result = Stringi.searchFirst("Красно-жёлтые дни - песня группы Кино", '-');
 
-		assert result != null;
-
-		assertEquals(6, (int) result);
+		assertEquals(6, Optional.ofNullable(result).orElse(-1));
 	}
 
 	/**
@@ -228,9 +227,7 @@ public class StringiTest
 	{
 		Integer result = Stringi.searchLast("Красно-жёлтые дни - песня группы Кино", '-');
 
-		assert result != null;
-
-		assertEquals(18, (int) result);
+		assertEquals(18, Optional.ofNullable(result).orElse(-1));
 	}
 
 	/**
@@ -245,20 +242,20 @@ public class StringiTest
 		assertNull(result);
 
 		result = Stringi.searchFirst("Мама, мы все тяжело больны - песня группы Кино.", List.of('М'));
-		assert result != null;
-		assertEquals(0, (int) result);
+
+		assertEquals(0, Optional.ofNullable(result).orElse(-1));
 
 		result = Stringi.searchFirst("Мама, мы все тяжело больны - песня группы Кино.", List.of('.'));
-		assert result != null;
-		assertEquals(46, (int) result);
+
+		assertEquals(46, Optional.ofNullable(result).orElse(-1));
 
 		result = Stringi.searchFirst("Мама, мы все тяжело больны - песня группы Кино.", List.of('е'));
-		assert result != null;
-		assertEquals(11, (int) result);
+
+		assertEquals(11, Optional.ofNullable(result).orElse(-1));
 
 		result = Stringi.searchFirst("Мама, мы все тяжело больны - песня группы Кино.", List.of('ж', ','));
-		assert result != null;
-		assertEquals(4, (int) result);
+
+		assertEquals(4, Optional.ofNullable(result).orElse(-1));
 	}
 
 	/**
@@ -273,20 +270,20 @@ public class StringiTest
 		assertNull(result);
 
 		result = Stringi.searchLast("Мама, мы все тяжело больны - песня группы Кино.", List.of('М'));
-		assert result != null;
-		assertEquals(0, (int) result);
+
+		assertEquals(0, Optional.ofNullable(result).orElse(-1));
 
 		result = Stringi.searchLast("Мама, мы все тяжело больны - песня группы Кино.", List.of('.'));
-		assert result != null;
-		assertEquals(46, (int) result);
+
+		assertEquals(46, Optional.ofNullable(result).orElse(-1));
 
 		result = Stringi.searchLast("Мама, мы все тяжело больны - песня группы Кино.", List.of('е'));
-		assert result != null;
-		assertEquals(30, (int) result);
+
+		assertEquals(30, Optional.ofNullable(result).orElse(-1));
 
 		result = Stringi.searchLast("Мама, мы все тяжело больны - песня группы Кино.", List.of('ж', ','));
-		assert result != null;
-		assertEquals(15, (int) result);
+
+		assertEquals(15, Optional.ofNullable(result).orElse(-1));
 	}
 
 	/**
@@ -297,9 +294,7 @@ public class StringiTest
 	{
 		Integer result = Stringi.searchFirstLetter("+Когда твоя девушка больна+");
 
-		assert result != null;
-
-		assertEquals(1, (int) result);
+		assertEquals(1, Optional.ofNullable(result).orElse(-1));
 	}
 
 	/**
@@ -310,9 +305,7 @@ public class StringiTest
 	{
 		Integer result = Stringi.searchLastLetter("###Ночь###");
 
-		assert result != null;
-
-		assertEquals(6, (int) result);
+		assertEquals(6, Optional.ofNullable(result).orElse(-1));
 	}
 
 	/**
