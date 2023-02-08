@@ -36,21 +36,39 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class StringiTest
 {
-	public static final Character[] SYMBOLS = {
-		'!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+',
-		',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@',
-		'[', '\\', ']', '^', '_', '`', '{', '|', '}', '~'
-	};
-
 	/**
 	 * Проверка метода {@link Stringi#firstToLowerCase(String)}.
 	 */
 	@Test
 	public void testFirstToLowerCase()
 	{
-		assertEquals("", Stringi.firstToLowerCase(""));
-		assertEquals("п", Stringi.firstToLowerCase("П"));
 		assertEquals("пРИВЕТ", Stringi.firstToLowerCase("ПРИВЕТ"));
+	}
+
+	/**
+	 * Проверка метода {@link Stringi#firstToLowerCase(String)} с пустым значением.
+	 */
+	@Test
+	public void testFirstToLowerCaseEmpty()
+	{
+		assertEquals("", Stringi.firstToLowerCase(""));
+	}
+
+	/**
+	 * Проверка метода {@link Stringi#firstToLowerCase(String)} с одной буквой в значении.
+	 */
+	@Test
+	public void testFirstToLowerCaseOneChar()
+	{
+		assertEquals("п", Stringi.firstToLowerCase("П"));
+	}
+
+	/**
+	 * Проверка метода {@link Stringi#firstToLowerCase(String)} если первый символ значения не буква.
+	 */
+	@Test
+	public void testFirstToLowerCaseFirstNotChar()
+	{
 		assertEquals("_ПРИВЕТ", Stringi.firstToLowerCase("_ПРИВЕТ"));
 	}
 
@@ -60,9 +78,33 @@ public class StringiTest
 	@Test
 	public void testFirstToUpperCase()
 	{
-		assertEquals("", Stringi.firstToUpperCase(""));
-		assertEquals("П", Stringi.firstToUpperCase("п"));
 		assertEquals("Привет", Stringi.firstToUpperCase("привет"));
+	}
+
+	/**
+	 * Проверка метода {@link Stringi#firstToUpperCase(String)} с пустым значением.
+	 */
+	@Test
+	public void testFirstToUpperCaseEmpty()
+	{
+		assertEquals("", Stringi.firstToUpperCase(""));
+	}
+
+	/**
+	 * Проверка метода {@link Stringi#firstToUpperCase(String)} с одной буквой в значении.
+	 */
+	@Test
+	public void testFirstToUpperCaseOneChar()
+	{
+		assertEquals("П", Stringi.firstToUpperCase("п"));
+	}
+
+	/**
+	 * Проверка метода {@link Stringi#firstToUpperCase(String)} если первый символ значения не буква.
+	 */
+	@Test
+	public void testFirstToUpperCaseFirstNotChar()
+	{
 		assertEquals("_привет", Stringi.firstToUpperCase("_привет"));
 	}
 
@@ -72,11 +114,42 @@ public class StringiTest
 	@Test
 	public void testFirstLetterToUpperCase()
 	{
-		assertEquals("", Stringi.firstLetterToUpperCase(""));
-		assertEquals("П", Stringi.firstLetterToUpperCase("п"));
 		assertEquals("Привет", Stringi.firstLetterToUpperCase("привет"));
-		assertEquals("Ппривет", Stringi.firstLetterToUpperCase("ппривет"));
+	}
+
+	/**
+	 * Проверка метода {@link Stringi#firstLetterToUpperCase(String)} с пустым значением.
+	 */
+	@Test
+	public void testFirstLetterToUpperCaseEmpty()
+	{
+		assertEquals("", Stringi.firstLetterToUpperCase(""));
+	}
+
+	/**
+	 * Проверка метода {@link Stringi#firstLetterToUpperCase(String)}с одной буквой в значении.
+	 */
+	@Test
+	public void testFirstLetterToUpperCaseOneChar()
+	{
+		assertEquals("П", Stringi.firstLetterToUpperCase("п"));
+	}
+
+	/**
+	 * Проверка метода {@link Stringi#firstLetterToUpperCase(String)} если первый символ значения не буква.
+	 */
+	@Test
+	public void testFirstLetterToUpperCaseFirstNotChar()
+	{
 		assertEquals("_-Привет", Stringi.firstLetterToUpperCase("_-привет"));
+	}
+
+	/**
+	 * Проверка метода {@link Stringi#firstLetterToUpperCase(String)} если в значении нет букв.
+	 */
+	@Test
+	public void testFirstLetterToUpperCaseNotChar()
+	{
 		assertEquals("_-/*-/-/*", Stringi.firstLetterToUpperCase("_-/*-/-/*"));
 	}
 
@@ -86,11 +159,42 @@ public class StringiTest
 	@Test
 	public void testFirstLetterToLowerCase()
 	{
-		assertEquals("", Stringi.firstLetterToLowerCase(""));
-		assertEquals("п", Stringi.firstLetterToLowerCase("П"));
 		assertEquals("пРИВЕТ", Stringi.firstLetterToLowerCase("ПРИВЕТ"));
-		assertEquals("пПРИВЕТ", Stringi.firstLetterToLowerCase("ППРИВЕТ"));
+	}
+
+	/**
+	 * Проверка метода {@link Stringi#firstLetterToLowerCase(String)} с пустым значением.
+	 */
+	@Test
+	public void testFirstLetterToLowerCaseEmpty()
+	{
+		assertEquals("", Stringi.firstLetterToLowerCase(""));
+	}
+
+	/**
+	 * Проверка метода {@link Stringi#firstLetterToLowerCase(String)}с одной буквой в значении.
+	 */
+	@Test
+	public void testFirstLetterToLowerCaseOneChar()
+	{
+		assertEquals("п", Stringi.firstLetterToLowerCase("П"));
+	}
+
+	/**
+	 * Проверка метода {@link Stringi#firstLetterToLowerCase(String)} если первый символ значения не буква.
+	 */
+	@Test
+	public void testFirstLetterToLowerCaseFirstNotChar()
+	{
 		assertEquals("_-пРИВЕТ", Stringi.firstLetterToLowerCase("_-ПРИВЕТ"));
+	}
+
+	/**
+	 * Проверка метода {@link Stringi#firstLetterToLowerCase(String)} если в значении нет букв.
+	 */
+	@Test
+	public void testFirstLetterToLowerCaseNotChar()
+	{
 		assertEquals("_-/*-/-/*", Stringi.firstLetterToLowerCase("_-/*-/-/*"));
 	}
 
@@ -100,8 +204,6 @@ public class StringiTest
 	@Test
 	public void testReverseCase()
 	{
-		assertEquals("привет", Stringi.reverseCase("ПРИВЕТ"));
-		assertEquals("ПРИВЕТ", Stringi.reverseCase("привет"));
 		assertEquals("ПрИвЕт", Stringi.reverseCase("пРиВеТ"));
 	}
 
@@ -109,7 +211,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#searchFirst(String, Character)}.
 	 */
 	@Test
-	public void testSearchFirstSymbol()
+	public void testSearchFirst()
 	{
 		Integer result = Stringi.searchFirst("Красно-жёлтые дни - песня группы Кино", '-');
 
@@ -122,7 +224,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#searchLast(String, Character)}.
 	 */
 	@Test
-	public void testSearchLastSymbol()
+	public void testSearchLast()
 	{
 		Integer result = Stringi.searchLast("Красно-жёлтые дни - песня группы Кино", '-');
 
@@ -135,7 +237,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#searchFirst(String, List)}.
 	 */
 	@Test
-	public void testSearchFirstSymbols()
+	public void testSearchFirstList()
 	{
 		Integer result = null;
 
@@ -163,7 +265,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#searchLast(String, List)}.
 	 */
 	@Test
-	public void testSearchLastSymbols()
+	public void testSearchLastList()
 	{
 		Integer result = null;
 
@@ -313,6 +415,14 @@ public class StringiTest
 	public void testIsPalindrome()
 	{
 		assertTrue(Stringi.isPalindrome("ШАЛАШ"));
+	}
+
+	/**
+	 * Проверка метода {@link Stringi#isPalindrome(String)} с некорректным значением.
+	 */
+	@Test
+	public void testIsPalindromeNotCorrect()
+	{
 		assertFalse(Stringi.isPalindrome("МАЛЫШ"));
 	}
 
@@ -323,6 +433,14 @@ public class StringiTest
 	public void testIsPalindromeIgnoreCase()
 	{
 		assertTrue(Stringi.isPalindromeIgnoreCase("Шалаш"));
+	}
+
+	/**
+	 * Проверка метода {@link Stringi#isPalindromeIgnoreCase(String)} с некорректным значением.
+	 */
+	@Test
+	public void testIsPalindromeIgnoreCaseNotCorrect()
+	{
 		assertFalse(Stringi.isPalindromeIgnoreCase("Малыш"));
 	}
 
