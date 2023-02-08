@@ -264,24 +264,40 @@ public class StringiTest
 	@Test
 	public void testSearchLastList()
 	{
-		Integer result = null;
-
-		result = Stringi.searchLast("Мама, мы все тяжело больны - песня группы Кино.", List.of());
-		assertNull(result);
-
-		result = Stringi.searchLast("Мама, мы все тяжело больны - песня группы Кино.", List.of('М'));
-
-		assertEquals(0, Optional.ofNullable(result).orElse(-1));
-
-		result = Stringi.searchLast("Мама, мы все тяжело больны - песня группы Кино.", List.of('.'));
+		Integer result = Stringi.searchLast("Мама, мы все тяжело больны - песня группы Кино.", List.of('.'));
 
 		assertEquals(46, Optional.ofNullable(result).orElse(-1));
+	}
 
-		result = Stringi.searchLast("Мама, мы все тяжело больны - песня группы Кино.", List.of('е'));
+	/**
+	 * Проверка метода {@link Stringi#searchLast(String, List)} с пустым списком.
+	 */
+	@Test
+	public void testSearchLastListEmpty()
+	{
+		Integer result = Stringi.searchLast("Мама, мы все тяжело больны - песня группы Кино.", List.of());
 
-		assertEquals(30, Optional.ofNullable(result).orElse(-1));
+		assertNull(result);
+	}
 
-		result = Stringi.searchLast("Мама, мы все тяжело больны - песня группы Кино.", List.of('ж', ','));
+	/**
+	 * Проверка метода {@link Stringi#searchLast(String, List)} с первым искомым символом в строке.
+	 */
+	@Test
+	public void testSearchLastListFirstLetter()
+	{
+		Integer result = Stringi.searchLast("Мама, мы все тяжело больны - песня группы Кино.", List.of('М'));
+
+		assertEquals(0, Optional.ofNullable(result).orElse(-1));
+	}
+
+	/**
+	 * Проверка метода {@link Stringi#searchLast(String, List)} с несколькими искомыми символами.
+	 */
+	@Test
+	public void testSearchLastListManyLetter()
+	{
+		Integer result = Stringi.searchLast("Мама, мы все тяжело больны - песня группы Кино.", List.of('ж', ','));
 
 		assertEquals(15, Optional.ofNullable(result).orElse(-1));
 	}
