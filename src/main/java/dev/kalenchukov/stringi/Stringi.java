@@ -30,8 +30,11 @@ import org.jetbrains.annotations.Range;
 import org.jetbrains.annotations.Unmodifiable;
 
 import java.util.*;
+
 /**
  * Класс работы со строками под шуточным названием "стринги".
+ *
+ * @author Aleksey Kalenchukov
  */
 public class Stringi
 {

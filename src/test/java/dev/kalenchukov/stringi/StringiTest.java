@@ -34,6 +34,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Класс проверки методов класса {@link Stringi}.
+ *
+ * @author Aleksey Kalenchukov
  */
 public class StringiTest
 {
