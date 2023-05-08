@@ -1,7 +1,7 @@
 # Журнал изменений
 ## vX.X.X - XX.XX.XXXX
 ### Добавлено
-* Добавлен метод Stringi.countUniqueSymbols(String).
+* Добавлен метод Stringi.countVariousSymbols(String).
 
 ### Изменено
 *

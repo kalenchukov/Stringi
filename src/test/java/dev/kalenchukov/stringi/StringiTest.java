@@ -436,37 +436,37 @@ public class StringiTest
 	}
 
 	/**
-	 * Проверка метода {@link Stringi#countUniqueSymbols(String)} с пустым значением.
+	 * Проверка метода {@link Stringi#countVariousSymbols(String)} с пустым значением.
 	 */
 	@Test
-	public void testCountUniqueSymbolsEmpty()
+	public void testCountVariousSymbolsEmpty()
 	{
 		String string = "";
-		Integer result = Stringi.countUniqueSymbols(string);
+		Integer result = Stringi.countVariousSymbols(string);
 
 		assertEquals(0, result);
 	}
 
 	/**
-	 * Проверка метода {@link Stringi#countUniqueSymbols(String)} с пустым значением.
+	 * Проверка метода {@link Stringi#countVariousSymbols(String)} с пустым значением.
 	 */
 	@Test
-	public void testCountUniqueSymbols()
+	public void testCountVariousSymbols()
 	{
 		String string = "Я хочу быть кочегаром";
-		Integer result = Stringi.countUniqueSymbols(string);
+		Integer result = Stringi.countVariousSymbols(string);
 
 		assertEquals(16, result);
 	}
 
 	/**
-	 * Проверка метода {@link Stringi#countUniqueSymbols(String)} с переносом строки.
+	 * Проверка метода {@link Stringi#countVariousSymbols(String)} с переносом строки.
 	 */
 	@Test
-	public void testCountUniqueSymbolsReturnLine()
+	public void testCountVariousSymbolsReturnLine()
 	{
 		String string = "Я хочу быть кочегаром\n";
-		Integer result = Stringi.countUniqueSymbols(string);
+		Integer result = Stringi.countVariousSymbols(string);
 
 		assertEquals(17, result);
 	}
