@@ -436,6 +436,42 @@ public class StringiTest
 	}
 
 	/**
+	 * Проверка метода {@link Stringi#countUniqueSymbols(String)} с пустым значением.
+	 */
+	@Test
+	public void testCountUniqueSymbolsEmpty()
+	{
+		String string = "";
+		Integer result = Stringi.countUniqueSymbols(string);
+
+		assertEquals(0, result);
+	}
+
+	/**
+	 * Проверка метода {@link Stringi#countUniqueSymbols(String)} с пустым значением.
+	 */
+	@Test
+	public void testCountUniqueSymbols()
+	{
+		String string = "Я хочу быть кочегаром";
+		Integer result = Stringi.countUniqueSymbols(string);
+
+		assertEquals(16, result);
+	}
+
+	/**
+	 * Проверка метода {@link Stringi#countUniqueSymbols(String)} с переносом строки.
+	 */
+	@Test
+	public void testCountUniqueSymbolsReturnLine()
+	{
+		String string = "Я хочу быть кочегаром\n";
+		Integer result = Stringi.countUniqueSymbols(string);
+
+		assertEquals(17, result);
+	}
+
+	/**
 	 * Проверка метода {@link Stringi#isPalindrome(String)}.
 	 */
 	@Test

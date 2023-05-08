@@ -30,6 +30,7 @@ import org.jetbrains.annotations.Range;
 import org.jetbrains.annotations.Unmodifiable;
 
 import java.util.*;
+import java.util.stream.Stream;
 
 /**
  * Класс работы со строками под шуточным названием "стринги".
@@ -410,6 +411,26 @@ public class Stringi
 		}
 
 		return Stringi.glue(characters);
+	}
+
+	/**
+	 * Возвращает количество уникальных символов в строке.
+	 *
+	 * @param string строка.
+	 * @return количество уникальных символов.
+	 */
+	@NotNull
+	public static Integer countUniqueSymbols(@NotNull final String string)
+	{
+		Objects.requireNonNull(string);
+
+		Set<Character> uniqueSymbols = new HashSet<>();
+
+		for (Character symbol : string.toCharArray()) {
+			uniqueSymbols.add(symbol);
+		}
+		
+		return uniqueSymbols.size();
 	}
 
 	/**
