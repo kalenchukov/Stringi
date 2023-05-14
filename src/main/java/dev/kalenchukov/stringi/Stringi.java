@@ -34,7 +34,7 @@ import java.util.*;
 /**
  * Класс работы со строками под шуточным названием "стринги".
  *
- * @author Aleksey Kalenchukov
+ * @author Алексей Каленчуков
  */
 public class Stringi
 {
