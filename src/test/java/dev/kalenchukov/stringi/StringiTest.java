@@ -43,7 +43,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#firstToLowerCase(String)}.
 	 */
 	@Test
-	public void testFirstToLowerCase()
+	public void firstToLowerCase()
 	{
 		assertEquals("пРИВЕТ", Stringi.firstToLowerCase("ПРИВЕТ"));
 	}
@@ -52,7 +52,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#firstToLowerCase(String)} с пустым значением.
 	 */
 	@Test
-	public void testFirstToLowerCaseEmpty()
+	public void firstToLowerCaseEmpty()
 	{
 		assertEquals("", Stringi.firstToLowerCase(""));
 	}
@@ -61,7 +61,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#firstToLowerCase(String)} с одной буквой в значении.
 	 */
 	@Test
-	public void testFirstToLowerCaseOneChar()
+	public void firstToLowerCaseOneChar()
 	{
 		assertEquals("п", Stringi.firstToLowerCase("П"));
 	}
@@ -70,7 +70,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#firstToLowerCase(String)} если первый символ значения не буква.
 	 */
 	@Test
-	public void testFirstToLowerCaseFirstNotChar()
+	public void firstToLowerCaseFirstNotChar()
 	{
 		assertEquals("_ПРИВЕТ", Stringi.firstToLowerCase("_ПРИВЕТ"));
 	}
@@ -79,7 +79,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#firstToUpperCase(String)}.
 	 */
 	@Test
-	public void testFirstToUpperCase()
+	public void firstToUpperCase()
 	{
 		assertEquals("Привет", Stringi.firstToUpperCase("привет"));
 	}
@@ -88,7 +88,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#firstToUpperCase(String)} с пустым значением.
 	 */
 	@Test
-	public void testFirstToUpperCaseEmpty()
+	public void firstToUpperCaseEmpty()
 	{
 		assertEquals("", Stringi.firstToUpperCase(""));
 	}
@@ -97,7 +97,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#firstToUpperCase(String)} с одной буквой в значении.
 	 */
 	@Test
-	public void testFirstToUpperCaseOneChar()
+	public void firstToUpperCaseOneChar()
 	{
 		assertEquals("П", Stringi.firstToUpperCase("п"));
 	}
@@ -106,7 +106,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#firstToUpperCase(String)} если первый символ значения не буква.
 	 */
 	@Test
-	public void testFirstToUpperCaseFirstNotChar()
+	public void firstToUpperCaseFirstNotChar()
 	{
 		assertEquals("_привет", Stringi.firstToUpperCase("_привет"));
 	}
@@ -115,7 +115,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#firstLetterToUpperCase(String)}.
 	 */
 	@Test
-	public void testFirstLetterToUpperCase()
+	public void firstLetterToUpperCase()
 	{
 		assertEquals("Привет", Stringi.firstLetterToUpperCase("привет"));
 	}
@@ -124,7 +124,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#firstLetterToUpperCase(String)} с пустым значением.
 	 */
 	@Test
-	public void testFirstLetterToUpperCaseEmpty()
+	public void firstLetterToUpperCaseEmpty()
 	{
 		assertEquals("", Stringi.firstLetterToUpperCase(""));
 	}
@@ -133,7 +133,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#firstLetterToUpperCase(String)}с одной буквой в значении.
 	 */
 	@Test
-	public void testFirstLetterToUpperCaseOneChar()
+	public void firstLetterToUpperCaseOneChar()
 	{
 		assertEquals("П", Stringi.firstLetterToUpperCase("п"));
 	}
@@ -142,7 +142,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#firstLetterToUpperCase(String)} если первый символ значения не буква.
 	 */
 	@Test
-	public void testFirstLetterToUpperCaseFirstNotChar()
+	public void firstLetterToUpperCaseFirstNotChar()
 	{
 		assertEquals("_-Привет", Stringi.firstLetterToUpperCase("_-привет"));
 	}
@@ -151,7 +151,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#firstLetterToUpperCase(String)} если в значении нет букв.
 	 */
 	@Test
-	public void testFirstLetterToUpperCaseNotChar()
+	public void firstLetterToUpperCaseNotChar()
 	{
 		assertEquals("_-/*-/-/*", Stringi.firstLetterToUpperCase("_-/*-/-/*"));
 	}
@@ -160,7 +160,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#firstLetterToLowerCase(String)}.
 	 */
 	@Test
-	public void testFirstLetterToLowerCase()
+	public void firstLetterToLowerCase()
 	{
 		assertEquals("пРИВЕТ", Stringi.firstLetterToLowerCase("ПРИВЕТ"));
 	}
@@ -169,7 +169,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#firstLetterToLowerCase(String)} с пустым значением.
 	 */
 	@Test
-	public void testFirstLetterToLowerCaseEmpty()
+	public void firstLetterToLowerCaseEmpty()
 	{
 		assertEquals("", Stringi.firstLetterToLowerCase(""));
 	}
@@ -178,7 +178,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#firstLetterToLowerCase(String)}с одной буквой в значении.
 	 */
 	@Test
-	public void testFirstLetterToLowerCaseOneChar()
+	public void firstLetterToLowerCaseOneChar()
 	{
 		assertEquals("п", Stringi.firstLetterToLowerCase("П"));
 	}
@@ -187,7 +187,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#firstLetterToLowerCase(String)} если первый символ значения не буква.
 	 */
 	@Test
-	public void testFirstLetterToLowerCaseFirstNotChar()
+	public void firstLetterToLowerCaseFirstNotChar()
 	{
 		assertEquals("_-пРИВЕТ", Stringi.firstLetterToLowerCase("_-ПРИВЕТ"));
 	}
@@ -196,7 +196,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#firstLetterToLowerCase(String)} если в значении нет букв.
 	 */
 	@Test
-	public void testFirstLetterToLowerCaseNotChar()
+	public void firstLetterToLowerCaseNotChar()
 	{
 		assertEquals("_-/*-/-/*", Stringi.firstLetterToLowerCase("_-/*-/-/*"));
 	}
@@ -205,7 +205,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#reverseCase(String)}.
 	 */
 	@Test
-	public void testReverseCase()
+	public void reverseCase()
 	{
 		assertEquals("ПрИвЕт", Stringi.reverseCase("пРиВеТ"));
 	}
@@ -214,7 +214,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#searchFirst(String, Character)}.
 	 */
 	@Test
-	public void testSearchFirst()
+	public void searchFirst()
 	{
 		Integer result = Stringi.searchFirst("Красно-жёлтые дни - песня группы Кино", '-');
 
@@ -225,7 +225,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#searchLast(String, Character)}.
 	 */
 	@Test
-	public void testSearchLast()
+	public void searchLast()
 	{
 		Integer result = Stringi.searchLast("Красно-жёлтые дни - песня группы Кино", '-');
 
@@ -236,7 +236,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#searchFirst(String, List)}.
 	 */
 	@Test
-	public void testSearchFirstList()
+	public void searchFirstList()
 	{
 		Integer result = Stringi.searchFirst("Мама, мы все тяжело больны - песня группы Кино.", List.of('.'));
 
@@ -247,7 +247,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#searchFirst(String, List)} с пустым списком.
 	 */
 	@Test
-	public void testSearchFirstListEmpty()
+	public void searchFirstListEmpty()
 	{
 		Integer result = Stringi.searchFirst("Мама, мы все тяжело больны - песня группы Кино.", List.of());
 
@@ -258,7 +258,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#searchFirst(String, List)} с первым искомым символом в строке.
 	 */
 	@Test
-	public void testSearchFirstListFirstLetter()
+	public void searchFirstListFirstLetter()
 	{
 		Integer result = Stringi.searchFirst("Мама, мы все тяжело больны - песня группы Кино.", List.of('М'));
 
@@ -269,7 +269,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#searchFirst(String, List)} с несколькими искомыми символами.
 	 */
 	@Test
-	public void testSearchFirstListManyLetter()
+	public void searchFirstListManyLetter()
 	{
 		Integer result = Stringi.searchFirst("Мама, мы все тяжело больны - песня группы Кино.", List.of('ж', ','));
 
@@ -280,7 +280,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#searchLast(String, List)}.
 	 */
 	@Test
-	public void testSearchLastList()
+	public void searchLastList()
 	{
 		Integer result = Stringi.searchLast("Мама, мы все тяжело больны - песня группы Кино.", List.of('.'));
 
@@ -291,7 +291,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#searchLast(String, List)} с пустым списком.
 	 */
 	@Test
-	public void testSearchLastListEmpty()
+	public void searchLastListEmpty()
 	{
 		Integer result = Stringi.searchLast("Мама, мы все тяжело больны - песня группы Кино.", List.of());
 
@@ -302,7 +302,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#searchLast(String, List)} с первым искомым символом в строке.
 	 */
 	@Test
-	public void testSearchLastListFirstLetter()
+	public void searchLastListFirstLetter()
 	{
 		Integer result = Stringi.searchLast("Мама, мы все тяжело больны - песня группы Кино.", List.of('М'));
 
@@ -313,7 +313,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#searchLast(String, List)} с несколькими искомыми символами.
 	 */
 	@Test
-	public void testSearchLastListManyLetter()
+	public void searchLastListManyLetter()
 	{
 		Integer result = Stringi.searchLast("Мама, мы все тяжело больны - песня группы Кино.", List.of('ж', ','));
 
@@ -324,7 +324,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#searchFirstLetter(String)}.
 	 */
 	@Test
-	public void testSearchFirstLetter()
+	public void searchFirstLetter()
 	{
 		Integer result = Stringi.searchFirstLetter("+Когда твоя девушка больна+");
 
@@ -335,7 +335,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#searchLastLetter(String)}.
 	 */
 	@Test
-	public void testSearchLastLetter()
+	public void searchLastLetter()
 	{
 		Integer result = Stringi.searchLastLetter("###Ночь###");
 
@@ -346,7 +346,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#repeatToLength(String, Integer)}.
 	 */
 	@Test
-	public void testRepeatToLength()
+	public void repeatToLength()
 	{
 		String result = Stringi.repeatToLength("Без десяти", 15);
 
@@ -357,7 +357,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#repeatToLength(String, Integer)} с отрицательным значением.
 	 */
 	@Test
-	public void testRepeatToLengthLengthNegative()
+	public void repeatToLengthLengthNegative()
 	{
 		assertThrows(IllegalArgumentException.class, () -> {
 			Stringi.repeatToLength("Без десяти", -1);
@@ -368,7 +368,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#repeatToLength(String, Integer)} с нулевым значением.
 	 */
 	@Test
-	public void testRepeatToLengthLengthZero()
+	public void repeatToLengthLengthZero()
 	{
 		String result = Stringi.repeatToLength("Без десяти", 0);
 
@@ -379,7 +379,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#shuffle(String)}.
 	 */
 	@Test
-	public void testShuffle()
+	public void shuffle()
 	{
 		String string = "Когда твоя девушка больна";
 		String result = Stringi.shuffle(string);
@@ -391,7 +391,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#shuffle(String)} с пустым значением.
 	 */
 	@Test
-	public void testShuffleEmpty()
+	public void shuffleEmpty()
 	{
 		String string = "";
 		String result = Stringi.shuffle(string);
@@ -403,7 +403,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#shuffle(String)} по количеству символов в строке после перемешивания символов в строке.
 	 */
 	@Test
-	public void testShuffleEqualsLength()
+	public void shuffleEqualsLength()
 	{
 		String string = "Когда твоя девушка больна";
 		String result = Stringi.shuffle(string);
@@ -415,7 +415,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#reverse(String)}.
 	 */
 	@Test
-	public void testReverse()
+	public void reverse()
 	{
 		String string = "Малыш";
 		String result = Stringi.reverse(string);
@@ -427,7 +427,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#reverse(String)} с пустым значением.
 	 */
 	@Test
-	public void testReverseEmpty()
+	public void reverseEmpty()
 	{
 		String string = "";
 		String result = Stringi.reverse(string);
@@ -439,7 +439,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#countVariousSymbols(String)} с пустым значением.
 	 */
 	@Test
-	public void testCountVariousSymbolsEmpty()
+	public void countVariousSymbolsEmpty()
 	{
 		String string = "";
 		Integer result = Stringi.countVariousSymbols(string);
@@ -451,7 +451,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#countVariousSymbols(String)} с пустым значением.
 	 */
 	@Test
-	public void testCountVariousSymbols()
+	public void countVariousSymbols()
 	{
 		String string = "Я хочу быть кочегаром";
 		Integer result = Stringi.countVariousSymbols(string);
@@ -463,7 +463,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#countVariousSymbols(String)} с переносом строки.
 	 */
 	@Test
-	public void testCountVariousSymbolsReturnLine()
+	public void countVariousSymbolsReturnLine()
 	{
 		String string = "Я хочу быть кочегаром\n";
 		Integer result = Stringi.countVariousSymbols(string);
@@ -475,7 +475,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#isPalindrome(String)}.
 	 */
 	@Test
-	public void testIsPalindrome()
+	public void isPalindrome()
 	{
 		assertTrue(Stringi.isPalindrome("ШАЛАШ"));
 	}
@@ -484,7 +484,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#isPalindrome(String)} с некорректным значением.
 	 */
 	@Test
-	public void testIsPalindromeNotCorrect()
+	public void isPalindromeNotCorrect()
 	{
 		assertFalse(Stringi.isPalindrome("МАЛЫШ"));
 	}
@@ -493,7 +493,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#isPalindromeIgnoreCase(String)}.
 	 */
 	@Test
-	public void testIsPalindromeIgnoreCase()
+	public void isPalindromeIgnoreCase()
 	{
 		assertTrue(Stringi.isPalindromeIgnoreCase("Шалаш"));
 	}
@@ -502,7 +502,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#isPalindromeIgnoreCase(String)} с некорректным значением.
 	 */
 	@Test
-	public void testIsPalindromeIgnoreCaseNotCorrect()
+	public void isPalindromeIgnoreCaseNotCorrect()
 	{
 		assertFalse(Stringi.isPalindromeIgnoreCase("Малыш"));
 	}
@@ -511,7 +511,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#join(List)}.
 	 */
 	@Test
-	public void testJoinList()
+	public void joinList()
 	{
 		String result = Stringi.join(List.of("Белы", "й д", "ень"));
 
@@ -522,7 +522,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#join(List, String)}.
 	 */
 	@Test
-	public void testJoinListSeparator()
+	public void joinListSeparator()
 	{
 		String result = Stringi.join(List.of("Белы", "й д", "ень"), "|");
 
@@ -533,7 +533,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#join(List)} со значением {@code null}.
 	 */
 	@Test
-	public void testJoinListNull()
+	public void joinListNull()
 	{
 		List<String> values = new ArrayList<>();
 		values.add("Белый");
@@ -549,7 +549,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#join(List)} без значений.
 	 */
 	@Test
-	public void testJoinListEmpty()
+	public void joinListEmpty()
 	{
 		String result = Stringi.join(List.of());
 
@@ -560,7 +560,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#join(String[])}.
 	 */
 	@Test
-	public void testJoinArray()
+	public void joinArray()
 	{
 		String result = Stringi.join(new String[] {"К", "И", "Н", "О"});
 
@@ -571,7 +571,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#join(String[], String)}.
 	 */
 	@Test
-	public void testJoinArraySeparator()
+	public void joinArraySeparator()
 	{
 		String result = Stringi.join(new String[] {"К", "И", "Н", "О"}, "|");
 
@@ -582,7 +582,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#join(String[])} со значением {@code null}.
 	 */
 	@Test
-	public void testJoinArrayNull()
+	public void joinArrayNull()
 	{
 		String result = Stringi.join(new String[] {"K", "I", null, "N", "O"});
 
@@ -593,7 +593,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#join(String[])} без значений.
 	 */
 	@Test
-	public void testJoinArrayEmpty()
+	public void joinArrayEmpty()
 	{
 		String result = Stringi.join(new String[] {});
 
@@ -604,7 +604,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#fillLeft(String, String, Integer)}.
 	 */
 	@Test
-	public void testFillLeft()
+	public void fillLeft()
 	{
 		String result = Stringi.fillLeft("КИНО", "#", 10);
 
@@ -615,7 +615,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#fillLeft(String, String, Integer)} с нулевым значением.
 	 */
 	@Test
-	public void testFillLeftLengthZero()
+	public void fillLeftLengthZero()
 	{
 		String result = Stringi.fillLeft("КИНО", "#", 0);
 
@@ -626,7 +626,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#fillLeft(String, String, Integer)} с пустым значением.
 	 */
 	@Test
-	public void testFillLeftFillerEmpty()
+	public void fillLeftFillerEmpty()
 	{
 		String result = Stringi.fillLeft("КИНО", "", 10);
 
@@ -637,7 +637,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#fillLeft(String, String, Integer)} с пустым значением.
 	 */
 	@Test
-	public void testFillLeftStringEmpty()
+	public void fillLeftStringEmpty()
 	{
 		String result = Stringi.fillLeft("", "#", 10);
 
@@ -648,7 +648,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#fillLeft(String, String, Integer)} с отрицательным значением.
 	 */
 	@Test
-	public void testFillLeftLengthNegative()
+	public void fillLeftLengthNegative()
 	{
 		assertThrows(IllegalArgumentException.class, () -> {
 			Stringi.fillLeft("КИНО", "#", -1);
@@ -659,7 +659,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#fill(String, String, Integer)}.
 	 */
 	@Test
-	public void testFill()
+	public void fill()
 	{
 		String result = Stringi.fill("КИНО", "#", 10);
 
@@ -670,7 +670,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#fill(String, String, Integer)} нулевым значением.
 	 */
 	@Test
-	public void testFillLengthZero()
+	public void fillLengthZero()
 	{
 		String result = Stringi.fill("КИНО", "#", 0);
 
@@ -681,7 +681,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#fill(String, String, Integer)} с пустым значением.
 	 */
 	@Test
-	public void testFillFillerEmpty()
+	public void fillFillerEmpty()
 	{
 		String result = Stringi.fill("КИНО", "", 10);
 
@@ -692,7 +692,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#fill(String, String, Integer)} с пустым значением.
 	 */
 	@Test
-	public void testFillStringEmpty()
+	public void fillStringEmpty()
 	{
 		String result = Stringi.fill("", "#", 10);
 
@@ -703,7 +703,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#fill(String, String, Integer)} с отрицательным значением.
 	 */
 	@Test
-	public void testFillLengthNegative()
+	public void fillLengthNegative()
 	{
 		assertThrows(IllegalArgumentException.class, () -> {
 			Stringi.fill("КИНО", "#", -1);
@@ -714,7 +714,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#fill(String, String, Integer)} с нечётным значением.
 	 */
 	@Test
-	public void testFillLengthUneven()
+	public void fillLengthUneven()
 	{
 		String result = Stringi.fill("КИНО", "#", 9);
 
@@ -725,7 +725,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#fillRight(String, String, Integer)}.
 	 */
 	@Test
-	public void testFillRight()
+	public void fillRight()
 	{
 		String result = Stringi.fillRight("КИНО", "#", 10);
 
@@ -736,7 +736,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#fillRight(String, String, Integer)} с нулевым значением.
 	 */
 	@Test
-	public void testFillRightLengthZero()
+	public void fillRightLengthZero()
 	{
 		String result = Stringi.fillRight("КИНО", "#", 0);
 
@@ -747,7 +747,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#fillRight(String, String, Integer)} с пустым значением.
 	 */
 	@Test
-	public void testFillRightFillerEmpty()
+	public void fillRightFillerEmpty()
 	{
 		String result = Stringi.fillRight("КИНО", "", 10);
 
@@ -758,7 +758,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#fillRight(String, String, Integer)} с пустым значением.
 	 */
 	@Test
-	public void testFillRightStringEmpty()
+	public void fillRightStringEmpty()
 	{
 		String result = Stringi.fillRight("", "#", 10);
 
@@ -769,7 +769,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#fillRight(String, String, Integer)} с отрицательным значением.
 	 */
 	@Test
-	public void testFillRightLengthNegative()
+	public void fillRightLengthNegative()
 	{
 		assertThrows(IllegalArgumentException.class, () -> {
 			Stringi.fillRight("КИНО", "#", -1);
@@ -780,7 +780,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#toCharList(String)}.
 	 */
 	@Test
-	public void testToCharList()
+	public void toCharList()
 	{
 		List<Character> symbols = List.of(
 			'W', 'a', 'l', 'k', ' ', 'a', 'l', 'l', ' ', 'o', 'v', 'e', 'r', ' ', 'y', 'o', 'u'
@@ -793,7 +793,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#toCharList(String)}.
 	 */
 	@Test
-	public void testToCharListEmpty()
+	public void toCharListEmpty()
 	{
 		List<Character> symbols = List.of();
 
@@ -804,7 +804,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#toCharArray(String)}.
 	 */
 	@Test
-	public void testToCharArray()
+	public void toCharArray()
 	{
 		Character[] symbols = {
 			'W', 'a', 'l', 'k', ' ', 'a', 'l', 'l', ' ', 'o', 'v', 'e', 'r', ' ', 'y', 'o', 'u'
@@ -817,7 +817,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#toCharArray(String)} с пустым значением.
 	 */
 	@Test
-	public void testToCharArrayEmpty()
+	public void toCharArrayEmpty()
 	{
 		Character[] symbols = {};
 
@@ -828,7 +828,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#glue(List)}.
 	 */
 	@Test
-	public void testGlueList()
+	public void glueList()
 	{
 		String result = Stringi.glue(List.of('A', 'C', '/', 'D', 'C'));
 
@@ -839,7 +839,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#glue(List, String)}.
 	 */
 	@Test
-	public void testGlueListSeparator()
+	public void glueListSeparator()
 	{
 		String result = Stringi.glue(List.of('T', 'N', 'T'), ".");
 
@@ -850,7 +850,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#glue(List)} со значением {@code null}.
 	 */
 	@Test
-	public void testGlueListNull()
+	public void glueListNull()
 	{
 		List<Character> values = new ArrayList<>();
 		values.add('A');
@@ -868,7 +868,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#glue(List)} без значений.
 	 */
 	@Test
-	public void testGlueListEmpty()
+	public void glueListEmpty()
 	{
 		String result = Stringi.glue(List.of());
 
@@ -879,7 +879,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#glue(Character[])}.
 	 */
 	@Test
-	public void testGlueArray()
+	public void glueArray()
 	{
 		String result = Stringi.glue(new Character[] {'A', 'C', '/', 'D', 'C'});
 
@@ -890,7 +890,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#glue(Character[], String)}.
 	 */
 	@Test
-	public void testGlueArraySeparator()
+	public void glueArraySeparator()
 	{
 		String result = Stringi.glue(new Character[] {'T', 'N', 'T'}, ".");
 
@@ -901,7 +901,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#glue(Character[])} со значением {@code null}.
 	 */
 	@Test
-	public void testGlueArrayNull()
+	public void glueArrayNull()
 	{
 		String result = Stringi.glue(new Character[] {'T', null, 'N', 'T'});
 
@@ -912,7 +912,7 @@ public class StringiTest
 	 * Проверка метода {@link Stringi#glue(Character[])} без значений.
 	 */
 	@Test
-	public void testGlueArrayEmpty()
+	public void glueArrayEmpty()
 	{
 		String result = Stringi.glue(new Character[] {});
 
