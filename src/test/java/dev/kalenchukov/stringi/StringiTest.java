@@ -28,7 +28,6 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -45,9 +44,11 @@ public class StringiTest
 	@Test
 	public void firstToLowerCase()
 	{
-		String actual = Stringi.firstToLowerCase("ПРИВЕТ");
+		String value = "ПРИВЕТ";
 
-		assertEquals("пРИВЕТ", actual);
+		String actualString = Stringi.firstToLowerCase(value);
+
+		assertEquals("пРИВЕТ", actualString);
 	}
 
 	/**
@@ -56,9 +57,11 @@ public class StringiTest
 	@Test
 	public void firstToLowerCaseEmpty()
 	{
-		String actual = Stringi.firstToLowerCase("");
+		String value = "";
 
-		assertEquals("", actual);
+		String actualString = Stringi.firstToLowerCase(value);
+
+		assertEquals("", actualString);
 	}
 
 	/**
@@ -67,9 +70,11 @@ public class StringiTest
 	@Test
 	public void firstToLowerCaseOneChar()
 	{
-		String actual = Stringi.firstToLowerCase("П");
+		String value = "П";
 
-		assertEquals("п", actual);
+		String actualString = Stringi.firstToLowerCase(value);
+
+		assertEquals("п", actualString);
 	}
 
 	/**
@@ -78,9 +83,11 @@ public class StringiTest
 	@Test
 	public void firstToLowerCaseFirstNotChar()
 	{
-		String actual = Stringi.firstToLowerCase("_ПРИВЕТ");
+		String value = "_ПРИВЕТ";
 
-		assertEquals("_ПРИВЕТ", actual);
+		String actualString = Stringi.firstToLowerCase(value);
+
+		assertEquals("_ПРИВЕТ", actualString);
 	}
 
 	/**
@@ -89,9 +96,11 @@ public class StringiTest
 	@Test
 	public void firstToUpperCase()
 	{
-		String actual = Stringi.firstToUpperCase("привет");
+		String value = "привет";
 
-		assertEquals("Привет", actual);
+		String actualString = Stringi.firstToUpperCase(value);
+
+		assertEquals("Привет", actualString);
 	}
 
 	/**
@@ -100,9 +109,11 @@ public class StringiTest
 	@Test
 	public void firstToUpperCaseEmpty()
 	{
-		String actual = Stringi.firstToUpperCase("");
+		String value = "";
 
-		assertEquals("", actual);
+		String actualString = Stringi.firstToUpperCase(value);
+
+		assertEquals("", actualString);
 	}
 
 	/**
@@ -111,9 +122,11 @@ public class StringiTest
 	@Test
 	public void firstToUpperCaseOneChar()
 	{
-		String actual = Stringi.firstToUpperCase("п");
+		String value = "п";
 
-		assertEquals("П", actual);
+		String actualString = Stringi.firstToUpperCase(value);
+
+		assertEquals("П", actualString);
 	}
 
 	/**
@@ -122,9 +135,11 @@ public class StringiTest
 	@Test
 	public void firstToUpperCaseFirstNotChar()
 	{
-		String actual = Stringi.firstToUpperCase("_привет");
+		String value = "_привет";
 
-		assertEquals("_привет", actual);
+		String actualString = Stringi.firstToUpperCase(value);
+
+		assertEquals("_привет", actualString);
 	}
 
 	/**
@@ -133,9 +148,11 @@ public class StringiTest
 	@Test
 	public void firstLetterToUpperCase()
 	{
-		String actual = Stringi.firstLetterToUpperCase("привет");
+		String value = "привет";
 
-		assertEquals("Привет", actual);
+		String actualString = Stringi.firstLetterToUpperCase(value);
+
+		assertEquals("Привет", actualString);
 	}
 
 	/**
@@ -144,9 +161,11 @@ public class StringiTest
 	@Test
 	public void firstLetterToUpperCaseEmpty()
 	{
-		String actual = Stringi.firstLetterToUpperCase("");
+		String value = "";
 
-		assertEquals("", actual);
+		String actualString = Stringi.firstLetterToUpperCase(value);
+
+		assertEquals("", actualString);
 	}
 
 	/**
@@ -155,9 +174,11 @@ public class StringiTest
 	@Test
 	public void firstLetterToUpperCaseOneChar()
 	{
-		String actual = Stringi.firstLetterToUpperCase("п");
+		String value = "п";
 
-		assertEquals("П", actual);
+		String actualString = Stringi.firstLetterToUpperCase(value);
+
+		assertEquals("П", actualString);
 	}
 
 	/**
@@ -166,9 +187,11 @@ public class StringiTest
 	@Test
 	public void firstLetterToUpperCaseFirstNotChar()
 	{
-		String actual = Stringi.firstLetterToUpperCase("_-привет");
+		String value = "_-привет";
 
-		assertEquals("_-Привет", actual);
+		String actualString = Stringi.firstLetterToUpperCase(value);
+
+		assertEquals("_-Привет", actualString);
 	}
 
 	/**
@@ -177,9 +200,11 @@ public class StringiTest
 	@Test
 	public void firstLetterToUpperCaseNotChar()
 	{
-		String actual = Stringi.firstLetterToUpperCase("_-/*-/-/*");
+		String value = "_-/*-/-/*";
 
-		assertEquals("_-/*-/-/*", actual);
+		String actualString = Stringi.firstLetterToUpperCase(value);
+
+		assertEquals("_-/*-/-/*", actualString);
 	}
 
 	/**
@@ -188,9 +213,11 @@ public class StringiTest
 	@Test
 	public void firstLetterToLowerCase()
 	{
-		String actual = Stringi.firstLetterToLowerCase("ПРИВЕТ");
+		String value = "ПРИВЕТ";
 
-		assertEquals("пРИВЕТ", actual);
+		String actualString = Stringi.firstLetterToLowerCase(value);
+
+		assertEquals("пРИВЕТ", actualString);
 	}
 
 	/**
@@ -199,9 +226,11 @@ public class StringiTest
 	@Test
 	public void firstLetterToLowerCaseEmpty()
 	{
-		String actual = Stringi.firstLetterToLowerCase("");
+		String value = "";
 
-		assertEquals("", actual);
+		String actualString = Stringi.firstLetterToLowerCase(value);
+
+		assertEquals("", actualString);
 	}
 
 	/**
@@ -210,9 +239,11 @@ public class StringiTest
 	@Test
 	public void firstLetterToLowerCaseOneChar()
 	{
-		String actual = Stringi.firstLetterToLowerCase("П");
+		String value = "П";
 
-		assertEquals("п", actual);
+		String actualString = Stringi.firstLetterToLowerCase(value);
+
+		assertEquals("п", actualString);
 	}
 
 	/**
@@ -221,9 +252,11 @@ public class StringiTest
 	@Test
 	public void firstLetterToLowerCaseFirstNotChar()
 	{
-		String actual = Stringi.firstLetterToLowerCase("_-ПРИВЕТ");
+		String value = "_-ПРИВЕТ";
 
-		assertEquals("_-пРИВЕТ", actual);
+		String actualString = Stringi.firstLetterToLowerCase(value);
+
+		assertEquals("_-пРИВЕТ", actualString);
 	}
 
 	/**
@@ -232,9 +265,11 @@ public class StringiTest
 	@Test
 	public void firstLetterToLowerCaseNotChar()
 	{
-		String actual = Stringi.firstLetterToLowerCase("_-/*-/-/*");
+		String value = "_-/*-/-/*";
 
-		assertEquals("_-/*-/-/*", actual);
+		String actualString = Stringi.firstLetterToLowerCase(value);
+
+		assertEquals("_-/*-/-/*", actualString);
 	}
 
 	/**
@@ -243,9 +278,11 @@ public class StringiTest
 	@Test
 	public void reverseCase()
 	{
-		String actual = Stringi.reverseCase("пРиВеТ");
+		String value = "пРиВеТ";
 
-		assertEquals("ПрИвЕт", actual);
+		String actualString = Stringi.reverseCase(value);
+
+		assertEquals("ПрИвЕт", actualString);
 	}
 
 	/**
@@ -254,9 +291,11 @@ public class StringiTest
 	@Test
 	public void searchFirst()
 	{
-		Integer actual = Stringi.searchFirst("Красно-жёлтые дни - песня группы Кино", '-');
+		String value = "Красно-жёлтые дни - песня группы Кино";
 
-		assertEquals(6, Optional.ofNullable(actual).orElse(-1));
+		Integer actualPosition = Stringi.searchFirst(value, '-');
+
+		assertEquals(6, actualPosition);
 	}
 
 	/**
@@ -265,9 +304,11 @@ public class StringiTest
 	@Test
 	public void searchLast()
 	{
-		Integer actual = Stringi.searchLast("Красно-жёлтые дни - песня группы Кино", '-');
+		String value = "Красно-жёлтые дни - песня группы Кино";
 
-		assertEquals(18, Optional.ofNullable(actual).orElse(-1));
+		Integer actualPosition = Stringi.searchLast(value, '-');
+
+		assertEquals(18, actualPosition);
 	}
 
 	/**
@@ -276,12 +317,11 @@ public class StringiTest
 	@Test
 	public void searchFirstList()
 	{
-		Integer actual = Stringi.searchFirst(
-				"Мама, мы все тяжело больны - песня группы Кино.",
-				List.of('.')
-		);
+		String value = "Мама, мы все тяжело больны - песня группы Кино.";
 
-		assertEquals(46, Optional.ofNullable(actual).orElse(-1));
+		Integer actualPosition = Stringi.searchFirst(value, List.of('.'));
+
+		assertEquals(46, actualPosition);
 	}
 
 	/**
@@ -290,12 +330,11 @@ public class StringiTest
 	@Test
 	public void searchFirstListEmpty()
 	{
-		Integer actual = Stringi.searchFirst(
-				"Мама, мы все тяжело больны - песня группы Кино.",
-				List.of()
-		);
+		String value = "Мама, мы все тяжело больны - песня группы Кино.";
 
-		assertNull(actual);
+		Integer actualPosition = Stringi.searchFirst(value, List.of());
+
+		assertNull(actualPosition);
 	}
 
 	/**
@@ -304,12 +343,11 @@ public class StringiTest
 	@Test
 	public void searchFirstListFirstLetter()
 	{
-		Integer actual = Stringi.searchFirst(
-				"Мама, мы все тяжело больны - песня группы Кино.",
-				List.of('М')
-		);
+		String value = "Мама, мы все тяжело больны - песня группы Кино.";
 
-		assertEquals(0, Optional.ofNullable(actual).orElse(-1));
+		Integer actualPosition = Stringi.searchFirst(value, List.of('М'));
+
+		assertEquals(0, actualPosition);
 	}
 
 	/**
@@ -318,12 +356,11 @@ public class StringiTest
 	@Test
 	public void searchFirstListManyLetter()
 	{
-		Integer actual = Stringi.searchFirst(
-				"Мама, мы все тяжело больны - песня группы Кино.",
-				List.of('ж', ',')
-		);
+		String value = "Мама, мы все тяжело больны - песня группы Кино.";
 
-		assertEquals(4, Optional.ofNullable(actual).orElse(-1));
+		Integer actualPosition = Stringi.searchFirst(value, List.of('ж', ','));
+
+		assertEquals(4, actualPosition);
 	}
 
 	/**
@@ -332,12 +369,11 @@ public class StringiTest
 	@Test
 	public void searchLastList()
 	{
-		Integer actual = Stringi.searchLast(
-				"Мама, мы все тяжело больны - песня группы Кино.",
-				List.of('.')
-		);
+		String value = "Мама, мы все тяжело больны - песня группы Кино.";
 
-		assertEquals(46, Optional.ofNullable(actual).orElse(-1));
+		Integer actualPosition = Stringi.searchLast(value, List.of('.'));
+
+		assertEquals(46, actualPosition);
 	}
 
 	/**
@@ -346,12 +382,11 @@ public class StringiTest
 	@Test
 	public void searchLastListEmpty()
 	{
-		Integer actual = Stringi.searchLast(
-				"Мама, мы все тяжело больны - песня группы Кино.",
-				List.of()
-		);
+		String value = "Мама, мы все тяжело больны - песня группы Кино.";
 
-		assertNull(actual);
+		Integer actualPosition = Stringi.searchLast(value, List.of());
+
+		assertNull(actualPosition);
 	}
 
 	/**
@@ -360,12 +395,11 @@ public class StringiTest
 	@Test
 	public void searchLastListFirstLetter()
 	{
-		Integer actual = Stringi.searchLast(
-				"Мама, мы все тяжело больны - песня группы Кино.",
-				List.of('М')
-		);
+		String value = "Мама, мы все тяжело больны - песня группы Кино.";
 
-		assertEquals(0, Optional.ofNullable(actual).orElse(-1));
+		Integer actualPosition = Stringi.searchLast(value, List.of('М'));
+
+		assertEquals(0, actualPosition);
 	}
 
 	/**
@@ -374,12 +408,11 @@ public class StringiTest
 	@Test
 	public void searchLastListManyLetter()
 	{
-		Integer actual = Stringi.searchLast(
-				"Мама, мы все тяжело больны - песня группы Кино.",
-				List.of('ж', ',')
-		);
+		String value = "Мама, мы все тяжело больны - песня группы Кино.";
 
-		assertEquals(15, Optional.ofNullable(actual).orElse(-1));
+		Integer actualPosition = Stringi.searchLast(value, List.of('ж', ','));
+
+		assertEquals(15, actualPosition);
 	}
 
 	/**
@@ -388,9 +421,11 @@ public class StringiTest
 	@Test
 	public void searchFirstLetter()
 	{
-		Integer actual = Stringi.searchFirstLetter("+Когда твоя девушка больна+");
+		String value = "+Когда твоя девушка больна+";
 
-		assertEquals(1, Optional.ofNullable(actual).orElse(-1));
+		Integer actualPosition = Stringi.searchFirstLetter(value);
+
+		assertEquals(1, actualPosition);
 	}
 
 	/**
@@ -399,9 +434,11 @@ public class StringiTest
 	@Test
 	public void searchLastLetter()
 	{
-		Integer actual = Stringi.searchLastLetter("###Ночь###");
+		String value = "###Ночь###";
 
-		assertEquals(6, Optional.ofNullable(actual).orElse(-1));
+		Integer actualPosition = Stringi.searchLastLetter(value);
+
+		assertEquals(6, actualPosition);
 	}
 
 	/**
@@ -410,9 +447,11 @@ public class StringiTest
 	@Test
 	public void repeatToLength()
 	{
-		String actual = Stringi.repeatToLength("Без десяти", 15);
+		String value = "Без десяти";
 
-		assertEquals("Без десятиБез д", actual);
+		String actualString = Stringi.repeatToLength(value, 15);
+
+		assertEquals("Без десятиБез д", actualString);
 	}
 
 	/**
@@ -421,8 +460,10 @@ public class StringiTest
 	@Test
 	public void repeatToLengthLengthNegative()
 	{
+		String value = "Без десяти";
+
 		assertThrows(IllegalArgumentException.class, () -> {
-			Stringi.repeatToLength("Без десяти", -1);
+			Stringi.repeatToLength(value, -1);
 		});
 	}
 
@@ -432,9 +473,11 @@ public class StringiTest
 	@Test
 	public void repeatToLengthLengthZero()
 	{
-		String actual = Stringi.repeatToLength("Без десяти", 0);
+		String value = "Без десяти";
 
-		assertEquals("", actual);
+		String actualString = Stringi.repeatToLength(value, 0);
+
+		assertEquals("", actualString);
 	}
 
 	/**
@@ -445,9 +488,9 @@ public class StringiTest
 	{
 		String value = "Когда твоя девушка больна";
 
-		String actual = Stringi.shuffle(value);
+		String actualString = Stringi.shuffle(value);
 
-		assertNotEquals("Когда твоя девушка больна", actual);
+		assertNotEquals("Когда твоя девушка больна", actualString);
 	}
 
 	/**
@@ -457,9 +500,10 @@ public class StringiTest
 	public void shuffleEmpty()
 	{
 		String value = "";
-		String actual = Stringi.shuffle(value);
 
-		assertEquals("", actual);
+		String actualString = Stringi.shuffle(value);
+
+		assertEquals("", actualString);
 	}
 
 	/**
@@ -470,9 +514,10 @@ public class StringiTest
 	public void shuffleEqualsLength()
 	{
 		String value = "Когда твоя девушка больна";
-		String actual = Stringi.shuffle(value);
 
-		assertEquals("Когда твоя девушка больна".length(), actual.length());
+		String actualString = Stringi.shuffle(value);
+
+		assertEquals("Когда твоя девушка больна".length(), actualString.length());
 	}
 
 	/**
@@ -482,9 +527,10 @@ public class StringiTest
 	public void reverse()
 	{
 		String value = "Малыш";
-		String actual = Stringi.reverse(value);
 
-		assertEquals("шылаМ", actual);
+		String actualString = Stringi.reverse(value);
+
+		assertEquals("шылаМ", actualString);
 	}
 
 	/**
@@ -494,9 +540,10 @@ public class StringiTest
 	public void reverseEmpty()
 	{
 		String value = "";
-		String actual = Stringi.reverse(value);
 
-		assertEquals("", actual);
+		String actualString = Stringi.reverse(value);
+
+		assertEquals("", actualString);
 	}
 
 	/**
@@ -506,9 +553,10 @@ public class StringiTest
 	public void countVariousSymbolsEmpty()
 	{
 		String value = "";
-		Integer actual = Stringi.countVariousSymbols(value);
 
-		assertEquals(0, actual);
+		Integer actualCount = Stringi.countVariousSymbols(value);
+
+		assertEquals(0, actualCount);
 	}
 
 	/**
@@ -518,9 +566,10 @@ public class StringiTest
 	public void countVariousSymbols()
 	{
 		String value = "Я хочу быть кочегаром";
-		Integer actual = Stringi.countVariousSymbols(value);
 
-		assertEquals(16, actual);
+		Integer actualCount = Stringi.countVariousSymbols(value);
+
+		assertEquals(16, actualCount);
 	}
 
 	/**
@@ -530,9 +579,10 @@ public class StringiTest
 	public void countVariousSymbolsReturnLine()
 	{
 		String value = "Я хочу быть кочегаром\n";
-		Integer actual = Stringi.countVariousSymbols(value);
 
-		assertEquals(17, actual);
+		Integer actualCount = Stringi.countVariousSymbols(value);
+
+		assertEquals(17, actualCount);
 	}
 
 	/**
@@ -541,7 +591,9 @@ public class StringiTest
 	@Test
 	public void isPalindrome()
 	{
-		boolean actual = Stringi.isPalindrome("ШАЛАШ");
+		String value = "ШАЛАШ";
+
+		boolean actual = Stringi.isPalindrome(value);
 
 		assertTrue(actual);
 	}
@@ -552,7 +604,9 @@ public class StringiTest
 	@Test
 	public void isPalindromeNotCorrect()
 	{
-		boolean actual = Stringi.isPalindrome("МАЛЫШ");
+		String value = "МАЛЫШ";
+
+		boolean actual = Stringi.isPalindrome(value);
 
 		assertFalse(actual);
 	}
@@ -563,7 +617,9 @@ public class StringiTest
 	@Test
 	public void isPalindromeIgnoreCase()
 	{
-		boolean actual = Stringi.isPalindromeIgnoreCase("Шалаш");
+		String value = "Шалаш";
+
+		boolean actual = Stringi.isPalindromeIgnoreCase(value);
 
 		assertTrue(actual);
 	}
@@ -574,7 +630,9 @@ public class StringiTest
 	@Test
 	public void isPalindromeIgnoreCaseNotCorrect()
 	{
-		boolean actual = Stringi.isPalindromeIgnoreCase("Малыш");
+		String value = "Малыш";
+
+		boolean actual = Stringi.isPalindromeIgnoreCase(value);
 
 		assertFalse(actual);
 	}
@@ -585,9 +643,11 @@ public class StringiTest
 	@Test
 	public void joinList()
 	{
-		String actual = Stringi.join(List.of("Белы", "й д", "ень"));
+		List<String> value = List.of("Белы", "й д", "ень");
 
-		assertEquals("Белый день", actual);
+		String actualString = Stringi.join(value);
+
+		assertEquals("Белый день", actualString);
 	}
 
 	/**
@@ -596,9 +656,11 @@ public class StringiTest
 	@Test
 	public void joinListSeparator()
 	{
-		String actual = Stringi.join(List.of("Белы", "й д", "ень"), "|");
+		List<String> value = List.of("Белы", "й д", "ень");
 
-		assertEquals("Белы|й д|ень", actual);
+		String actualString = Stringi.join(value, "|");
+
+		assertEquals("Белы|й д|ень", actualString);
 	}
 
 	/**
@@ -612,9 +674,9 @@ public class StringiTest
 		values.add(null);
 		values.add("день");
 
-		String actual = Stringi.join(values);
+		String actualString = Stringi.join(values);
 
-		assertEquals("Белыйдень", actual);
+		assertEquals("Белыйдень", actualString);
 	}
 
 	/**
@@ -623,9 +685,11 @@ public class StringiTest
 	@Test
 	public void joinListEmpty()
 	{
-		String actual = Stringi.join(List.of());
+		List<String> value = List.of();
 
-		assertEquals("", actual);
+		String actualString = Stringi.join(value);
+
+		assertEquals("", actualString);
 	}
 
 	/**
@@ -634,9 +698,11 @@ public class StringiTest
 	@Test
 	public void joinArray()
 	{
-		String actual = Stringi.join(new String[] {"К", "И", "Н", "О"});
+		String[] value = new String[] {"К", "И", "Н", "О"};
 
-		assertEquals("КИНО", actual);
+		String actualString = Stringi.join(value);
+
+		assertEquals("КИНО", actualString);
 	}
 
 	/**
@@ -645,9 +711,11 @@ public class StringiTest
 	@Test
 	public void joinArraySeparator()
 	{
-		String actual = Stringi.join(new String[] {"К", "И", "Н", "О"}, "|");
+		String[] value = new String[] {"К", "И", "Н", "О"};
 
-		assertEquals("К|И|Н|О", actual);
+		String actualString = Stringi.join(value, "|");
+
+		assertEquals("К|И|Н|О", actualString);
 	}
 
 	/**
@@ -656,9 +724,11 @@ public class StringiTest
 	@Test
 	public void joinArrayNull()
 	{
-		String actual = Stringi.join(new String[] {"K", "I", null, "N", "O"});
+		String[] value = new String[] {"K", "I", null, "N", "O"};
 
-		assertEquals("KINO", actual);
+		String actualString = Stringi.join(value);
+
+		assertEquals("KINO", actualString);
 	}
 
 	/**
@@ -667,9 +737,11 @@ public class StringiTest
 	@Test
 	public void joinArrayEmpty()
 	{
-		String actual = Stringi.join(new String[] {});
+		String[] value = new String[] {};
 
-		assertEquals("", actual);
+		String actualString = Stringi.join(value);
+
+		assertEquals("", actualString);
 	}
 
 	/**
@@ -678,9 +750,11 @@ public class StringiTest
 	@Test
 	public void fillLeft()
 	{
-		String actual = Stringi.fillLeft("КИНО", "#", 10);
+		String value = "КИНО";
 
-		assertEquals("######КИНО", actual);
+		String actualString = Stringi.fillLeft(value, "#", 10);
+
+		assertEquals("######КИНО", actualString);
 	}
 
 	/**
@@ -689,9 +763,11 @@ public class StringiTest
 	@Test
 	public void fillLeftLengthZero()
 	{
-		String actual = Stringi.fillLeft("КИНО", "#", 0);
+		String value = "КИНО";
 
-		assertEquals("КИНО", actual);
+		String actualString = Stringi.fillLeft(value, "#", 0);
+
+		assertEquals("КИНО", actualString);
 	}
 
 	/**
@@ -700,9 +776,11 @@ public class StringiTest
 	@Test
 	public void fillLeftFillerEmpty()
 	{
-		String actual = Stringi.fillLeft("КИНО", "", 10);
+		String value = "КИНО";
 
-		assertEquals("КИНО", actual);
+		String actualString = Stringi.fillLeft(value, "", 10);
+
+		assertEquals("КИНО", actualString);
 	}
 
 	/**
@@ -711,9 +789,11 @@ public class StringiTest
 	@Test
 	public void fillLeftStringEmpty()
 	{
-		String actual = Stringi.fillLeft("", "#", 10);
+		String value = "";
 
-		assertEquals("##########", actual);
+		String actualString = Stringi.fillLeft(value, "#", 10);
+
+		assertEquals("##########", actualString);
 	}
 
 	/**
@@ -722,8 +802,10 @@ public class StringiTest
 	@Test
 	public void fillLeftLengthNegative()
 	{
+		String value = "КИНО";
+
 		assertThrows(IllegalArgumentException.class, () -> {
-			Stringi.fillLeft("КИНО", "#", -1);
+			Stringi.fillLeft(value, "#", -1);
 		});
 	}
 
@@ -733,9 +815,11 @@ public class StringiTest
 	@Test
 	public void fill()
 	{
-		String actual = Stringi.fill("КИНО", "#", 10);
+		String value = "КИНО";
 
-		assertEquals("###КИНО###", actual);
+		String actualString = Stringi.fill(value, "#", 10);
+
+		assertEquals("###КИНО###", actualString);
 	}
 
 	/**
@@ -744,9 +828,11 @@ public class StringiTest
 	@Test
 	public void fillLengthZero()
 	{
-		String actual = Stringi.fill("КИНО", "#", 0);
+		String value = "КИНО";
 
-		assertEquals("КИНО", actual);
+		String actualString = Stringi.fill(value, "#", 0);
+
+		assertEquals("КИНО", actualString);
 	}
 
 	/**
@@ -755,9 +841,11 @@ public class StringiTest
 	@Test
 	public void fillFillerEmpty()
 	{
-		String actual = Stringi.fill("КИНО", "", 10);
+		String value = "КИНО";
 
-		assertEquals("КИНО", actual);
+		String actualString = Stringi.fill(value, "", 10);
+
+		assertEquals("КИНО", actualString);
 	}
 
 	/**
@@ -766,9 +854,11 @@ public class StringiTest
 	@Test
 	public void fillStringEmpty()
 	{
-		String actual = Stringi.fill("", "#", 10);
+		String value = "";
 
-		assertEquals("##########", actual);
+		String actualString = Stringi.fill(value, "#", 10);
+
+		assertEquals("##########", actualString);
 	}
 
 	/**
@@ -777,8 +867,10 @@ public class StringiTest
 	@Test
 	public void fillLengthNegative()
 	{
+		String value = "КИНО";
+
 		assertThrows(IllegalArgumentException.class, () -> {
-			Stringi.fill("КИНО", "#", -1);
+			Stringi.fill(value, "#", -1);
 		});
 	}
 
@@ -788,9 +880,11 @@ public class StringiTest
 	@Test
 	public void fillLengthUneven()
 	{
-		String actual = Stringi.fill("КИНО", "#", 9);
+		String value = "КИНО";
 
-		assertEquals("##КИНО###", actual);
+		String actualString = Stringi.fill(value, "#", 9);
+
+		assertEquals("##КИНО###", actualString);
 	}
 
 	/**
@@ -799,9 +893,11 @@ public class StringiTest
 	@Test
 	public void fillRight()
 	{
-		String actual = Stringi.fillRight("КИНО", "#", 10);
+		String value = "КИНО";
 
-		assertEquals("КИНО######", actual);
+		String actualString = Stringi.fillRight(value, "#", 10);
+
+		assertEquals("КИНО######", actualString);
 	}
 
 	/**
@@ -810,9 +906,11 @@ public class StringiTest
 	@Test
 	public void fillRightLengthZero()
 	{
-		String actual = Stringi.fillRight("КИНО", "#", 0);
+		String value = "КИНО";
 
-		assertEquals("КИНО", actual);
+		String actualString = Stringi.fillRight(value, "#", 0);
+
+		assertEquals("КИНО", actualString);
 	}
 
 	/**
@@ -821,9 +919,11 @@ public class StringiTest
 	@Test
 	public void fillRightFillerEmpty()
 	{
-		String actual = Stringi.fillRight("КИНО", "", 10);
+		String value = "КИНО";
 
-		assertEquals("КИНО", actual);
+		String actualString = Stringi.fillRight(value, "", 10);
+
+		assertEquals("КИНО", actualString);
 	}
 
 	/**
@@ -832,9 +932,11 @@ public class StringiTest
 	@Test
 	public void fillRightStringEmpty()
 	{
-		String actual = Stringi.fillRight("", "#", 10);
+		String value = "";
 
-		assertEquals("##########", actual);
+		String actualString = Stringi.fillRight(value, "#", 10);
+
+		assertEquals("##########", actualString);
 	}
 
 	/**
@@ -843,8 +945,10 @@ public class StringiTest
 	@Test
 	public void fillRightLengthNegative()
 	{
+		String value = "КИНО";
+
 		assertThrows(IllegalArgumentException.class, () -> {
-			Stringi.fillRight("КИНО", "#", -1);
+			Stringi.fillRight(value, "#", -1);
 		});
 	}
 
@@ -854,13 +958,14 @@ public class StringiTest
 	@Test
 	public void toCharList()
 	{
-		List<Character> expected = List.of(
+		String value = "Walk all over you";
+		List<Character> expectedList = List.of(
 			'W', 'a', 'l', 'k', ' ', 'a', 'l', 'l', ' ', 'o', 'v', 'e', 'r', ' ', 'y', 'o', 'u'
 		);
 
-		List<Character> actual = Stringi.toCharList("Walk all over you");
+		List<Character> actualList = Stringi.toCharList(value);
 
-		assertEquals(expected, actual);
+		assertEquals(expectedList, actualList);
 	}
 
 	/**
@@ -869,11 +974,12 @@ public class StringiTest
 	@Test
 	public void toCharListEmpty()
 	{
-		List<Character> expected = List.of();
+		String value = "";
+		List<Character> expectedList = List.of();
 
-		List<Character> actual = Stringi.toCharList("");
+		List<Character> actualList = Stringi.toCharList(value);
 
-		assertEquals(expected, actual);
+		assertEquals(expectedList, actualList);
 	}
 
 	/**
@@ -882,13 +988,14 @@ public class StringiTest
 	@Test
 	public void toCharArray()
 	{
-		Character[] expected = {
+		String value = "Walk all over you";
+		Character[] expectedArray = {
 			'W', 'a', 'l', 'k', ' ', 'a', 'l', 'l', ' ', 'o', 'v', 'e', 'r', ' ', 'y', 'o', 'u'
 		};
 
-		Character[] actual = Stringi.toCharArray("Walk all over you");
+		Character[] actualArray = Stringi.toCharArray(value);
 
-		assertArrayEquals(expected, actual);
+		assertArrayEquals(expectedArray, actualArray);
 	}
 
 	/**
@@ -897,11 +1004,12 @@ public class StringiTest
 	@Test
 	public void toCharArrayEmpty()
 	{
-		Character[] expected = {};
+		String value = "";
+		Character[] expectedArray = {};
 
-		Character[] actual = Stringi.toCharArray("");
+		Character[] actualArray = Stringi.toCharArray(value);
 
-		assertArrayEquals(expected, actual);
+		assertArrayEquals(expectedArray, actualArray);
 	}
 
 	/**
@@ -910,9 +1018,11 @@ public class StringiTest
 	@Test
 	public void glueList()
 	{
-		String actual = Stringi.glue(List.of('A', 'C', '/', 'D', 'C'));
+		List<Character> value = List.of('A', 'C', '/', 'D', 'C');
 
-		assertEquals("AC/DC", actual);
+		String actualString = Stringi.glue(value);
+
+		assertEquals("AC/DC", actualString);
 	}
 
 	/**
@@ -921,9 +1031,11 @@ public class StringiTest
 	@Test
 	public void glueListSeparator()
 	{
-		String actual = Stringi.glue(List.of('T', 'N', 'T'), ".");
+		List<Character> value = List.of('T', 'N', 'T');
 
-		assertEquals("T.N.T", actual);
+		String actualString = Stringi.glue(value, ".");
+
+		assertEquals("T.N.T", actualString);
 	}
 
 	/**
@@ -932,16 +1044,16 @@ public class StringiTest
 	@Test
 	public void glueListNull()
 	{
-		List<Character> values = new ArrayList<>();
-		values.add('A');
-		values.add('C');
-		values.add(null);
-		values.add('D');
-		values.add('C');
+		List<Character> value = new ArrayList<>();
+		value.add('A');
+		value.add('C');
+		value.add(null);
+		value.add('D');
+		value.add('C');
 
-		String actual = Stringi.glue(values);
+		String actualString = Stringi.glue(value);
 
-		assertEquals("ACDC", actual);
+		assertEquals("ACDC", actualString);
 	}
 	
 	/**
@@ -950,9 +1062,11 @@ public class StringiTest
 	@Test
 	public void glueListEmpty()
 	{
-		String actual = Stringi.glue(List.of());
+		List<Character> value = List.of();
 
-		assertEquals("", actual);
+		String actualString = Stringi.glue(value);
+
+		assertEquals("", actualString);
 	}
 	
 	/**
@@ -961,9 +1075,11 @@ public class StringiTest
 	@Test
 	public void glueArray()
 	{
-		String actual = Stringi.glue(new Character[] {'A', 'C', '/', 'D', 'C'});
+		Character[] value = new Character[] {'A', 'C', '/', 'D', 'C'};
 
-		assertEquals("AC/DC", actual);
+		String actualString = Stringi.glue(value);
+
+		assertEquals("AC/DC", actualString);
 	}
 
 	/**
@@ -972,9 +1088,11 @@ public class StringiTest
 	@Test
 	public void glueArraySeparator()
 	{
-		String actual = Stringi.glue(new Character[] {'T', 'N', 'T'}, ".");
+		Character[] value = new Character[] {'T', 'N', 'T'};
 
-		assertEquals("T.N.T", actual);
+		String actualString = Stringi.glue(value, ".");
+
+		assertEquals("T.N.T", actualString);
 	}
 
 	/**
@@ -983,9 +1101,11 @@ public class StringiTest
 	@Test
 	public void glueArrayNull()
 	{
-		String actual = Stringi.glue(new Character[] {'T', null, 'N', 'T'});
+		Character[] value = new Character[] {'T', null, 'N', 'T'};
 
-		assertEquals("TNT", actual);
+		String actualString = Stringi.glue(value);
+
+		assertEquals("TNT", actualString);
 	}
 
 	/**
@@ -994,8 +1114,10 @@ public class StringiTest
 	@Test
 	public void glueArrayEmpty()
 	{
-		String actual = Stringi.glue(new Character[] {});
+		Character[] value = new Character[] {};
 
-		assertEquals("", actual);
+		String actualString = Stringi.glue(value);
+
+		assertEquals("", actualString);
 	}
 }
