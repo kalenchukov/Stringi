@@ -29,7 +29,8 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 /**
  * Класс проверки методов класса {@link Stringi}.
@@ -48,7 +49,7 @@ public class StringiTest
 
 		String actualString = Stringi.firstToLowerCase(value);
 
-		assertEquals("пРИВЕТ", actualString);
+		assertThat(actualString).isEqualTo("пРИВЕТ");
 	}
 
 	/**
@@ -61,7 +62,7 @@ public class StringiTest
 
 		String actualString = Stringi.firstToLowerCase(value);
 
-		assertEquals("", actualString);
+		assertThat(actualString).isEmpty();
 	}
 
 	/**
@@ -74,7 +75,7 @@ public class StringiTest
 
 		String actualString = Stringi.firstToLowerCase(value);
 
-		assertEquals("п", actualString);
+		assertThat(actualString).isEqualTo("п");
 	}
 
 	/**
@@ -87,7 +88,7 @@ public class StringiTest
 
 		String actualString = Stringi.firstToLowerCase(value);
 
-		assertEquals("_ПРИВЕТ", actualString);
+		assertThat(actualString).isEqualTo("_ПРИВЕТ");
 	}
 
 	/**
@@ -100,7 +101,7 @@ public class StringiTest
 
 		String actualString = Stringi.firstToUpperCase(value);
 
-		assertEquals("Привет", actualString);
+		assertThat(actualString).isEqualTo("Привет");
 	}
 
 	/**
@@ -113,7 +114,7 @@ public class StringiTest
 
 		String actualString = Stringi.firstToUpperCase(value);
 
-		assertEquals("", actualString);
+		assertThat(actualString).isEmpty();
 	}
 
 	/**
@@ -126,7 +127,7 @@ public class StringiTest
 
 		String actualString = Stringi.firstToUpperCase(value);
 
-		assertEquals("П", actualString);
+		assertThat(actualString).isEqualTo("П");
 	}
 
 	/**
@@ -139,7 +140,7 @@ public class StringiTest
 
 		String actualString = Stringi.firstToUpperCase(value);
 
-		assertEquals("_привет", actualString);
+		assertThat(actualString).isEqualTo("_привет");
 	}
 
 	/**
@@ -152,7 +153,7 @@ public class StringiTest
 
 		String actualString = Stringi.firstLetterToUpperCase(value);
 
-		assertEquals("Привет", actualString);
+		assertThat(actualString).isEqualTo("Привет");
 	}
 
 	/**
@@ -165,7 +166,7 @@ public class StringiTest
 
 		String actualString = Stringi.firstLetterToUpperCase(value);
 
-		assertEquals("", actualString);
+		assertThat(actualString).isEmpty();
 	}
 
 	/**
@@ -178,7 +179,7 @@ public class StringiTest
 
 		String actualString = Stringi.firstLetterToUpperCase(value);
 
-		assertEquals("П", actualString);
+		assertThat(actualString).isEqualTo("П");
 	}
 
 	/**
@@ -191,7 +192,7 @@ public class StringiTest
 
 		String actualString = Stringi.firstLetterToUpperCase(value);
 
-		assertEquals("_-Привет", actualString);
+		assertThat(actualString).isEqualTo("_-Привет");
 	}
 
 	/**
@@ -204,7 +205,7 @@ public class StringiTest
 
 		String actualString = Stringi.firstLetterToUpperCase(value);
 
-		assertEquals("_-/*-/-/*", actualString);
+		assertThat(actualString).isEqualTo("_-/*-/-/*");
 	}
 
 	/**
@@ -217,7 +218,7 @@ public class StringiTest
 
 		String actualString = Stringi.firstLetterToLowerCase(value);
 
-		assertEquals("пРИВЕТ", actualString);
+		assertThat(actualString).isEqualTo("пРИВЕТ");
 	}
 
 	/**
@@ -230,7 +231,7 @@ public class StringiTest
 
 		String actualString = Stringi.firstLetterToLowerCase(value);
 
-		assertEquals("", actualString);
+		assertThat(actualString).isEmpty();
 	}
 
 	/**
@@ -243,7 +244,7 @@ public class StringiTest
 
 		String actualString = Stringi.firstLetterToLowerCase(value);
 
-		assertEquals("п", actualString);
+		assertThat(actualString).isEqualTo("п");
 	}
 
 	/**
@@ -256,7 +257,7 @@ public class StringiTest
 
 		String actualString = Stringi.firstLetterToLowerCase(value);
 
-		assertEquals("_-пРИВЕТ", actualString);
+		assertThat(actualString).isEqualTo("_-пРИВЕТ");
 	}
 
 	/**
@@ -269,7 +270,7 @@ public class StringiTest
 
 		String actualString = Stringi.firstLetterToLowerCase(value);
 
-		assertEquals("_-/*-/-/*", actualString);
+		assertThat(actualString).isEqualTo("_-/*-/-/*");
 	}
 
 	/**
@@ -282,7 +283,7 @@ public class StringiTest
 
 		String actualString = Stringi.reverseCase(value);
 
-		assertEquals("ПрИвЕт", actualString);
+		assertThat(actualString).isEqualTo("ПрИвЕт");
 	}
 
 	/**
@@ -295,7 +296,7 @@ public class StringiTest
 
 		Integer actualPosition = Stringi.searchFirst(value, '-');
 
-		assertEquals(6, actualPosition);
+		assertThat(actualPosition).isEqualTo(6);
 	}
 
 	/**
@@ -308,7 +309,7 @@ public class StringiTest
 
 		Integer actualPosition = Stringi.searchLast(value, '-');
 
-		assertEquals(18, actualPosition);
+		assertThat(actualPosition).isEqualTo(18);
 	}
 
 	/**
@@ -321,7 +322,7 @@ public class StringiTest
 
 		Integer actualPosition = Stringi.searchFirst(value, List.of('.'));
 
-		assertEquals(46, actualPosition);
+		assertThat(actualPosition).isEqualTo(46);
 	}
 
 	/**
@@ -334,7 +335,7 @@ public class StringiTest
 
 		Integer actualPosition = Stringi.searchFirst(value, List.of());
 
-		assertNull(actualPosition);
+		assertThat(actualPosition).isNull();
 	}
 
 	/**
@@ -347,7 +348,7 @@ public class StringiTest
 
 		Integer actualPosition = Stringi.searchFirst(value, List.of('М'));
 
-		assertEquals(0, actualPosition);
+		assertThat(actualPosition).isEqualTo(0);
 	}
 
 	/**
@@ -360,7 +361,7 @@ public class StringiTest
 
 		Integer actualPosition = Stringi.searchFirst(value, List.of('ж', ','));
 
-		assertEquals(4, actualPosition);
+		assertThat(actualPosition).isEqualTo(4);
 	}
 
 	/**
@@ -373,7 +374,7 @@ public class StringiTest
 
 		Integer actualPosition = Stringi.searchLast(value, List.of('.'));
 
-		assertEquals(46, actualPosition);
+		assertThat(actualPosition).isEqualTo(46);
 	}
 
 	/**
@@ -386,7 +387,7 @@ public class StringiTest
 
 		Integer actualPosition = Stringi.searchLast(value, List.of());
 
-		assertNull(actualPosition);
+		assertThat(actualPosition).isNull();
 	}
 
 	/**
@@ -399,7 +400,7 @@ public class StringiTest
 
 		Integer actualPosition = Stringi.searchLast(value, List.of('М'));
 
-		assertEquals(0, actualPosition);
+		assertThat(actualPosition).isEqualTo(0);
 	}
 
 	/**
@@ -412,7 +413,7 @@ public class StringiTest
 
 		Integer actualPosition = Stringi.searchLast(value, List.of('ж', ','));
 
-		assertEquals(15, actualPosition);
+		assertThat(actualPosition).isEqualTo(15);
 	}
 
 	/**
@@ -425,7 +426,7 @@ public class StringiTest
 
 		Integer actualPosition = Stringi.searchFirstLetter(value);
 
-		assertEquals(1, actualPosition);
+		assertThat(actualPosition).isEqualTo(1);
 	}
 
 	/**
@@ -438,7 +439,7 @@ public class StringiTest
 
 		Integer actualPosition = Stringi.searchLastLetter(value);
 
-		assertEquals(6, actualPosition);
+		assertThat(actualPosition).isEqualTo(6);
 	}
 
 	/**
@@ -451,7 +452,7 @@ public class StringiTest
 
 		String actualString = Stringi.repeatToLength(value, 15);
 
-		assertEquals("Без десятиБез д", actualString);
+		assertThat(actualString).isEqualTo("Без десятиБез д");
 	}
 
 	/**
@@ -462,7 +463,7 @@ public class StringiTest
 	{
 		String value = "Без десяти";
 
-		assertThrows(IllegalArgumentException.class, () -> {
+		assertThatExceptionOfType(IllegalArgumentException.class).isThrownBy(() -> {
 			Stringi.repeatToLength(value, -1);
 		});
 	}
@@ -477,7 +478,7 @@ public class StringiTest
 
 		String actualString = Stringi.repeatToLength(value, 0);
 
-		assertEquals("", actualString);
+		assertThat(actualString).isEmpty();
 	}
 
 	/**
@@ -490,7 +491,7 @@ public class StringiTest
 
 		String actualString = Stringi.shuffle(value);
 
-		assertNotEquals("Когда твоя девушка больна", actualString);
+		assertThat(actualString).isNotEqualTo("Когда твоя девушка больна");
 	}
 
 	/**
@@ -503,7 +504,7 @@ public class StringiTest
 
 		String actualString = Stringi.shuffle(value);
 
-		assertEquals("", actualString);
+		assertThat(actualString).isEmpty();
 	}
 
 	/**
@@ -517,7 +518,7 @@ public class StringiTest
 
 		String actualString = Stringi.shuffle(value);
 
-		assertEquals("Когда твоя девушка больна".length(), actualString.length());
+		assertThat(actualString).hasSize("Когда твоя девушка больна".length());
 	}
 
 	/**
@@ -530,7 +531,7 @@ public class StringiTest
 
 		String actualString = Stringi.reverse(value);
 
-		assertEquals("шылаМ", actualString);
+		assertThat(actualString).isEqualTo("шылаМ");
 	}
 
 	/**
@@ -543,7 +544,7 @@ public class StringiTest
 
 		String actualString = Stringi.reverse(value);
 
-		assertEquals("", actualString);
+		assertThat(actualString).isEmpty();
 	}
 
 	/**
@@ -554,9 +555,9 @@ public class StringiTest
 	{
 		String value = "";
 
-		Integer actualCount = Stringi.countVariousSymbols(value);
+		int actualCount = Stringi.countVariousSymbols(value);
 
-		assertEquals(0, actualCount);
+		assertThat(actualCount).isEqualTo(0);
 	}
 
 	/**
@@ -567,9 +568,9 @@ public class StringiTest
 	{
 		String value = "Я хочу быть кочегаром";
 
-		Integer actualCount = Stringi.countVariousSymbols(value);
+		int actualCount = Stringi.countVariousSymbols(value);
 
-		assertEquals(16, actualCount);
+		assertThat(actualCount).isEqualTo(16);
 	}
 
 	/**
@@ -580,9 +581,9 @@ public class StringiTest
 	{
 		String value = "Я хочу быть кочегаром\n";
 
-		Integer actualCount = Stringi.countVariousSymbols(value);
+		int actualCount = Stringi.countVariousSymbols(value);
 
-		assertEquals(17, actualCount);
+		assertThat(actualCount).isEqualTo(17);
 	}
 
 	/**
@@ -595,7 +596,7 @@ public class StringiTest
 
 		boolean actual = Stringi.isPalindrome(value);
 
-		assertTrue(actual);
+		assertThat(actual).isTrue();
 	}
 
 	/**
@@ -608,7 +609,7 @@ public class StringiTest
 
 		boolean actual = Stringi.isPalindrome(value);
 
-		assertFalse(actual);
+		assertThat(actual).isFalse();
 	}
 
 	/**
@@ -621,7 +622,7 @@ public class StringiTest
 
 		boolean actual = Stringi.isPalindromeIgnoreCase(value);
 
-		assertTrue(actual);
+		assertThat(actual).isTrue();
 	}
 
 	/**
@@ -634,7 +635,7 @@ public class StringiTest
 
 		boolean actual = Stringi.isPalindromeIgnoreCase(value);
 
-		assertFalse(actual);
+		assertThat(actual).isFalse();
 	}
 
 	/**
@@ -647,7 +648,7 @@ public class StringiTest
 
 		String actualString = Stringi.join(value);
 
-		assertEquals("Белый день", actualString);
+		assertThat(actualString).isEqualTo("Белый день");
 	}
 
 	/**
@@ -660,7 +661,7 @@ public class StringiTest
 
 		String actualString = Stringi.join(value, "|");
 
-		assertEquals("Белы|й д|ень", actualString);
+		assertThat(actualString).isEqualTo("Белы|й д|ень");
 	}
 
 	/**
@@ -676,7 +677,7 @@ public class StringiTest
 
 		String actualString = Stringi.join(values);
 
-		assertEquals("Белыйдень", actualString);
+		assertThat(actualString).isEqualTo("Белыйдень");
 	}
 
 	/**
@@ -689,7 +690,7 @@ public class StringiTest
 
 		String actualString = Stringi.join(value);
 
-		assertEquals("", actualString);
+		assertThat(actualString).isEmpty();
 	}
 
 	/**
@@ -702,7 +703,7 @@ public class StringiTest
 
 		String actualString = Stringi.join(value);
 
-		assertEquals("КИНО", actualString);
+		assertThat(actualString).isEqualTo("КИНО");
 	}
 
 	/**
@@ -715,7 +716,7 @@ public class StringiTest
 
 		String actualString = Stringi.join(value, "|");
 
-		assertEquals("К|И|Н|О", actualString);
+		assertThat(actualString).isEqualTo("К|И|Н|О");
 	}
 
 	/**
@@ -728,7 +729,7 @@ public class StringiTest
 
 		String actualString = Stringi.join(value);
 
-		assertEquals("KINO", actualString);
+		assertThat(actualString).isEqualTo("KINO");
 	}
 
 	/**
@@ -741,7 +742,7 @@ public class StringiTest
 
 		String actualString = Stringi.join(value);
 
-		assertEquals("", actualString);
+		assertThat(actualString).isEmpty();
 	}
 
 	/**
@@ -754,7 +755,7 @@ public class StringiTest
 
 		String actualString = Stringi.fillLeft(value, "#", 10);
 
-		assertEquals("######КИНО", actualString);
+		assertThat(actualString).isEqualTo("######КИНО");
 	}
 
 	/**
@@ -767,7 +768,7 @@ public class StringiTest
 
 		String actualString = Stringi.fillLeft(value, "#", 0);
 
-		assertEquals("КИНО", actualString);
+		assertThat(actualString).isEqualTo("КИНО");
 	}
 
 	/**
@@ -780,7 +781,7 @@ public class StringiTest
 
 		String actualString = Stringi.fillLeft(value, "", 10);
 
-		assertEquals("КИНО", actualString);
+		assertThat(actualString).isEqualTo("КИНО");
 	}
 
 	/**
@@ -793,7 +794,7 @@ public class StringiTest
 
 		String actualString = Stringi.fillLeft(value, "#", 10);
 
-		assertEquals("##########", actualString);
+		assertThat(actualString).isEqualTo("##########");
 	}
 
 	/**
@@ -804,7 +805,7 @@ public class StringiTest
 	{
 		String value = "КИНО";
 
-		assertThrows(IllegalArgumentException.class, () -> {
+		assertThatExceptionOfType(IllegalArgumentException.class).isThrownBy(() -> {
 			Stringi.fillLeft(value, "#", -1);
 		});
 	}
@@ -819,7 +820,7 @@ public class StringiTest
 
 		String actualString = Stringi.fill(value, "#", 10);
 
-		assertEquals("###КИНО###", actualString);
+		assertThat(actualString).isEqualTo("###КИНО###");
 	}
 
 	/**
@@ -832,7 +833,7 @@ public class StringiTest
 
 		String actualString = Stringi.fill(value, "#", 0);
 
-		assertEquals("КИНО", actualString);
+		assertThat(actualString).isEqualTo("КИНО");
 	}
 
 	/**
@@ -845,7 +846,7 @@ public class StringiTest
 
 		String actualString = Stringi.fill(value, "", 10);
 
-		assertEquals("КИНО", actualString);
+		assertThat(actualString).isEqualTo("КИНО");
 	}
 
 	/**
@@ -858,7 +859,7 @@ public class StringiTest
 
 		String actualString = Stringi.fill(value, "#", 10);
 
-		assertEquals("##########", actualString);
+		assertThat(actualString).isEqualTo("##########");
 	}
 
 	/**
@@ -869,7 +870,7 @@ public class StringiTest
 	{
 		String value = "КИНО";
 
-		assertThrows(IllegalArgumentException.class, () -> {
+		assertThatExceptionOfType(IllegalArgumentException.class).isThrownBy(() -> {
 			Stringi.fill(value, "#", -1);
 		});
 	}
@@ -884,7 +885,7 @@ public class StringiTest
 
 		String actualString = Stringi.fill(value, "#", 9);
 
-		assertEquals("##КИНО###", actualString);
+		assertThat(actualString).isEqualTo("##КИНО###");
 	}
 
 	/**
@@ -897,7 +898,7 @@ public class StringiTest
 
 		String actualString = Stringi.fillRight(value, "#", 10);
 
-		assertEquals("КИНО######", actualString);
+		assertThat(actualString).isEqualTo("КИНО######");
 	}
 
 	/**
@@ -910,7 +911,7 @@ public class StringiTest
 
 		String actualString = Stringi.fillRight(value, "#", 0);
 
-		assertEquals("КИНО", actualString);
+		assertThat(actualString).isEqualTo("КИНО");
 	}
 
 	/**
@@ -923,7 +924,7 @@ public class StringiTest
 
 		String actualString = Stringi.fillRight(value, "", 10);
 
-		assertEquals("КИНО", actualString);
+		assertThat(actualString).isEqualTo("КИНО");
 	}
 
 	/**
@@ -936,7 +937,7 @@ public class StringiTest
 
 		String actualString = Stringi.fillRight(value, "#", 10);
 
-		assertEquals("##########", actualString);
+		assertThat(actualString).isEqualTo("##########");
 	}
 
 	/**
@@ -947,7 +948,7 @@ public class StringiTest
 	{
 		String value = "КИНО";
 
-		assertThrows(IllegalArgumentException.class, () -> {
+		assertThatExceptionOfType(IllegalArgumentException.class).isThrownBy(() -> {
 			Stringi.fillRight(value, "#", -1);
 		});
 	}
@@ -965,7 +966,7 @@ public class StringiTest
 
 		List<Character> actualList = Stringi.toCharList(value);
 
-		assertEquals(expectedList, actualList);
+		assertThat(actualList).containsSequence(expectedList);
 	}
 
 	/**
@@ -979,7 +980,7 @@ public class StringiTest
 
 		List<Character> actualList = Stringi.toCharList(value);
 
-		assertEquals(expectedList, actualList);
+		assertThat(actualList).containsSequence(expectedList);
 	}
 
 	/**
@@ -995,7 +996,7 @@ public class StringiTest
 
 		Character[] actualArray = Stringi.toCharArray(value);
 
-		assertArrayEquals(expectedArray, actualArray);
+		assertThat(actualArray).containsSequence(expectedArray);
 	}
 
 	/**
@@ -1009,7 +1010,7 @@ public class StringiTest
 
 		Character[] actualArray = Stringi.toCharArray(value);
 
-		assertArrayEquals(expectedArray, actualArray);
+		assertThat(actualArray).containsSequence(expectedArray);
 	}
 
 	/**
@@ -1022,7 +1023,7 @@ public class StringiTest
 
 		String actualString = Stringi.glue(value);
 
-		assertEquals("AC/DC", actualString);
+		assertThat(actualString).isEqualTo("AC/DC");
 	}
 
 	/**
@@ -1035,7 +1036,7 @@ public class StringiTest
 
 		String actualString = Stringi.glue(value, ".");
 
-		assertEquals("T.N.T", actualString);
+		assertThat(actualString).isEqualTo("T.N.T");
 	}
 
 	/**
@@ -1053,7 +1054,7 @@ public class StringiTest
 
 		String actualString = Stringi.glue(value);
 
-		assertEquals("ACDC", actualString);
+		assertThat(actualString).isEqualTo("ACDC");
 	}
 	
 	/**
@@ -1066,7 +1067,7 @@ public class StringiTest
 
 		String actualString = Stringi.glue(value);
 
-		assertEquals("", actualString);
+		assertThat(actualString).isEmpty();
 	}
 	
 	/**
@@ -1079,7 +1080,7 @@ public class StringiTest
 
 		String actualString = Stringi.glue(value);
 
-		assertEquals("AC/DC", actualString);
+		assertThat(actualString).isEqualTo("AC/DC");
 	}
 
 	/**
@@ -1092,7 +1093,7 @@ public class StringiTest
 
 		String actualString = Stringi.glue(value, ".");
 
-		assertEquals("T.N.T", actualString);
+		assertThat(actualString).isEqualTo("T.N.T");
 	}
 
 	/**
@@ -1105,7 +1106,7 @@ public class StringiTest
 
 		String actualString = Stringi.glue(value);
 
-		assertEquals("TNT", actualString);
+		assertThat(actualString).isEqualTo("TNT");
 	}
 
 	/**
@@ -1118,6 +1119,6 @@ public class StringiTest
 
 		String actualString = Stringi.glue(value);
 
-		assertEquals("", actualString);
+		assertThat(actualString).isEmpty();
 	}
 }
