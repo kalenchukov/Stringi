@@ -1006,6 +1006,58 @@ public class StringiTest
 	}
 
 	/**
+	 * Проверка метода {@link Stringi#trimRight(String)}}.
+	 */
+	@Test
+	public void trimRight()
+	{
+		String value = "\t \nВидели ночь\n \t";
+
+		String actualString = Stringi.trimRight(value);
+
+		assertThat(actualString).isEqualTo("\t \nВидели ночь");
+	}
+
+	/**
+	 * Проверка метода {@link Stringi#trimRight(String)} с пустым значением.
+	 */
+	@Test
+	public void trimRightEmpty()
+	{
+		String value = "";
+
+		String actualString = Stringi.trimRight(value);
+
+		assertThat(actualString).isEmpty();
+	}
+
+	/**
+	 * Проверка метода {@link Stringi#trimRight(String)} только с символами пустого пространства.
+	 */
+	@Test
+	public void trimRightAllWhitespace()
+	{
+		String value = "\t\n \t\r";
+
+		String actualString = Stringi.trimRight(value);
+
+		assertThat(actualString).isEmpty();
+	}
+
+	/**
+	 * Проверка метода {@link Stringi#trimRight(String)} с отсутствием символов пустого пространства.
+	 */
+	@Test
+	public void trimRightNotWhitespace()
+	{
+		String value = "Видели ночь";
+
+		String actualString = Stringi.trimRight(value);
+
+		assertThat(actualString).isEqualTo("Видели ночь");
+	}
+
+	/**
 	 * Проверка метода {@link Stringi#toCharList(String)}.
 	 */
 	@Test

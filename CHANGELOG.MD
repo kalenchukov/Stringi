@@ -3,6 +3,7 @@
 ### Добавлено
 * Добавлен модуль assertj-core версии 3.24.2.
 * Добавлен метод Stringi.trimLeft(String).
+* Добавлен метод Stringi.trimRight(String).
 
 ### Изменено
 *

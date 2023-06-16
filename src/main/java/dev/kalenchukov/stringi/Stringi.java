@@ -717,6 +717,31 @@ public class Stringi
 	}
 
 	/**
+	 * Выполняет удаление символов пустого пространства в строке справа.
+	 *
+	 * @param string строка.
+	 * @return исходную строку, с удалёнными символами пустого пространства справа.
+	 */
+	@NotNull
+	public static String trimRight(@NotNull final String string)
+	{
+		Objects.requireNonNull(string);
+
+		final StringBuilder newString = new StringBuilder(string);
+		int trimLength = string.length();
+
+		for (int index = string.length() - 1; index >= 0; index--) {
+			if (!Character.isWhitespace(newString.charAt(index))) {
+				break;
+			}
+
+			trimLength--;
+		}
+
+		return newString.delete(trimLength, string.length()).toString();
+	}
+
+	/**
 	 * Возвращает коллекцию из символов строки.
 	 *
 	 * @param string строка.
