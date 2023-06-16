@@ -692,6 +692,31 @@ public class Stringi
 	}
 
 	/**
+	 * Выполняет удаление символов пустого пространства в строке слева.
+	 *
+	 * @param string строка.
+	 * @return исходную строку, с удалёнными символами пустого пространства слева.
+	 */
+	@NotNull
+	public static String trimLeft(@NotNull final String string)
+	{
+		Objects.requireNonNull(string);
+
+		final StringBuilder newString = new StringBuilder(string);
+		int trimLength = 0;
+
+		for (int index = 0; index < string.length(); index++) {
+			if (!Character.isWhitespace(newString.charAt(index))) {
+				break;
+			}
+
+			trimLength++;
+		}
+
+		return newString.delete(0, trimLength).toString();
+	}
+
+	/**
 	 * Возвращает коллекцию из символов строки.
 	 *
 	 * @param string строка.
@@ -699,7 +724,7 @@ public class Stringi
 	 */
 	@Unmodifiable
 	@NotNull
-	public static  List<Character> toCharList(@NotNull final String string)
+	public static List<Character> toCharList(@NotNull final String string)
 	{
 		Objects.requireNonNull(string);
 

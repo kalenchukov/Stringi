@@ -954,6 +954,58 @@ public class StringiTest
 	}
 
 	/**
+	 * Проверка метода {@link Stringi#trimLeft(String)}}.
+	 */
+	@Test
+	public void trimLeft()
+	{
+		String value = "\t \nВидели ночь\n \t";
+
+		String actualString = Stringi.trimLeft(value);
+
+		assertThat(actualString).isEqualTo("Видели ночь\n \t");
+	}
+
+	/**
+	 * Проверка метода {@link Stringi#trimLeft(String)} с пустым значением.
+	 */
+	@Test
+	public void trimLeftEmpty()
+	{
+		String value = "";
+
+		String actualString = Stringi.trimLeft(value);
+
+		assertThat(actualString).isEmpty();
+	}
+
+	/**
+	 * Проверка метода {@link Stringi#trimLeft(String)} только с символами пустого пространства.
+	 */
+	@Test
+	public void trimLeftAllWhitespace()
+	{
+		String value = "\t\n \t\r";
+
+		String actualString = Stringi.trimLeft(value);
+
+		assertThat(actualString).isEmpty();
+	}
+
+	/**
+	 * Проверка метода {@link Stringi#trimLeft(String)} с отсутствием символов пустого пространства.
+	 */
+	@Test
+	public void trimLeftNotWhitespace()
+	{
+		String value = "Видели ночь";
+
+		String actualString = Stringi.trimLeft(value);
+
+		assertThat(actualString).isEqualTo("Видели ночь");
+	}
+
+	/**
 	 * Проверка метода {@link Stringi#toCharList(String)}.
 	 */
 	@Test
