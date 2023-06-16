@@ -225,7 +225,7 @@ true
 
 #### Возвращает коллекцию из символов строки
 ```java
-Stringi.toCharList();
+Stringi.toCharList("Walk all over you");
 ```
 
 Результат выполнения:
@@ -237,7 +237,7 @@ Stringi.toCharList();
 
 #### Возвращает массив из символов строки
 ```java
-Stringi.toCharArray();
+Stringi.toCharArray("Walk all over you");
 ```
 
 Результат выполнения:
