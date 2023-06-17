@@ -24,6 +24,7 @@
 
 package dev.kalenchukov.stringi;
 
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -40,1189 +41,1593 @@ import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 public class StringiTest
 {
 	/**
-	 * Проверка метода {@link Stringi#firstToLowerCase(String)}.
-	 */
-	@Test
-	public void firstToLowerCase()
-	{
-		String value = "ПРИВЕТ";
+	 * Класс проверки метода {@link Stringi#firstToLowerCase(String)}.
+	 *
+	 * @author Алексей Каленчуков
+	 */
+	@Nested
+	public class FirstToLowerCase
+	{
+		/**
+		 * Проверка метода {@link Stringi#firstToLowerCase(String)}.
+		 */
+		@Test
+		public void firstToLowerCase()
+		{
+			String value = "ПРИВЕТ";
+
+			String actualString = Stringi.firstToLowerCase(value);
+
+			assertThat(actualString).isEqualTo("пРИВЕТ");
+		}
+
+		/**
+		 * Проверка метода {@link Stringi#firstToLowerCase(String)} с пустым значением.
+		 */
+		@Test
+		public void firstToLowerCaseEmpty()
+		{
+			String value = "";
 
-		String actualString = Stringi.firstToLowerCase(value);
+			String actualString = Stringi.firstToLowerCase(value);
 
-		assertThat(actualString).isEqualTo("пРИВЕТ");
-	}
+			assertThat(actualString).isEmpty();
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#firstToLowerCase(String)} с пустым значением.
-	 */
-	@Test
-	public void firstToLowerCaseEmpty()
-	{
-		String value = "";
+		/**
+		 * Проверка метода {@link Stringi#firstToLowerCase(String)} с одной буквой в значении.
+		 */
+		@Test
+		public void firstToLowerCaseOneChar()
+		{
+			String value = "П";
 
-		String actualString = Stringi.firstToLowerCase(value);
+			String actualString = Stringi.firstToLowerCase(value);
 
-		assertThat(actualString).isEmpty();
-	}
+			assertThat(actualString).isEqualTo("п");
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#firstToLowerCase(String)} с одной буквой в значении.
-	 */
-	@Test
-	public void firstToLowerCaseOneChar()
-	{
-		String value = "П";
+		/**
+		 * Проверка метода {@link Stringi#firstToLowerCase(String)} если первый символ значения не буква.
+		 */
+		@Test
+		public void firstToLowerCaseFirstNotChar()
+		{
+			String value = "_ПРИВЕТ";
 
-		String actualString = Stringi.firstToLowerCase(value);
+			String actualString = Stringi.firstToLowerCase(value);
 
-		assertThat(actualString).isEqualTo("п");
+			assertThat(actualString).isEqualTo("_ПРИВЕТ");
+		}
 	}
 
 	/**
-	 * Проверка метода {@link Stringi#firstToLowerCase(String)} если первый символ значения не буква.
+	 * Класс проверки метода {@link Stringi#firstToUpperCase(String)}.
+	 *
+	 * @author Алексей Каленчуков
 	 */
-	@Test
-	public void firstToLowerCaseFirstNotChar()
+	@Nested
+	public class FirstToUpperCase
 	{
-		String value = "_ПРИВЕТ";
+		/**
+		 * Проверка метода {@link Stringi#firstToUpperCase(String)}.
+		 */
+		@Test
+		public void firstToUpperCase()
+		{
+			String value = "привет";
+
+			String actualString = Stringi.firstToUpperCase(value);
+
+			assertThat(actualString).isEqualTo("Привет");
+		}
 
-		String actualString = Stringi.firstToLowerCase(value);
+		/**
+		 * Проверка метода {@link Stringi#firstToUpperCase(String)} с пустым значением.
+		 */
+		@Test
+		public void firstToUpperCaseEmpty()
+		{
+			String value = "";
+
+			String actualString = Stringi.firstToUpperCase(value);
+
+			assertThat(actualString).isEmpty();
+		}
+
+		/**
+		 * Проверка метода {@link Stringi#firstToUpperCase(String)} с одной буквой в значении.
+		 */
+		@Test
+		public void firstToUpperCaseOneChar()
+		{
+			String value = "п";
 
-		assertThat(actualString).isEqualTo("_ПРИВЕТ");
-	}
+			String actualString = Stringi.firstToUpperCase(value);
 
-	/**
-	 * Проверка метода {@link Stringi#firstToUpperCase(String)}.
-	 */
-	@Test
-	public void firstToUpperCase()
-	{
-		String value = "привет";
+			assertThat(actualString).isEqualTo("П");
+		}
+
+		/**
+		 * Проверка метода {@link Stringi#firstToUpperCase(String)} если первый символ значения не буква.
+		 */
+		@Test
+		public void firstToUpperCaseFirstNotChar()
+		{
+			String value = "_привет";
 
-		String actualString = Stringi.firstToUpperCase(value);
+			String actualString = Stringi.firstToUpperCase(value);
 
-		assertThat(actualString).isEqualTo("Привет");
+			assertThat(actualString).isEqualTo("_привет");
+		}
 	}
 
 	/**
-	 * Проверка метода {@link Stringi#firstToUpperCase(String)} с пустым значением.
+	 * Класс проверки метода {@link Stringi#firstLetterToUpperCase(String)}.
+	 *
+	 * @author Алексей Каленчуков
 	 */
-	@Test
-	public void firstToUpperCaseEmpty()
+	@Nested
+	public class FirstLetterToUpperCase
 	{
-		String value = "";
+		/**
+		 * Проверка метода {@link Stringi#firstLetterToUpperCase(String)}.
+		 */
+		@Test
+		public void firstLetterToUpperCase()
+		{
+			String value = "привет";
 
-		String actualString = Stringi.firstToUpperCase(value);
+			String actualString = Stringi.firstLetterToUpperCase(value);
 
-		assertThat(actualString).isEmpty();
-	}
+			assertThat(actualString).isEqualTo("Привет");
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#firstToUpperCase(String)} с одной буквой в значении.
-	 */
-	@Test
-	public void firstToUpperCaseOneChar()
-	{
-		String value = "п";
+		/**
+		 * Проверка метода {@link Stringi#firstLetterToUpperCase(String)} с пустым значением.
+		 */
+		@Test
+		public void firstLetterToUpperCaseEmpty()
+		{
+			String value = "";
 
-		String actualString = Stringi.firstToUpperCase(value);
+			String actualString = Stringi.firstLetterToUpperCase(value);
 
-		assertThat(actualString).isEqualTo("П");
-	}
+			assertThat(actualString).isEmpty();
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#firstToUpperCase(String)} если первый символ значения не буква.
-	 */
-	@Test
-	public void firstToUpperCaseFirstNotChar()
-	{
-		String value = "_привет";
+		/**
+		 * Проверка метода {@link Stringi#firstLetterToUpperCase(String)}с одной буквой в значении.
+		 */
+		@Test
+		public void firstLetterToUpperCaseOneChar()
+		{
+			String value = "п";
 
-		String actualString = Stringi.firstToUpperCase(value);
+			String actualString = Stringi.firstLetterToUpperCase(value);
 
-		assertThat(actualString).isEqualTo("_привет");
-	}
+			assertThat(actualString).isEqualTo("П");
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#firstLetterToUpperCase(String)}.
-	 */
-	@Test
-	public void firstLetterToUpperCase()
-	{
-		String value = "привет";
+		/**
+		 * Проверка метода {@link Stringi#firstLetterToUpperCase(String)} если первый символ значения не буква.
+		 */
+		@Test
+		public void firstLetterToUpperCaseFirstNotChar()
+		{
+			String value = "_-привет";
 
-		String actualString = Stringi.firstLetterToUpperCase(value);
+			String actualString = Stringi.firstLetterToUpperCase(value);
 
-		assertThat(actualString).isEqualTo("Привет");
-	}
+			assertThat(actualString).isEqualTo("_-Привет");
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#firstLetterToUpperCase(String)} с пустым значением.
-	 */
-	@Test
-	public void firstLetterToUpperCaseEmpty()
-	{
-		String value = "";
+		/**
+		 * Проверка метода {@link Stringi#firstLetterToUpperCase(String)} если в значении нет букв.
+		 */
+		@Test
+		public void firstLetterToUpperCaseNotChar()
+		{
+			String value = "_-/*-/-/*";
 
-		String actualString = Stringi.firstLetterToUpperCase(value);
+			String actualString = Stringi.firstLetterToUpperCase(value);
 
-		assertThat(actualString).isEmpty();
+			assertThat(actualString).isEqualTo("_-/*-/-/*");
+		}
 	}
 
 	/**
-	 * Проверка метода {@link Stringi#firstLetterToUpperCase(String)}с одной буквой в значении.
+	 * Класс проверки метода {@link Stringi#firstLetterToLowerCase(String)}.
+	 *
+	 * @author Алексей Каленчуков
 	 */
-	@Test
-	public void firstLetterToUpperCaseOneChar()
+	@Nested
+	public class FirstLetterToLowerCase
 	{
-		String value = "п";
+		/**
+		 * Проверка метода {@link Stringi#firstLetterToLowerCase(String)}.
+		 */
+		@Test
+		public void firstLetterToLowerCase()
+		{
+			String value = "ПРИВЕТ";
 
-		String actualString = Stringi.firstLetterToUpperCase(value);
+			String actualString = Stringi.firstLetterToLowerCase(value);
 
-		assertThat(actualString).isEqualTo("П");
-	}
+			assertThat(actualString).isEqualTo("пРИВЕТ");
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#firstLetterToUpperCase(String)} если первый символ значения не буква.
-	 */
-	@Test
-	public void firstLetterToUpperCaseFirstNotChar()
-	{
-		String value = "_-привет";
+		/**
+		 * Проверка метода {@link Stringi#firstLetterToLowerCase(String)} с пустым значением.
+		 */
+		@Test
+		public void firstLetterToLowerCaseEmpty()
+		{
+			String value = "";
 
-		String actualString = Stringi.firstLetterToUpperCase(value);
+			String actualString = Stringi.firstLetterToLowerCase(value);
 
-		assertThat(actualString).isEqualTo("_-Привет");
-	}
+			assertThat(actualString).isEmpty();
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#firstLetterToUpperCase(String)} если в значении нет букв.
-	 */
-	@Test
-	public void firstLetterToUpperCaseNotChar()
-	{
-		String value = "_-/*-/-/*";
+		/**
+		 * Проверка метода {@link Stringi#firstLetterToLowerCase(String)}с одной буквой в значении.
+		 */
+		@Test
+		public void firstLetterToLowerCaseOneChar()
+		{
+			String value = "П";
 
-		String actualString = Stringi.firstLetterToUpperCase(value);
+			String actualString = Stringi.firstLetterToLowerCase(value);
 
-		assertThat(actualString).isEqualTo("_-/*-/-/*");
-	}
+			assertThat(actualString).isEqualTo("п");
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#firstLetterToLowerCase(String)}.
-	 */
-	@Test
-	public void firstLetterToLowerCase()
-	{
-		String value = "ПРИВЕТ";
+		/**
+		 * Проверка метода {@link Stringi#firstLetterToLowerCase(String)} если первый символ значения не буква.
+		 */
+		@Test
+		public void firstLetterToLowerCaseFirstNotChar()
+		{
+			String value = "_-ПРИВЕТ";
 
-		String actualString = Stringi.firstLetterToLowerCase(value);
+			String actualString = Stringi.firstLetterToLowerCase(value);
 
-		assertThat(actualString).isEqualTo("пРИВЕТ");
-	}
+			assertThat(actualString).isEqualTo("_-пРИВЕТ");
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#firstLetterToLowerCase(String)} с пустым значением.
-	 */
-	@Test
-	public void firstLetterToLowerCaseEmpty()
-	{
-		String value = "";
+		/**
+		 * Проверка метода {@link Stringi#firstLetterToLowerCase(String)} если в значении нет букв.
+		 */
+		@Test
+		public void firstLetterToLowerCaseNotChar()
+		{
+			String value = "_-/*-/-/*";
 
-		String actualString = Stringi.firstLetterToLowerCase(value);
+			String actualString = Stringi.firstLetterToLowerCase(value);
 
-		assertThat(actualString).isEmpty();
+			assertThat(actualString).isEqualTo("_-/*-/-/*");
+		}
 	}
 
 	/**
-	 * Проверка метода {@link Stringi#firstLetterToLowerCase(String)}с одной буквой в значении.
+	 * Класс проверки метода {@link Stringi#searchFirst(String, List)}.
+	 *
+	 * @author Алексей Каленчуков
 	 */
-	@Test
-	public void firstLetterToLowerCaseOneChar()
+	@Nested
+	public class SearchFirstList
 	{
-		String value = "П";
+		/**
+		 * Проверка метода {@link Stringi#searchFirst(String, List)}.
+		 */
+		@Test
+		public void searchFirst()
+		{
+			String value = "Мама, мы все тяжело больны - песня группы Кино.";
 
-		String actualString = Stringi.firstLetterToLowerCase(value);
+			Integer actualPosition = Stringi.searchFirst(value, List.of('.'));
 
-		assertThat(actualString).isEqualTo("п");
-	}
+			assertThat(actualPosition).isEqualTo(46);
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#firstLetterToLowerCase(String)} если первый символ значения не буква.
-	 */
-	@Test
-	public void firstLetterToLowerCaseFirstNotChar()
-	{
-		String value = "_-ПРИВЕТ";
+		/**
+		 * Проверка метода {@link Stringi#searchFirst(String, List)} с пустым списком.
+		 */
+		@Test
+		public void searchFirstEmpty()
+		{
+			String value = "Мама, мы все тяжело больны - песня группы Кино.";
 
-		String actualString = Stringi.firstLetterToLowerCase(value);
+			Integer actualPosition = Stringi.searchFirst(value, List.of());
 
-		assertThat(actualString).isEqualTo("_-пРИВЕТ");
-	}
+			assertThat(actualPosition).isNull();
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#firstLetterToLowerCase(String)} если в значении нет букв.
-	 */
-	@Test
-	public void firstLetterToLowerCaseNotChar()
-	{
-		String value = "_-/*-/-/*";
+		/**
+		 * Проверка метода {@link Stringi#searchFirst(String, List)} с первым искомым символом в строке.
+		 */
+		@Test
+		public void searchFirstFirstLetter()
+		{
+			String value = "Мама, мы все тяжело больны - песня группы Кино.";
 
-		String actualString = Stringi.firstLetterToLowerCase(value);
+			Integer actualPosition = Stringi.searchFirst(value, List.of('М'));
 
-		assertThat(actualString).isEqualTo("_-/*-/-/*");
-	}
+			assertThat(actualPosition).isEqualTo(0);
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#reverseCase(String)}.
-	 */
-	@Test
-	public void reverseCase()
-	{
-		String value = "пРиВеТ";
+		/**
+		 * Проверка метода {@link Stringi#searchFirst(String, List)} с несколькими искомыми символами.
+		 */
+		@Test
+		public void searchFirstManyLetter()
+		{
+			String value = "Мама, мы все тяжело больны - песня группы Кино.";
 
-		String actualString = Stringi.reverseCase(value);
+			Integer actualPosition = Stringi.searchFirst(value, List.of('ж', ','));
 
-		assertThat(actualString).isEqualTo("ПрИвЕт");
+			assertThat(actualPosition).isEqualTo(4);
+		}
 	}
 
 	/**
-	 * Проверка метода {@link Stringi#searchFirst(String, Character)}.
+	 * Класс проверки метода {@link Stringi#searchFirst(String, Character)}.
+	 *
+	 * @author Алексей Каленчуков
 	 */
-	@Test
-	public void searchFirst()
+	@Nested
+	public class SearchFirstCharacter
 	{
-		String value = "Красно-жёлтые дни - песня группы Кино";
+		/**
+		 * Проверка метода {@link Stringi#searchFirst(String, Character)}.
+		 */
+		@Test
+		public void searchFirst()
+		{
+			String value = "Красно-жёлтые дни - песня группы Кино";
 
-		Integer actualPosition = Stringi.searchFirst(value, '-');
+			Integer actualPosition = Stringi.searchFirst(value, '-');
 
-		assertThat(actualPosition).isEqualTo(6);
-	}
+			assertThat(actualPosition).isEqualTo(6);
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#searchLast(String, Character)}.
-	 */
-	@Test
-	public void searchLast()
-	{
-		String value = "Красно-жёлтые дни - песня группы Кино";
+		/**
+		 * Проверка метода {@link Stringi#searchFirst(String, Character)} с отсутствием искомого символа.
+		 */
+		@Test
+		public void searchFirstNotSymbols()
+		{
+			String value = "Красно-жёлтые дни - песня группы Кино";
 
-		Integer actualPosition = Stringi.searchLast(value, '-');
+			Integer actualPosition = Stringi.searchFirst(value, ':');
 
-		assertThat(actualPosition).isEqualTo(18);
+			assertThat(actualPosition).isNull();
+		}
 	}
 
 	/**
-	 * Проверка метода {@link Stringi#searchFirst(String, List)}.
+	 * Класс проверки метода {@link Stringi#searchLast(String, List)}.
+	 *
+	 * @author Алексей Каленчуков
 	 */
-	@Test
-	public void searchFirstList()
+	@Nested
+	public class SearchLastList
 	{
-		String value = "Мама, мы все тяжело больны - песня группы Кино.";
+		/**
+		 * Проверка метода {@link Stringi#searchLast(String, List)}.
+		 */
+		@Test
+		public void searchLast()
+		{
+			String value = "Мама, мы все тяжело больны - песня группы Кино.";
 
-		Integer actualPosition = Stringi.searchFirst(value, List.of('.'));
+			Integer actualPosition = Stringi.searchLast(value, List.of('.'));
 
-		assertThat(actualPosition).isEqualTo(46);
-	}
+			assertThat(actualPosition).isEqualTo(46);
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#searchFirst(String, List)} с пустым списком.
-	 */
-	@Test
-	public void searchFirstListEmpty()
-	{
-		String value = "Мама, мы все тяжело больны - песня группы Кино.";
+		/**
+		 * Проверка метода {@link Stringi#searchLast(String, List)} с пустым списком.
+		 */
+		@Test
+		public void searchLastEmpty()
+		{
+			String value = "Мама, мы все тяжело больны - песня группы Кино.";
 
-		Integer actualPosition = Stringi.searchFirst(value, List.of());
+			Integer actualPosition = Stringi.searchLast(value, List.of());
 
-		assertThat(actualPosition).isNull();
-	}
+			assertThat(actualPosition).isNull();
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#searchFirst(String, List)} с первым искомым символом в строке.
-	 */
-	@Test
-	public void searchFirstListFirstLetter()
-	{
-		String value = "Мама, мы все тяжело больны - песня группы Кино.";
+		/**
+		 * Проверка метода {@link Stringi#searchLast(String, List)} с первым искомым символом в строке.
+		 */
+		@Test
+		public void searchLastFirstLetter()
+		{
+			String value = "Мама, мы все тяжело больны - песня группы Кино.";
 
-		Integer actualPosition = Stringi.searchFirst(value, List.of('М'));
+			Integer actualPosition = Stringi.searchLast(value, List.of('М'));
 
-		assertThat(actualPosition).isEqualTo(0);
-	}
+			assertThat(actualPosition).isEqualTo(0);
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#searchFirst(String, List)} с несколькими искомыми символами.
-	 */
-	@Test
-	public void searchFirstListManyLetter()
-	{
-		String value = "Мама, мы все тяжело больны - песня группы Кино.";
+		/**
+		 * Проверка метода {@link Stringi#searchLast(String, List)} с несколькими искомыми символами.
+		 */
+		@Test
+		public void searchLastManyLetter()
+		{
+			String value = "Мама, мы все тяжело больны - песня группы Кино.";
 
-		Integer actualPosition = Stringi.searchFirst(value, List.of('ж', ','));
+			Integer actualPosition = Stringi.searchLast(value, List.of('ж', ','));
 
-		assertThat(actualPosition).isEqualTo(4);
+			assertThat(actualPosition).isEqualTo(15);
+		}
 	}
 
 	/**
-	 * Проверка метода {@link Stringi#searchLast(String, List)}.
+	 * Класс проверки метода {@link Stringi#searchLast(String, Character)}.
+	 *
+	 * @author Алексей Каленчуков
 	 */
-	@Test
-	public void searchLastList()
+	@Nested
+	public class SearchLastCharacter
 	{
-		String value = "Мама, мы все тяжело больны - песня группы Кино.";
+		/**
+		 * Проверка метода {@link Stringi#searchLast(String, Character)}.
+		 */
+		@Test
+		public void searchLast()
+		{
+			String value = "Красно-жёлтые дни - песня группы Кино";
 
-		Integer actualPosition = Stringi.searchLast(value, List.of('.'));
+			Integer actualPosition = Stringi.searchLast(value, '-');
 
-		assertThat(actualPosition).isEqualTo(46);
+			assertThat(actualPosition).isEqualTo(18);
+		}
+		/**
+		 * Проверка метода {@link Stringi#searchLast(String, Character)} с отсутствием искомого символа.
+		 */
+		@Test
+		public void searchLastNotSymbols()
+		{
+			String value = "Красно-жёлтые дни - песня группы Кино";
+
+			Integer actualPosition = Stringi.searchLast(value, ':');
+
+			assertThat(actualPosition).isNull();
+		}
 	}
 
 	/**
-	 * Проверка метода {@link Stringi#searchLast(String, List)} с пустым списком.
+	 * Класс проверки метода {@link Stringi#repeatToLength(String, Integer)}.
+	 *
+	 * @author Алексей Каленчуков
 	 */
-	@Test
-	public void searchLastListEmpty()
+	@Nested
+	public class RepeatToLength
 	{
-		String value = "Мама, мы все тяжело больны - песня группы Кино.";
+		/**
+		 * Проверка метода {@link Stringi#repeatToLength(String, Integer)}.
+		 */
+		@Test
+		public void repeatToLength()
+		{
+			String value = "Без десяти";
 
-		Integer actualPosition = Stringi.searchLast(value, List.of());
+			String actualString = Stringi.repeatToLength(value, 15);
 
-		assertThat(actualPosition).isNull();
-	}
+			assertThat(actualString).isEqualTo("Без десятиБез д");
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#searchLast(String, List)} с первым искомым символом в строке.
-	 */
-	@Test
-	public void searchLastListFirstLetter()
-	{
-		String value = "Мама, мы все тяжело больны - песня группы Кино.";
+		/**
+		 * Проверка метода {@link Stringi#repeatToLength(String, Integer)} с отрицательным значением.
+		 */
+		@Test
+		public void repeatToLengthLengthNegative()
+		{
+			String value = "Без десяти";
+
+			assertThatExceptionOfType(IllegalArgumentException.class).isThrownBy(() -> {
+				Stringi.repeatToLength(value, -1);
+			});
+		}
+
+		/**
+		 * Проверка метода {@link Stringi#repeatToLength(String, Integer)} с нулевым значением.
+		 */
+		@Test
+		public void repeatToLengthLengthZero()
+		{
+			String value = "Без десяти";
 
-		Integer actualPosition = Stringi.searchLast(value, List.of('М'));
+			String actualString = Stringi.repeatToLength(value, 0);
 
-		assertThat(actualPosition).isEqualTo(0);
+			assertThat(actualString).isEmpty();
+		}
 	}
 
 	/**
-	 * Проверка метода {@link Stringi#searchLast(String, List)} с несколькими искомыми символами.
+	 * Класс проверки метода {@link Stringi#shuffle(String)}.
+	 *
+	 * @author Алексей Каленчуков
 	 */
-	@Test
-	public void searchLastListManyLetter()
+	@Nested
+	public class Shuffle
 	{
-		String value = "Мама, мы все тяжело больны - песня группы Кино.";
+		/**
+		 * Проверка метода {@link Stringi#shuffle(String)}.
+		 */
+		@Test
+		public void shuffle()
+		{
+			String value = "Когда твоя девушка больна";
 
-		Integer actualPosition = Stringi.searchLast(value, List.of('ж', ','));
+			String actualString = Stringi.shuffle(value);
 
-		assertThat(actualPosition).isEqualTo(15);
-	}
+			assertThat(actualString).isNotEqualTo("Когда твоя девушка больна");
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#searchFirstLetter(String)}.
-	 */
-	@Test
-	public void searchFirstLetter()
-	{
-		String value = "+Когда твоя девушка больна+";
+		/**
+		 * Проверка метода {@link Stringi#shuffle(String)} с пустым значением.
+		 */
+		@Test
+		public void shuffleEmpty()
+		{
+			String value = "";
 
-		Integer actualPosition = Stringi.searchFirstLetter(value);
+			String actualString = Stringi.shuffle(value);
 
-		assertThat(actualPosition).isEqualTo(1);
-	}
+			assertThat(actualString).isEmpty();
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#searchLastLetter(String)}.
-	 */
-	@Test
-	public void searchLastLetter()
-	{
-		String value = "###Ночь###";
+		/**
+		 * Проверка метода {@link Stringi#shuffle(String)} по количеству символов в строке
+		 * после перемешивания символов в строке.
+		 */
+		@Test
+		public void shuffleEqualsLength()
+		{
+			String value = "Когда твоя девушка больна";
 
-		Integer actualPosition = Stringi.searchLastLetter(value);
+			String actualString = Stringi.shuffle(value);
 
-		assertThat(actualPosition).isEqualTo(6);
+			assertThat(actualString).hasSize("Когда твоя девушка больна".length());
+		}
 	}
 
 	/**
-	 * Проверка метода {@link Stringi#repeatToLength(String, Integer)}.
+	 * Класс проверки метода {@link Stringi#reverse(String)}.
+	 *
+	 * @author Алексей Каленчуков
 	 */
-	@Test
-	public void repeatToLength()
+	@Nested
+	public class Reverse
 	{
-		String value = "Без десяти";
+		/**
+		 * Проверка метода {@link Stringi#reverse(String)}.
+		 */
+		@Test
+		public void reverse()
+		{
+			String value = "Малыш";
 
-		String actualString = Stringi.repeatToLength(value, 15);
+			String actualString = Stringi.reverse(value);
 
-		assertThat(actualString).isEqualTo("Без десятиБез д");
-	}
+			assertThat(actualString).isEqualTo("шылаМ");
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#repeatToLength(String, Integer)} с отрицательным значением.
-	 */
-	@Test
-	public void repeatToLengthLengthNegative()
-	{
-		String value = "Без десяти";
+		/**
+		 * Проверка метода {@link Stringi#reverse(String)} с пустым значением.
+		 */
+		@Test
+		public void reverseEmpty()
+		{
+			String value = "";
 
-		assertThatExceptionOfType(IllegalArgumentException.class).isThrownBy(() -> {
-			Stringi.repeatToLength(value, -1);
-		});
+			String actualString = Stringi.reverse(value);
+
+			assertThat(actualString).isEmpty();
+		}
 	}
 
 	/**
-	 * Проверка метода {@link Stringi#repeatToLength(String, Integer)} с нулевым значением.
+	 * Класс проверки метода {@link Stringi#countVariousSymbols(String)}.
+	 *
+	 * @author Алексей Каленчуков
 	 */
-	@Test
-	public void repeatToLengthLengthZero()
+	@Nested
+	public class CountVariousSymbols
 	{
-		String value = "Без десяти";
+		/**
+		 * Проверка метода {@link Stringi#countVariousSymbols(String)} с пустым значением.
+		 */
+		@Test
+		public void countVariousSymbols()
+		{
+			String value = "Я хочу быть кочегаром";
 
-		String actualString = Stringi.repeatToLength(value, 0);
+			int actualCount = Stringi.countVariousSymbols(value);
 
-		assertThat(actualString).isEmpty();
-	}
+			assertThat(actualCount).isEqualTo(16);
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#shuffle(String)}.
-	 */
-	@Test
-	public void shuffle()
-	{
-		String value = "Когда твоя девушка больна";
+		/**
+		 * Проверка метода {@link Stringi#countVariousSymbols(String)} с пустым значением.
+		 */
+		@Test
+		public void countVariousSymbolsEmpty()
+		{
+			String value = "";
 
-		String actualString = Stringi.shuffle(value);
+			int actualCount = Stringi.countVariousSymbols(value);
 
-		assertThat(actualString).isNotEqualTo("Когда твоя девушка больна");
-	}
+			assertThat(actualCount).isEqualTo(0);
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#shuffle(String)} с пустым значением.
-	 */
-	@Test
-	public void shuffleEmpty()
-	{
-		String value = "";
+		/**
+		 * Проверка метода {@link Stringi#countVariousSymbols(String)} с переносом строки.
+		 */
+		@Test
+		public void countVariousSymbolsReturnLine()
+		{
+			String value = "Я хочу быть кочегаром\n";
 
-		String actualString = Stringi.shuffle(value);
+			int actualCount = Stringi.countVariousSymbols(value);
 
-		assertThat(actualString).isEmpty();
+			assertThat(actualCount).isEqualTo(17);
+		}
 	}
 
 	/**
-	 * Проверка метода {@link Stringi#shuffle(String)} по количеству символов в строке
-	 * после перемешивания символов в строке.
+	 * Класс проверки метода {@link Stringi#isPalindrome(String)}.
+	 *
+	 * @author Алексей Каленчуков
 	 */
-	@Test
-	public void shuffleEqualsLength()
+	@Nested
+	public class IsPalindrome
 	{
-		String value = "Когда твоя девушка больна";
+		/**
+		 * Проверка метода {@link Stringi#isPalindrome(String)}.
+		 */
+		@Test
+		public void isPalindrome()
+		{
+			String value = "ШАЛАШ";
 
-		String actualString = Stringi.shuffle(value);
+			boolean actual = Stringi.isPalindrome(value);
 
-		assertThat(actualString).hasSize("Когда твоя девушка больна".length());
-	}
+			assertThat(actual).isTrue();
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#reverse(String)}.
-	 */
-	@Test
-	public void reverse()
-	{
-		String value = "Малыш";
+		/**
+		 * Проверка метода {@link Stringi#isPalindrome(String)} с некорректным значением.
+		 */
+		@Test
+		public void isPalindromeNotCorrect()
+		{
+			String value = "МАЛЫШ";
 
-		String actualString = Stringi.reverse(value);
+			boolean actual = Stringi.isPalindrome(value);
 
-		assertThat(actualString).isEqualTo("шылаМ");
+			assertThat(actual).isFalse();
+		}
 	}
 
 	/**
-	 * Проверка метода {@link Stringi#reverse(String)} с пустым значением.
+	 * Класс проверки метода {@link Stringi#isPalindromeIgnoreCase(String)}.
+	 *
+	 * @author Алексей Каленчуков
 	 */
-	@Test
-	public void reverseEmpty()
+	@Nested
+	public class IsPalindromeIgnoreCase
 	{
-		String value = "";
+		/**
+		 * Проверка метода {@link Stringi#isPalindromeIgnoreCase(String)}.
+		 */
+		@Test
+		public void isPalindromeIgnoreCase()
+		{
+			String value = "Шалаш";
 
-		String actualString = Stringi.reverse(value);
+			boolean actual = Stringi.isPalindromeIgnoreCase(value);
 
-		assertThat(actualString).isEmpty();
-	}
+			assertThat(actual).isTrue();
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#countVariousSymbols(String)} с пустым значением.
-	 */
-	@Test
-	public void countVariousSymbolsEmpty()
-	{
-		String value = "";
+		/**
+		 * Проверка метода {@link Stringi#isPalindromeIgnoreCase(String)} с некорректным значением.
+		 */
+		@Test
+		public void isPalindromeIgnoreCaseNotCorrect()
+		{
+			String value = "Малыш";
 
-		int actualCount = Stringi.countVariousSymbols(value);
+			boolean actual = Stringi.isPalindromeIgnoreCase(value);
 
-		assertThat(actualCount).isEqualTo(0);
+			assertThat(actual).isFalse();
+		}
 	}
 
 	/**
-	 * Проверка метода {@link Stringi#countVariousSymbols(String)} с пустым значением.
+	 * Класс проверки метода {@link Stringi#join(List)}.
+	 *
+	 * @author Алексей Каленчуков
 	 */
-	@Test
-	public void countVariousSymbols()
+	@Nested
+	public class JoinList
 	{
-		String value = "Я хочу быть кочегаром";
+		/**
+		 * Проверка метода {@link Stringi#join(List)}.
+		 */
+		@Test
+		public void join()
+		{
+			List<String> value = List.of("Белы", "й д", "ень");
 
-		int actualCount = Stringi.countVariousSymbols(value);
+			String actualString = Stringi.join(value);
 
-		assertThat(actualCount).isEqualTo(16);
-	}
+			assertThat(actualString).isEqualTo("Белый день");
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#countVariousSymbols(String)} с переносом строки.
-	 */
-	@Test
-	public void countVariousSymbolsReturnLine()
-	{
-		String value = "Я хочу быть кочегаром\n";
+		/**
+		 * Проверка метода {@link Stringi#join(List)} со значением {@code null}.
+		 */
+		@Test
+		public void joinNull()
+		{
+			List<String> values = new ArrayList<>();
+			values.add("Белый");
+			values.add(null);
+			values.add("день");
 
-		int actualCount = Stringi.countVariousSymbols(value);
+			String actualString = Stringi.join(values);
 
-		assertThat(actualCount).isEqualTo(17);
-	}
+			assertThat(actualString).isEqualTo("Белыйдень");
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#isPalindrome(String)}.
-	 */
-	@Test
-	public void isPalindrome()
-	{
-		String value = "ШАЛАШ";
+		/**
+		 * Проверка метода {@link Stringi#join(List)} без значений.
+		 */
+		@Test
+		public void joinEmpty()
+		{
+			List<String> value = List.of();
 
-		boolean actual = Stringi.isPalindrome(value);
+			String actualString = Stringi.join(value);
 
-		assertThat(actual).isTrue();
+			assertThat(actualString).isEmpty();
+		}
 	}
 
 	/**
-	 * Проверка метода {@link Stringi#isPalindrome(String)} с некорректным значением.
+	 * Класс проверки метода {@link Stringi#join(List, String)}.
+	 *
+	 * @author Алексей Каленчуков
 	 */
-	@Test
-	public void isPalindromeNotCorrect()
+	@Nested
+	public class JoinListSeparator
 	{
-		String value = "МАЛЫШ";
+		/**
+		 * Проверка метода {@link Stringi#join(List, String)}.
+		 */
+		@Test
+		public void join()
+		{
+			List<String> value = List.of("Белы", "й д", "ень");
 
-		boolean actual = Stringi.isPalindrome(value);
+			String actualString = Stringi.join(value, "|");
 
-		assertThat(actual).isFalse();
-	}
+			assertThat(actualString).isEqualTo("Белы|й д|ень");
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#isPalindromeIgnoreCase(String)}.
-	 */
-	@Test
-	public void isPalindromeIgnoreCase()
-	{
-		String value = "Шалаш";
+		/**
+		 * Проверка метода {@link Stringi#join(List, String)} с пустым значением.
+		 */
+		@Test
+		public void joinEmpty()
+		{
+			List<String> value = List.of();
 
-		boolean actual = Stringi.isPalindromeIgnoreCase(value);
+			String actualString = Stringi.join(value, "|");
 
-		assertThat(actual).isTrue();
+			assertThat(actualString).isEmpty();
+		}
 	}
 
 	/**
-	 * Проверка метода {@link Stringi#isPalindromeIgnoreCase(String)} с некорректным значением.
+	 * Класс проверки метода {@link Stringi#join(String[])}.
+	 *
+	 * @author Алексей Каленчуков
 	 */
-	@Test
-	public void isPalindromeIgnoreCaseNotCorrect()
+	@Nested
+	public class JoinArrayString
 	{
-		String value = "Малыш";
+		/**
+		 * Проверка метода {@link Stringi#join(String[])}.
+		 */
+		@Test
+		public void join()
+		{
+			String[] value = new String[]{"К", "И", "Н", "О"};
 
-		boolean actual = Stringi.isPalindromeIgnoreCase(value);
+			String actualString = Stringi.join(value);
 
-		assertThat(actual).isFalse();
-	}
+			assertThat(actualString).isEqualTo("КИНО");
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#join(List)}.
-	 */
-	@Test
-	public void joinList()
-	{
-		List<String> value = List.of("Белы", "й д", "ень");
+		/**
+		 * Проверка метода {@link Stringi#join(String[])} со значением {@code null}.
+		 */
+		@Test
+		public void joinNull()
+		{
+			String[] value = new String[] {"K", "I", null, "N", "O"};
 
-		String actualString = Stringi.join(value);
+			String actualString = Stringi.join(value);
 
-		assertThat(actualString).isEqualTo("Белый день");
-	}
+			assertThat(actualString).isEqualTo("KINO");
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#join(List, String)}.
-	 */
-	@Test
-	public void joinListSeparator()
-	{
-		List<String> value = List.of("Белы", "й д", "ень");
+		/**
+		 * Проверка метода {@link Stringi#join(String[])} без значений.
+		 */
+		@Test
+		public void joinEmpty()
+		{
+			String[] value = new String[] {};
 
-		String actualString = Stringi.join(value, "|");
+			String actualString = Stringi.join(value);
 
-		assertThat(actualString).isEqualTo("Белы|й д|ень");
+			assertThat(actualString).isEmpty();
+		}
 	}
 
 	/**
-	 * Проверка метода {@link Stringi#join(List)} со значением {@code null}.
+	 * Класс проверки метода {@link Stringi#join(String[], String)}.
+	 *
+	 * @author Алексей Каленчуков
 	 */
-	@Test
-	public void joinListNull()
+	@Nested
+	public class JoinArraySeparator
 	{
-		List<String> values = new ArrayList<>();
-		values.add("Белый");
-		values.add(null);
-		values.add("день");
+		/**
+		 * Проверка метода {@link Stringi#join(String[], String)}.
+		 */
+		@Test
+		public void join()
+		{
+			String[] value = new String[]{"К", "И", "Н", "О"};
 
-		String actualString = Stringi.join(values);
+			String actualString = Stringi.join(value, "|");
 
-		assertThat(actualString).isEqualTo("Белыйдень");
-	}
+			assertThat(actualString).isEqualTo("К|И|Н|О");
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#join(List)} без значений.
-	 */
-	@Test
-	public void joinListEmpty()
-	{
-		List<String> value = List.of();
+		/**
+		 * Проверка метода {@link Stringi#join(String[], String)} с пустым значением.
+		 */
+		@Test
+		public void joinEmpty()
+		{
+			String[] value = new String[]{};
 
-		String actualString = Stringi.join(value);
+			String actualString = Stringi.join(value, "|");
 
-		assertThat(actualString).isEmpty();
+			assertThat(actualString).isEmpty();
+		}
 	}
 
 	/**
-	 * Проверка метода {@link Stringi#join(String[])}.
+	 * Класс проверки метода {@link Stringi#fillLeft(String, String, Integer)}.
+	 *
+	 * @author Алексей Каленчуков
 	 */
-	@Test
-	public void joinArray()
+	@Nested
+	public class FillLeft
 	{
-		String[] value = new String[] {"К", "И", "Н", "О"};
+		/**
+		 * Проверка метода {@link Stringi#fillLeft(String, String, Integer)}.
+		 */
+		@Test
+		public void fillLeft()
+		{
+			String value = "КИНО";
 
-		String actualString = Stringi.join(value);
+			String actualString = Stringi.fillLeft(value, "#", 10);
 
-		assertThat(actualString).isEqualTo("КИНО");
-	}
+			assertThat(actualString).isEqualTo("######КИНО");
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#join(String[], String)}.
-	 */
-	@Test
-	public void joinArraySeparator()
-	{
-		String[] value = new String[] {"К", "И", "Н", "О"};
+		/**
+		 * Проверка метода {@link Stringi#fillLeft(String, String, Integer)} с нулевым значением.
+		 */
+		@Test
+		public void fillLeftLengthZero()
+		{
+			String value = "КИНО";
 
-		String actualString = Stringi.join(value, "|");
+			String actualString = Stringi.fillLeft(value, "#", 0);
 
-		assertThat(actualString).isEqualTo("К|И|Н|О");
-	}
+			assertThat(actualString).isEqualTo("КИНО");
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#join(String[])} со значением {@code null}.
-	 */
-	@Test
-	public void joinArrayNull()
-	{
-		String[] value = new String[] {"K", "I", null, "N", "O"};
+		/**
+		 * Проверка метода {@link Stringi#fillLeft(String, String, Integer)} с пустым значением.
+		 */
+		@Test
+		public void fillLeftFillerEmpty()
+		{
+			String value = "КИНО";
 
-		String actualString = Stringi.join(value);
+			String actualString = Stringi.fillLeft(value, "", 10);
 
-		assertThat(actualString).isEqualTo("KINO");
-	}
+			assertThat(actualString).isEqualTo("КИНО");
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#join(String[])} без значений.
-	 */
-	@Test
-	public void joinArrayEmpty()
-	{
-		String[] value = new String[] {};
+		/**
+		 * Проверка метода {@link Stringi#fillLeft(String, String, Integer)} с пустым значением.
+		 */
+		@Test
+		public void fillLeftStringEmpty()
+		{
+			String value = "";
+
+			String actualString = Stringi.fillLeft(value, "#", 10);
+
+			assertThat(actualString).isEqualTo("##########");
+		}
 
-		String actualString = Stringi.join(value);
+		/**
+		 * Проверка метода {@link Stringi#fillLeft(String, String, Integer)} с отрицательным значением.
+		 */
+		@Test
+		public void fillLeftLengthNegative()
+		{
+			String value = "КИНО";
 
-		assertThat(actualString).isEmpty();
+			assertThatExceptionOfType(IllegalArgumentException.class).isThrownBy(() -> {
+				Stringi.fillLeft(value, "#", -1);
+			});
+		}
 	}
 
 	/**
-	 * Проверка метода {@link Stringi#fillLeft(String, String, Integer)}.
+	 * Класс проверки метода {@link Stringi#fill(String, String, Integer)}.
+	 *
+	 * @author Алексей Каленчуков
 	 */
-	@Test
-	public void fillLeft()
+	@Nested
+	public class Fill
 	{
-		String value = "КИНО";
+		/**
+		 * Проверка метода {@link Stringi#fill(String, String, Integer)}.
+		 */
+		@Test
+		public void fill()
+		{
+			String value = "КИНО";
 
-		String actualString = Stringi.fillLeft(value, "#", 10);
+			String actualString = Stringi.fill(value, "#", 10);
 
-		assertThat(actualString).isEqualTo("######КИНО");
-	}
+			assertThat(actualString).isEqualTo("###КИНО###");
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#fillLeft(String, String, Integer)} с нулевым значением.
-	 */
-	@Test
-	public void fillLeftLengthZero()
-	{
-		String value = "КИНО";
+		/**
+		 * Проверка метода {@link Stringi#fill(String, String, Integer)} нулевым значением.
+		 */
+		@Test
+		public void fillLengthZero()
+		{
+			String value = "КИНО";
 
-		String actualString = Stringi.fillLeft(value, "#", 0);
+			String actualString = Stringi.fill(value, "#", 0);
 
-		assertThat(actualString).isEqualTo("КИНО");
-	}
+			assertThat(actualString).isEqualTo("КИНО");
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#fillLeft(String, String, Integer)} с пустым значением.
-	 */
-	@Test
-	public void fillLeftFillerEmpty()
-	{
-		String value = "КИНО";
+		/**
+		 * Проверка метода {@link Stringi#fill(String, String, Integer)} с пустым значением.
+		 */
+		@Test
+		public void fillFillerEmpty()
+		{
+			String value = "КИНО";
 
-		String actualString = Stringi.fillLeft(value, "", 10);
+			String actualString = Stringi.fill(value, "", 10);
 
-		assertThat(actualString).isEqualTo("КИНО");
-	}
+			assertThat(actualString).isEqualTo("КИНО");
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#fillLeft(String, String, Integer)} с пустым значением.
-	 */
-	@Test
-	public void fillLeftStringEmpty()
-	{
-		String value = "";
+		/**
+		 * Проверка метода {@link Stringi#fill(String, String, Integer)} с пустым значением.
+		 */
+		@Test
+		public void fillStringEmpty()
+		{
+			String value = "";
 
-		String actualString = Stringi.fillLeft(value, "#", 10);
+			String actualString = Stringi.fill(value, "#", 10);
 
-		assertThat(actualString).isEqualTo("##########");
-	}
+			assertThat(actualString).isEqualTo("##########");
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#fillLeft(String, String, Integer)} с отрицательным значением.
-	 */
-	@Test
-	public void fillLeftLengthNegative()
-	{
-		String value = "КИНО";
+		/**
+		 * Проверка метода {@link Stringi#fill(String, String, Integer)} с отрицательным значением.
+		 */
+		@Test
+		public void fillLengthNegative()
+		{
+			String value = "КИНО";
 
-		assertThatExceptionOfType(IllegalArgumentException.class).isThrownBy(() -> {
-			Stringi.fillLeft(value, "#", -1);
-		});
-	}
+			assertThatExceptionOfType(IllegalArgumentException.class).isThrownBy(() -> {
+				Stringi.fill(value, "#", -1);
+			});
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#fill(String, String, Integer)}.
-	 */
-	@Test
-	public void fill()
-	{
-		String value = "КИНО";
+		/**
+		 * Проверка метода {@link Stringi#fill(String, String, Integer)} с нечётным значением.
+		 */
+		@Test
+		public void fillLengthUneven()
+		{
+			String value = "КИНО";
 
-		String actualString = Stringi.fill(value, "#", 10);
+			String actualString = Stringi.fill(value, "#", 9);
 
-		assertThat(actualString).isEqualTo("###КИНО###");
+			assertThat(actualString).isEqualTo("##КИНО###");
+		}
 	}
 
 	/**
-	 * Проверка метода {@link Stringi#fill(String, String, Integer)} нулевым значением.
+	 * Класс проверки метода {@link Stringi#fillRight(String, String, Integer)}.
+	 *
+	 * @author Алексей Каленчуков
 	 */
-	@Test
-	public void fillLengthZero()
+	@Nested
+	public class FillRight
 	{
-		String value = "КИНО";
+		/**
+		 * Проверка метода {@link Stringi#fillRight(String, String, Integer)}.
+		 */
+		@Test
+		public void fillRight()
+		{
+			String value = "КИНО";
 
-		String actualString = Stringi.fill(value, "#", 0);
+			String actualString = Stringi.fillRight(value, "#", 10);
 
-		assertThat(actualString).isEqualTo("КИНО");
-	}
+			assertThat(actualString).isEqualTo("КИНО######");
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#fill(String, String, Integer)} с пустым значением.
-	 */
-	@Test
-	public void fillFillerEmpty()
-	{
-		String value = "КИНО";
+		/**
+		 * Проверка метода {@link Stringi#fillRight(String, String, Integer)} с нулевым значением.
+		 */
+		@Test
+		public void fillRightLengthZero()
+		{
+			String value = "КИНО";
 
-		String actualString = Stringi.fill(value, "", 10);
+			String actualString = Stringi.fillRight(value, "#", 0);
 
-		assertThat(actualString).isEqualTo("КИНО");
-	}
+			assertThat(actualString).isEqualTo("КИНО");
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#fill(String, String, Integer)} с пустым значением.
-	 */
-	@Test
-	public void fillStringEmpty()
-	{
-		String value = "";
+		/**
+		 * Проверка метода {@link Stringi#fillRight(String, String, Integer)} с пустым значением.
+		 */
+		@Test
+		public void fillRightFillerEmpty()
+		{
+			String value = "КИНО";
 
-		String actualString = Stringi.fill(value, "#", 10);
+			String actualString = Stringi.fillRight(value, "", 10);
 
-		assertThat(actualString).isEqualTo("##########");
-	}
+			assertThat(actualString).isEqualTo("КИНО");
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#fill(String, String, Integer)} с отрицательным значением.
-	 */
-	@Test
-	public void fillLengthNegative()
-	{
-		String value = "КИНО";
+		/**
+		 * Проверка метода {@link Stringi#fillRight(String, String, Integer)} с пустым значением.
+		 */
+		@Test
+		public void fillRightStringEmpty()
+		{
+			String value = "";
 
-		assertThatExceptionOfType(IllegalArgumentException.class).isThrownBy(() -> {
-			Stringi.fill(value, "#", -1);
-		});
-	}
+			String actualString = Stringi.fillRight(value, "#", 10);
 
-	/**
-	 * Проверка метода {@link Stringi#fill(String, String, Integer)} с нечётным значением.
-	 */
-	@Test
-	public void fillLengthUneven()
-	{
-		String value = "КИНО";
+			assertThat(actualString).isEqualTo("##########");
+		}
 
-		String actualString = Stringi.fill(value, "#", 9);
+		/**
+		 * Проверка метода {@link Stringi#fillRight(String, String, Integer)} с отрицательным значением.
+		 */
+		@Test
+		public void fillRightLengthNegative()
+		{
+			String value = "КИНО";
 
-		assertThat(actualString).isEqualTo("##КИНО###");
+			assertThatExceptionOfType(IllegalArgumentException.class).isThrownBy(() -> {
+				Stringi.fillRight(value, "#", -1);
+			});
+		}
 	}
 
 	/**
-	 * Проверка метода {@link Stringi#fillRight(String, String, Integer)}.
+	 * Класс проверки метода {@link Stringi#trimLeft(String)}.
+	 *
+	 * @author Алексей Каленчуков
 	 */
-	@Test
-	public void fillRight()
+	@Nested
+	public class TrimLeft
 	{
-		String value = "КИНО";
+		/**
+		 * Проверка метода {@link Stringi#trimLeft(String)}}.
+		 */
+		@Test
+		public void trimLeft()
+		{
+			String value = "\t \nВидели ночь\n \t";
 
-		String actualString = Stringi.fillRight(value, "#", 10);
+			String actualString = Stringi.trimLeft(value);
 
-		assertThat(actualString).isEqualTo("КИНО######");
-	}
+			assertThat(actualString).isEqualTo("Видели ночь\n \t");
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#fillRight(String, String, Integer)} с нулевым значением.
-	 */
-	@Test
-	public void fillRightLengthZero()
-	{
-		String value = "КИНО";
+		/**
+		 * Проверка метода {@link Stringi#trimLeft(String)} с пустым значением.
+		 */
+		@Test
+		public void trimLeftEmpty()
+		{
+			String value = "";
 
-		String actualString = Stringi.fillRight(value, "#", 0);
+			String actualString = Stringi.trimLeft(value);
 
-		assertThat(actualString).isEqualTo("КИНО");
-	}
+			assertThat(actualString).isEmpty();
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#fillRight(String, String, Integer)} с пустым значением.
-	 */
-	@Test
-	public void fillRightFillerEmpty()
-	{
-		String value = "КИНО";
+		/**
+		 * Проверка метода {@link Stringi#trimLeft(String)} только с символами пустого пространства.
+		 */
+		@Test
+		public void trimLeftAllWhitespace()
+		{
+			String value = "\t\n \t\r";
 
-		String actualString = Stringi.fillRight(value, "", 10);
+			String actualString = Stringi.trimLeft(value);
 
-		assertThat(actualString).isEqualTo("КИНО");
-	}
+			assertThat(actualString).isEmpty();
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#fillRight(String, String, Integer)} с пустым значением.
-	 */
-	@Test
-	public void fillRightStringEmpty()
-	{
-		String value = "";
+		/**
+		 * Проверка метода {@link Stringi#trimLeft(String)} с отсутствием символов пустого пространства.
+		 */
+		@Test
+		public void trimLeftNotWhitespace()
+		{
+			String value = "Видели ночь";
 
-		String actualString = Stringi.fillRight(value, "#", 10);
+			String actualString = Stringi.trimLeft(value);
 
-		assertThat(actualString).isEqualTo("##########");
+			assertThat(actualString).isEqualTo("Видели ночь");
+		}
 	}
 
 	/**
-	 * Проверка метода {@link Stringi#fillRight(String, String, Integer)} с отрицательным значением.
+	 * Класс проверки метода {@link Stringi#trimRight(String)}.
+	 *
+	 * @author Алексей Каленчуков
 	 */
-	@Test
-	public void fillRightLengthNegative()
+	@Nested
+	public class TrimRight
 	{
-		String value = "КИНО";
+		/**
+		 * Проверка метода {@link Stringi#trimRight(String)}}.
+		 */
+		@Test
+		public void trimRight()
+		{
+			String value = "\t \nВидели ночь\n \t";
 
-		assertThatExceptionOfType(IllegalArgumentException.class).isThrownBy(() -> {
-			Stringi.fillRight(value, "#", -1);
-		});
-	}
+			String actualString = Stringi.trimRight(value);
 
-	/**
-	 * Проверка метода {@link Stringi#trimLeft(String)}}.
-	 */
-	@Test
-	public void trimLeft()
-	{
-		String value = "\t \nВидели ночь\n \t";
+			assertThat(actualString).isEqualTo("\t \nВидели ночь");
+		}
 
-		String actualString = Stringi.trimLeft(value);
+		/**
+		 * Проверка метода {@link Stringi#trimRight(String)} с пустым значением.
+		 */
+		@Test
+		public void trimRightEmpty()
+		{
+			String value = "";
 
-		assertThat(actualString).isEqualTo("Видели ночь\n \t");
-	}
+			String actualString = Stringi.trimRight(value);
 
-	/**
-	 * Проверка метода {@link Stringi#trimLeft(String)} с пустым значением.
-	 */
-	@Test
-	public void trimLeftEmpty()
-	{
-		String value = "";
+			assertThat(actualString).isEmpty();
+		}
 
-		String actualString = Stringi.trimLeft(value);
+		/**
+		 * Проверка метода {@link Stringi#trimRight(String)} только с символами пустого пространства.
+		 */
+		@Test
+		public void trimRightAllWhitespace()
+		{
+			String value = "\t\n \t\r";
 
-		assertThat(actualString).isEmpty();
-	}
+			String actualString = Stringi.trimRight(value);
 
-	/**
-	 * Проверка метода {@link Stringi#trimLeft(String)} только с символами пустого пространства.
-	 */
-	@Test
-	public void trimLeftAllWhitespace()
-	{
-		String value = "\t\n \t\r";
+			assertThat(actualString).isEmpty();
+		}
 
-		String actualString = Stringi.trimLeft(value);
+		/**
+		 * Проверка метода {@link Stringi#trimRight(String)} с отсутствием символов пустого пространства.
+		 */
+		@Test
+		public void trimRightNotWhitespace()
+		{
+			String value = "Видели ночь";
 
-		assertThat(actualString).isEmpty();
+			String actualString = Stringi.trimRight(value);
+
+			assertThat(actualString).isEqualTo("Видели ночь");
+		}
 	}
 
 	/**
-	 * Проверка метода {@link Stringi#trimLeft(String)} с отсутствием символов пустого пространства.
+	 * Класс проверки метода {@link Stringi#toCharList(String)}.
+	 *
+	 * @author Алексей Каленчуков
 	 */
-	@Test
-	public void trimLeftNotWhitespace()
+	@Nested
+	public class ToCharList
 	{
-		String value = "Видели ночь";
+		/**
+		 * Проверка метода {@link Stringi#toCharList(String)}.
+		 */
+		@Test
+		public void toCharList()
+		{
+			String value = "Walk all over you";
+			List<Character> expectedList = List.of(
+				'W', 'a', 'l', 'k', ' ', 'a', 'l', 'l', ' ', 'o', 'v', 'e', 'r', ' ', 'y', 'o', 'u'
+			);
 
-		String actualString = Stringi.trimLeft(value);
+			List<Character> actualList = Stringi.toCharList(value);
 
-		assertThat(actualString).isEqualTo("Видели ночь");
-	}
+			assertThat(actualList).containsSequence(expectedList);
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#trimRight(String)}}.
-	 */
-	@Test
-	public void trimRight()
-	{
-		String value = "\t \nВидели ночь\n \t";
+		/**
+		 * Проверка метода {@link Stringi#toCharList(String)}.
+		 */
+		@Test
+		public void toCharListEmpty()
+		{
+			String value = "";
+			List<Character> expectedList = List.of();
 
-		String actualString = Stringi.trimRight(value);
+			List<Character> actualList = Stringi.toCharList(value);
 
-		assertThat(actualString).isEqualTo("\t \nВидели ночь");
+			assertThat(actualList).containsSequence(expectedList);
+		}
 	}
 
 	/**
-	 * Проверка метода {@link Stringi#trimRight(String)} с пустым значением.
+	 * Класс проверки метода {@link Stringi#toCharArray(String)}.
+	 *
+	 * @author Алексей Каленчуков
 	 */
-	@Test
-	public void trimRightEmpty()
+	@Nested
+	public class ToCharArray
 	{
-		String value = "";
+		/**
+		 * Проверка метода {@link Stringi#toCharArray(String)}.
+		 */
+		@Test
+		public void toCharArray()
+		{
+			String value = "Walk all over you";
+			Character[] expectedArray = {
+				'W', 'a', 'l', 'k', ' ', 'a', 'l', 'l', ' ', 'o', 'v', 'e', 'r', ' ', 'y', 'o', 'u'
+			};
 
-		String actualString = Stringi.trimRight(value);
+			Character[] actualArray = Stringi.toCharArray(value);
 
-		assertThat(actualString).isEmpty();
-	}
+			assertThat(actualArray).containsSequence(expectedArray);
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#trimRight(String)} только с символами пустого пространства.
-	 */
-	@Test
-	public void trimRightAllWhitespace()
-	{
-		String value = "\t\n \t\r";
+		/**
+		 * Проверка метода {@link Stringi#toCharArray(String)} с пустым значением.
+		 */
+		@Test
+		public void toCharArrayEmpty()
+		{
+			String value = "";
+			Character[] expectedArray = {};
 
-		String actualString = Stringi.trimRight(value);
+			Character[] actualArray = Stringi.toCharArray(value);
 
-		assertThat(actualString).isEmpty();
+			assertThat(actualArray).containsSequence(expectedArray);
+		}
 	}
 
 	/**
-	 * Проверка метода {@link Stringi#trimRight(String)} с отсутствием символов пустого пространства.
+	 * Класс проверки метода {@link Stringi#glue(List)}.
+	 *
+	 * @author Алексей Каленчуков
 	 */
-	@Test
-	public void trimRightNotWhitespace()
+	@Nested
+	public class GlueList
 	{
-		String value = "Видели ночь";
+		/**
+		 * Проверка метода {@link Stringi#glue(List)}.
+		 */
+		@Test
+		public void glue()
+		{
+			List<Character> value = List.of('A', 'C', '/', 'D', 'C');
 
-		String actualString = Stringi.trimRight(value);
+			String actualString = Stringi.glue(value);
 
-		assertThat(actualString).isEqualTo("Видели ночь");
-	}
+			assertThat(actualString).isEqualTo("AC/DC");
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#toCharList(String)}.
-	 */
-	@Test
-	public void toCharList()
-	{
-		String value = "Walk all over you";
-		List<Character> expectedList = List.of(
-			'W', 'a', 'l', 'k', ' ', 'a', 'l', 'l', ' ', 'o', 'v', 'e', 'r', ' ', 'y', 'o', 'u'
-		);
+		/**
+		 * Проверка метода {@link Stringi#glue(List)} со значением {@code null}.
+		 */
+		@Test
+		public void glueNull()
+		{
+			List<Character> value = new ArrayList<>();
+			value.add('A');
+			value.add('C');
+			value.add(null);
+			value.add('D');
+			value.add('C');
 
-		List<Character> actualList = Stringi.toCharList(value);
+			String actualString = Stringi.glue(value);
 
-		assertThat(actualList).containsSequence(expectedList);
-	}
+			assertThat(actualString).isEqualTo("ACDC");
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#toCharList(String)}.
-	 */
-	@Test
-	public void toCharListEmpty()
-	{
-		String value = "";
-		List<Character> expectedList = List.of();
+		/**
+		 * Проверка метода {@link Stringi#glue(List)} без значений.
+		 */
+		@Test
+		public void glueEmpty()
+		{
+			List<Character> value = List.of();
 
-		List<Character> actualList = Stringi.toCharList(value);
+			String actualString = Stringi.glue(value);
 
-		assertThat(actualList).containsSequence(expectedList);
+			assertThat(actualString).isEmpty();
+		}
 	}
 
 	/**
-	 * Проверка метода {@link Stringi#toCharArray(String)}.
+	 * Класс проверки метода {@link Stringi#glue(List, String)}.
+	 *
+	 * @author Алексей Каленчуков
 	 */
-	@Test
-	public void toCharArray()
+	@Nested
+	public class GlueListSeparator
 	{
-		String value = "Walk all over you";
-		Character[] expectedArray = {
-			'W', 'a', 'l', 'k', ' ', 'a', 'l', 'l', ' ', 'o', 'v', 'e', 'r', ' ', 'y', 'o', 'u'
-		};
+		/**
+		 * Проверка метода {@link Stringi#glue(List, String)}.
+		 */
+		@Test
+		public void glue()
+		{
+			List<Character> value = List.of('T', 'N', 'T');
 
-		Character[] actualArray = Stringi.toCharArray(value);
+			String actualString = Stringi.glue(value, ".");
 
-		assertThat(actualArray).containsSequence(expectedArray);
-	}
+			assertThat(actualString).isEqualTo("T.N.T");
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#toCharArray(String)} с пустым значением.
-	 */
-	@Test
-	public void toCharArrayEmpty()
-	{
-		String value = "";
-		Character[] expectedArray = {};
+		/**
+		 * Проверка метода {@link Stringi#glue(List, String)} с пустым значением.
+		 */
+		@Test
+		public void glueEmpty()
+		{
+			List<Character> value = List.of();
 
-		Character[] actualArray = Stringi.toCharArray(value);
+			String actualString = Stringi.glue(value, ".");
 
-		assertThat(actualArray).containsSequence(expectedArray);
+			assertThat(actualString).isEmpty();
+		}
 	}
 
 	/**
-	 * Проверка метода {@link Stringi#glue(List)}.
+	 * Класс проверки метода {@link Stringi#glue(Character[])}.
+	 *
+	 * @author Алексей Каленчуков
 	 */
-	@Test
-	public void glueList()
+	@Nested
+	public class GlueArrayCharacter
 	{
-		List<Character> value = List.of('A', 'C', '/', 'D', 'C');
+		/**
+		 * Проверка метода {@link Stringi#glue(Character[])}.
+		 */
+		@Test
+		public void glue()
+		{
+			Character[] value = new Character[]{'A', 'C', '/', 'D', 'C'};
 
-		String actualString = Stringi.glue(value);
+			String actualString = Stringi.glue(value);
 
-		assertThat(actualString).isEqualTo("AC/DC");
-	}
+			assertThat(actualString).isEqualTo("AC/DC");
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#glue(List, String)}.
-	 */
-	@Test
-	public void glueListSeparator()
-	{
-		List<Character> value = List.of('T', 'N', 'T');
+		/**
+		 * Проверка метода {@link Stringi#glue(Character[])} со значением {@code null}.
+		 */
+		@Test
+		public void glueNull()
+		{
+			Character[] value = new Character[] {'T', null, 'N', 'T'};
 
-		String actualString = Stringi.glue(value, ".");
+			String actualString = Stringi.glue(value);
 
-		assertThat(actualString).isEqualTo("T.N.T");
-	}
+			assertThat(actualString).isEqualTo("TNT");
+		}
 
-	/**
-	 * Проверка метода {@link Stringi#glue(List)} со значением {@code null}.
-	 */
-	@Test
-	public void glueListNull()
-	{
-		List<Character> value = new ArrayList<>();
-		value.add('A');
-		value.add('C');
-		value.add(null);
-		value.add('D');
-		value.add('C');
+		/**
+		 * Проверка метода {@link Stringi#glue(Character[])} с пустым массивом.
+		 */
+		@Test
+		public void glueEmpty()
+		{
+			Character[] value = new Character[] {};
 
-		String actualString = Stringi.glue(value);
+			String actualString = Stringi.glue(value);
 
-		assertThat(actualString).isEqualTo("ACDC");
+			assertThat(actualString).isEmpty();
+		}
 	}
-	
+
 	/**
-	 * Проверка метода {@link Stringi#glue(List)} без значений.
+	 * Класс проверки метода {@link Stringi#glue(Character[], String)}.
+	 *
+	 * @author Алексей Каленчуков
 	 */
-	@Test
-	public void glueListEmpty()
+	@Nested
+	public class GlueArraySeparator
 	{
-		List<Character> value = List.of();
+		/**
+		 * Проверка метода {@link Stringi#glue(Character[], String)}.
+		 */
+		@Test
+		public void glue()
+		{
+			Character[] value = new Character[]{'T', 'N', 'T'};
 
-		String actualString = Stringi.glue(value);
+			String actualString = Stringi.glue(value, ".");
 
-		assertThat(actualString).isEmpty();
-	}
-	
-	/**
-	 * Проверка метода {@link Stringi#glue(Character[])}.
-	 */
-	@Test
-	public void glueArray()
-	{
-		Character[] value = new Character[] {'A', 'C', '/', 'D', 'C'};
+			assertThat(actualString).isEqualTo("T.N.T");
+		}
 
-		String actualString = Stringi.glue(value);
+		/**
+		 * Проверка метода {@link Stringi#glue(Character[], String)} с пустым значением.
+		 */
+		@Test
+		public void glueEmpty()
+		{
+			Character[] value = new Character[]{};
 
-		assertThat(actualString).isEqualTo("AC/DC");
+			String actualString = Stringi.glue(value, ".");
+
+			assertThat(actualString).isEmpty();
+		}
 	}
 
 	/**
-	 * Проверка метода {@link Stringi#glue(Character[], String)}.
+	 * Класс проверки метода {@link Stringi#searchFirstLetter(String)}.
+	 *
+	 * @author Алексей Каленчуков
 	 */
-	@Test
-	public void glueArraySeparator()
+	@Nested
+	public class SearchFirstLetter
 	{
-		Character[] value = new Character[] {'T', 'N', 'T'};
+		/**
+		 * Проверка метода {@link Stringi#searchFirstLetter(String)}.
+		 */
+		@Test
+		public void searchFirstLetter()
+		{
+			String value = "+Когда твоя девушка больна+";
+
+			Integer actualPosition = Stringi.searchFirstLetter(value);
 
-		String actualString = Stringi.glue(value, ".");
+			assertThat(actualPosition).isEqualTo(1);
+		}
 
-		assertThat(actualString).isEqualTo("T.N.T");
+		/**
+		 * Проверка метода {@link Stringi#searchFirstLetter(String)} с отсутствием букв.
+		 */
+		@Test
+		public void searchFirstLetterNotLetter()
+		{
+			String value = "+++++++++++++";
+
+			Integer actualPosition = Stringi.searchFirstLetter(value);
+
+			assertThat(actualPosition).isNull();
+		}
 	}
 
 	/**
-	 * Проверка метода {@link Stringi#glue(Character[])} со значением {@code null}.
+	 * Класс проверки метода {@link Stringi#searchLastLetter(String)}.
+	 *
+	 * @author Алексей Каленчуков
 	 */
-	@Test
-	public void glueArrayNull()
+	@Nested
+	public class SearchLastLetter
 	{
-		Character[] value = new Character[] {'T', null, 'N', 'T'};
+		/**
+		 * Проверка метода {@link Stringi#searchLastLetter(String)}.
+		 */
+		@Test
+		public void searchLastLetter()
+		{
+			String value = "###Ночь###";
+
+			Integer actualPosition = Stringi.searchLastLetter(value);
+
+			assertThat(actualPosition).isEqualTo(6);
+		}
 
-		String actualString = Stringi.glue(value);
+		/**
+		 * Проверка метода {@link Stringi#searchLastLetter(String)} с отсутствием букв.
+		 */
+		@Test
+		public void searchLastLetterNotLetter()
+		{
+			String value = "##############";
 
-		assertThat(actualString).isEqualTo("TNT");
+			Integer actualPosition = Stringi.searchLastLetter(value);
+
+			assertThat(actualPosition).isNull();
+		}
 	}
 
 	/**
-	 * Проверка метода {@link Stringi#glue(Character[])} без значений.
+	 * Класс проверки метода {@link Stringi#reverseCase(String)}.
+	 *
+	 * @author Алексей Каленчуков
 	 */
-	@Test
-	public void glueArrayEmpty()
+	@Nested
+	public class ReverseCase
 	{
-		Character[] value = new Character[] {};
+		/**
+		 * Проверка метода {@link Stringi#reverseCase(String)}.
+		 */
+		@Test
+		public void reverseCase()
+		{
+			String value = "пРиВеТ";
+
+			String actualString = Stringi.reverseCase(value);
+
+			assertThat(actualString).isEqualTo("ПрИвЕт");
+		}
+
+		/**
+		 * Проверка метода {@link Stringi#reverseCase(String)} с отсутствием букв.
+		 */
+		@Test
+		public void reverseCaseNotLetter()
+		{
+			String value = "56776843245";
 
-		String actualString = Stringi.glue(value);
+			String actualString = Stringi.reverseCase(value);
 
-		assertThat(actualString).isEmpty();
+			assertThat(actualString).isEqualTo("56776843245");
+		}
 	}
 }
