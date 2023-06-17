@@ -142,15 +142,13 @@ public class Stringi
 	{
 		Objects.requireNonNull(string);
 
-		final Character[] characters = Stringi.toCharArray(string);
 		final StringBuilder newString = new StringBuilder();
 
-		for (char character : characters)
+		for (char character : string.toCharArray())
 		{
 			if (Character.isLowerCase(character)) {
 				newString.append(Character.toUpperCase(character));
-			}
-			else {
+			} else {
 				newString.append(Character.toLowerCase(character));
 			}
 		}
@@ -195,7 +193,8 @@ public class Stringi
 	 *
 	 * @param string строка.
 	 * @param symbols коллекция искомых символов.
-	 * @return позицию первого вхождения одного из символов в строке или {@code null} если ни один из символов не найден.
+	 * @return позицию первого вхождения одного из символов в строке или {@code null} если
+	 * ни один из символов не найден.
 	 */
 	@Nullable
 	public static Integer searchFirst(@NotNull final String string, @NotNull final List<@NotNull Character> symbols)
@@ -211,10 +210,9 @@ public class Stringi
 			return null;
 		}
 
-		final Character[] characters = Stringi.toCharArray(string);
+		final char[] characters = string.toCharArray();
 
-		for (int position = 0; position < characters.length; position++)
-		{
+		for (int position = 0; position < characters.length; position++) {
 			if (symbols.contains(characters[position])) {
 				return position;
 			}
@@ -238,10 +236,9 @@ public class Stringi
 			return null;
 		}
 
-		final Character[] characters = Stringi.toCharArray(string);
+		final char[] characters = string.toCharArray();
 
-		for (int position = 0; position < characters.length; position++)
-		{
+		for (int position = 0; position < characters.length; position++) {
 			if (Character.isLetter(characters[position])) {
 				return position;
 			}
@@ -265,10 +262,9 @@ public class Stringi
 			return null;
 		}
 
-		final Character[] characters = Stringi.toCharArray(string);
+		final char[] characters = string.toCharArray();
 
-		for (int position = characters.length - 1; position >= 0; position--)
-		{
+		for (int position = characters.length - 1; position >= 0; position--) {
 			if (Character.isLetter(characters[position])) {
 				return position;
 			}
@@ -298,10 +294,9 @@ public class Stringi
 			return null;
 		}
 
-		final Character[] characters = Stringi.toCharArray(string);
+		final char[] characters = string.toCharArray();
 
-		for (int position = characters.length - 1; position >= 0; position--)
-		{
+		for (int position = characters.length - 1; position >= 0; position--) {
 			if (symbols.contains(characters[position])) {
 				return position;
 			}
@@ -335,7 +330,7 @@ public class Stringi
 
 		StringBuilder newString = new StringBuilder();
 
-		final Character[] characters = Stringi.toCharArray(string);
+		final char[] characters = string.toCharArray();
 		int indexCharacter = 0;
 		int needLength = length;
 
@@ -369,7 +364,7 @@ public class Stringi
 			return string;
 		}
 
-		Character[] characters = Stringi.toCharArray(string);
+		final Character[] characters = Stringi.toCharArray(string);
 		final int coefficient = (int) (characters.length * 2.5);
 		final Random random = new Random();
 
@@ -399,7 +394,7 @@ public class Stringi
 			return string;
 		}
 
-		Character[] characters = Stringi.toCharArray(string);
+		final Character[] characters = Stringi.toCharArray(string);
 
 		for (int iterationReverse = 0; iterationReverse < characters.length / 2; iterationReverse++)
 		{
@@ -425,7 +420,7 @@ public class Stringi
 
 		Set<Character> variousSymbols = new HashSet<>();
 
-		for (Character symbol : string.toCharArray()) {
+		for (char symbol : string.toCharArray()) {
 			variousSymbols.add(symbol);
 		}
 		
@@ -583,7 +578,7 @@ public class Stringi
 
 		boolean addSeparator = false;
 
-		StringBuilder newString = new StringBuilder();
+		final StringBuilder newString = new StringBuilder();
 
 		for (String string : strings)
 		{
