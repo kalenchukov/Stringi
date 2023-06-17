@@ -36,7 +36,7 @@ import java.util.*;
  *
  * @author Алексей Каленчуков
  */
-public class Stringi
+public final class Stringi
 {
 	/**
 	 * Конструктор для {@code Stringi}.
