@@ -125,7 +125,7 @@ Stringi.reverse("Малыш");
 
 #### Выполняет склеивание символов
 ```java
-Stringi.glue(new Character[] {'A', 'C', '/', 'D', 'C'});
+Stringi.glue(new char[] {'A', 'C', '/', 'D', 'C'});
 ```
 
 Результат выполнения:
@@ -135,7 +135,7 @@ AC/DC
 
 #### Выполняет склеивание символов с разделителем
 ```java
-Stringi.glue(new Character[] {'T', 'N', 'T'}, ".");
+Stringi.glue(new char[] {'T', 'N', 'T'}, ".");
 ```
 
 Результат выполнения:

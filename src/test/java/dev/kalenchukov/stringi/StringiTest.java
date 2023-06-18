@@ -372,7 +372,7 @@ public class StringiTest
 	}
 
 	/**
-	 * Класс проверки метода {@link Stringi#searchFirst(String, Character)}.
+	 * Класс проверки метода {@link Stringi#searchFirst(String, char)}.
 	 *
 	 * @author Алексей Каленчуков
 	 */
@@ -380,7 +380,7 @@ public class StringiTest
 	public class SearchFirstCharacter
 	{
 		/**
-		 * Проверка метода {@link Stringi#searchFirst(String, Character)}.
+		 * Проверка метода {@link Stringi#searchFirst(String, char)}.
 		 */
 		@Test
 		public void searchFirst()
@@ -393,7 +393,7 @@ public class StringiTest
 		}
 
 		/**
-		 * Проверка метода {@link Stringi#searchFirst(String, Character)} с отсутствием искомого символа.
+		 * Проверка метода {@link Stringi#searchFirst(String, char)} с отсутствием искомого символа.
 		 */
 		@Test
 		public void searchFirstNotSymbols()
@@ -468,7 +468,7 @@ public class StringiTest
 	}
 
 	/**
-	 * Класс проверки метода {@link Stringi#searchLast(String, Character)}.
+	 * Класс проверки метода {@link Stringi#searchLast(String, char)}.
 	 *
 	 * @author Алексей Каленчуков
 	 */
@@ -476,7 +476,7 @@ public class StringiTest
 	public class SearchLastCharacter
 	{
 		/**
-		 * Проверка метода {@link Stringi#searchLast(String, Character)}.
+		 * Проверка метода {@link Stringi#searchLast(String, char)}.
 		 */
 		@Test
 		public void searchLast()
@@ -488,7 +488,7 @@ public class StringiTest
 			assertThat(actualPosition).isEqualTo(18);
 		}
 		/**
-		 * Проверка метода {@link Stringi#searchLast(String, Character)} с отсутствием искомого символа.
+		 * Проверка метода {@link Stringi#searchLast(String, char)} с отсутствием искомого символа.
 		 */
 		@Test
 		public void searchLastNotSymbols()
@@ -502,7 +502,7 @@ public class StringiTest
 	}
 
 	/**
-	 * Класс проверки метода {@link Stringi#repeatToLength(String, Integer)}.
+	 * Класс проверки метода {@link Stringi#repeatToLength(String, int)}.
 	 *
 	 * @author Алексей Каленчуков
 	 */
@@ -510,7 +510,7 @@ public class StringiTest
 	public class RepeatToLength
 	{
 		/**
-		 * Проверка метода {@link Stringi#repeatToLength(String, Integer)}.
+		 * Проверка метода {@link Stringi#repeatToLength(String, int)}.
 		 */
 		@Test
 		public void repeatToLength()
@@ -523,7 +523,7 @@ public class StringiTest
 		}
 
 		/**
-		 * Проверка метода {@link Stringi#repeatToLength(String, Integer)} с отрицательным значением.
+		 * Проверка метода {@link Stringi#repeatToLength(String, int)} с отрицательным значением.
 		 */
 		@Test
 		public void repeatToLengthLengthNegative()
@@ -536,7 +536,7 @@ public class StringiTest
 		}
 
 		/**
-		 * Проверка метода {@link Stringi#repeatToLength(String, Integer)} с нулевым значением.
+		 * Проверка метода {@link Stringi#repeatToLength(String, int)} с нулевым значением.
 		 */
 		@Test
 		public void repeatToLengthLengthZero()
@@ -921,7 +921,7 @@ public class StringiTest
 	}
 
 	/**
-	 * Класс проверки метода {@link Stringi#fillLeft(String, String, Integer)}.
+	 * Класс проверки метода {@link Stringi#fillLeft(String, String, int)}.
 	 *
 	 * @author Алексей Каленчуков
 	 */
@@ -929,7 +929,7 @@ public class StringiTest
 	public class FillLeft
 	{
 		/**
-		 * Проверка метода {@link Stringi#fillLeft(String, String, Integer)}.
+		 * Проверка метода {@link Stringi#fillLeft(String, String, int)}.
 		 */
 		@Test
 		public void fillLeft()
@@ -942,7 +942,7 @@ public class StringiTest
 		}
 
 		/**
-		 * Проверка метода {@link Stringi#fillLeft(String, String, Integer)} с нулевым значением.
+		 * Проверка метода {@link Stringi#fillLeft(String, String, int)} с нулевым значением.
 		 */
 		@Test
 		public void fillLeftLengthZero()
@@ -955,7 +955,7 @@ public class StringiTest
 		}
 
 		/**
-		 * Проверка метода {@link Stringi#fillLeft(String, String, Integer)} с пустым значением.
+		 * Проверка метода {@link Stringi#fillLeft(String, String, int)} с пустым значением.
 		 */
 		@Test
 		public void fillLeftFillerEmpty()
@@ -968,7 +968,7 @@ public class StringiTest
 		}
 
 		/**
-		 * Проверка метода {@link Stringi#fillLeft(String, String, Integer)} с пустым значением.
+		 * Проверка метода {@link Stringi#fillLeft(String, String, int)} с пустым значением.
 		 */
 		@Test
 		public void fillLeftStringEmpty()
@@ -981,7 +981,7 @@ public class StringiTest
 		}
 
 		/**
-		 * Проверка метода {@link Stringi#fillLeft(String, String, Integer)} с отрицательным значением.
+		 * Проверка метода {@link Stringi#fillLeft(String, String, int)} с отрицательным значением.
 		 */
 		@Test
 		public void fillLeftLengthNegative()
@@ -995,7 +995,7 @@ public class StringiTest
 	}
 
 	/**
-	 * Класс проверки метода {@link Stringi#fill(String, String, Integer)}.
+	 * Класс проверки метода {@link Stringi#fill(String, String, int)}.
 	 *
 	 * @author Алексей Каленчуков
 	 */
@@ -1003,7 +1003,7 @@ public class StringiTest
 	public class Fill
 	{
 		/**
-		 * Проверка метода {@link Stringi#fill(String, String, Integer)}.
+		 * Проверка метода {@link Stringi#fill(String, String, int)}.
 		 */
 		@Test
 		public void fill()
@@ -1016,7 +1016,7 @@ public class StringiTest
 		}
 
 		/**
-		 * Проверка метода {@link Stringi#fill(String, String, Integer)} нулевым значением.
+		 * Проверка метода {@link Stringi#fill(String, String, int)} нулевым значением.
 		 */
 		@Test
 		public void fillLengthZero()
@@ -1029,7 +1029,7 @@ public class StringiTest
 		}
 
 		/**
-		 * Проверка метода {@link Stringi#fill(String, String, Integer)} с пустым значением.
+		 * Проверка метода {@link Stringi#fill(String, String, int)} с пустым значением.
 		 */
 		@Test
 		public void fillFillerEmpty()
@@ -1042,7 +1042,7 @@ public class StringiTest
 		}
 
 		/**
-		 * Проверка метода {@link Stringi#fill(String, String, Integer)} с пустым значением.
+		 * Проверка метода {@link Stringi#fill(String, String, int)} с пустым значением.
 		 */
 		@Test
 		public void fillStringEmpty()
@@ -1055,7 +1055,7 @@ public class StringiTest
 		}
 
 		/**
-		 * Проверка метода {@link Stringi#fill(String, String, Integer)} с отрицательным значением.
+		 * Проверка метода {@link Stringi#fill(String, String, int)} с отрицательным значением.
 		 */
 		@Test
 		public void fillLengthNegative()
@@ -1068,7 +1068,7 @@ public class StringiTest
 		}
 
 		/**
-		 * Проверка метода {@link Stringi#fill(String, String, Integer)} с нечётным значением.
+		 * Проверка метода {@link Stringi#fill(String, String, int)} с нечётным значением.
 		 */
 		@Test
 		public void fillLengthUneven()
@@ -1082,7 +1082,7 @@ public class StringiTest
 	}
 
 	/**
-	 * Класс проверки метода {@link Stringi#fillRight(String, String, Integer)}.
+	 * Класс проверки метода {@link Stringi#fillRight(String, String, int)}.
 	 *
 	 * @author Алексей Каленчуков
 	 */
@@ -1090,7 +1090,7 @@ public class StringiTest
 	public class FillRight
 	{
 		/**
-		 * Проверка метода {@link Stringi#fillRight(String, String, Integer)}.
+		 * Проверка метода {@link Stringi#fillRight(String, String, int)}.
 		 */
 		@Test
 		public void fillRight()
@@ -1103,7 +1103,7 @@ public class StringiTest
 		}
 
 		/**
-		 * Проверка метода {@link Stringi#fillRight(String, String, Integer)} с нулевым значением.
+		 * Проверка метода {@link Stringi#fillRight(String, String, int)} с нулевым значением.
 		 */
 		@Test
 		public void fillRightLengthZero()
@@ -1116,7 +1116,7 @@ public class StringiTest
 		}
 
 		/**
-		 * Проверка метода {@link Stringi#fillRight(String, String, Integer)} с пустым значением.
+		 * Проверка метода {@link Stringi#fillRight(String, String, int)} с пустым значением.
 		 */
 		@Test
 		public void fillRightFillerEmpty()
@@ -1129,7 +1129,7 @@ public class StringiTest
 		}
 
 		/**
-		 * Проверка метода {@link Stringi#fillRight(String, String, Integer)} с пустым значением.
+		 * Проверка метода {@link Stringi#fillRight(String, String, int)} с пустым значением.
 		 */
 		@Test
 		public void fillRightStringEmpty()
@@ -1142,7 +1142,7 @@ public class StringiTest
 		}
 
 		/**
-		 * Проверка метода {@link Stringi#fillRight(String, String, Integer)} с отрицательным значением.
+		 * Проверка метода {@link Stringi#fillRight(String, String, int)} с отрицательным значением.
 		 */
 		@Test
 		public void fillRightLengthNegative()

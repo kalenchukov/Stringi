@@ -26,7 +26,6 @@ package dev.kalenchukov.stringi;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.annotations.Range;
 import org.jetbrains.annotations.Unmodifiable;
 
 import java.util.*;
@@ -95,7 +94,7 @@ public final class Stringi
 		if (position != null)
 		{
 			StringBuilder newString = new StringBuilder();
-			newString.append(string.substring(0, position));
+			newString.append(string, 0, position);
 			newString.append(string.substring(position, position + 1).toUpperCase());
 			newString.append(string.substring(position + 1));
 
@@ -121,7 +120,7 @@ public final class Stringi
 		if (position != null)
 		{
 			StringBuilder newString = new StringBuilder();
-			newString.append(string.substring(0, position));
+			newString.append(string, 0, position);
 			newString.append(string.substring(position, position + 1).toLowerCase());
 			newString.append(string.substring(position + 1));
 
@@ -164,10 +163,9 @@ public final class Stringi
 	 * @return позицию первого вхождения символа в строке или {@code null} если символ не найден.
 	 */
 	@Nullable
-	public static Integer searchFirst(@NotNull final String string, @NotNull final Character symbol)
+	public static Integer searchFirst(@NotNull final String string, final char symbol)
 	{
 		Objects.requireNonNull(string);
-		Objects.requireNonNull(symbol);
 
 		return Stringi.searchFirst(string, List.of(symbol));
 	}
@@ -180,10 +178,9 @@ public final class Stringi
 	 * @return позицию последнего вхождения символа в строке или {@code null} если символ не найден.
 	 */
 	@Nullable
-	public static Integer searchLast(@NotNull final String string, @NotNull final Character symbol)
+	public static Integer searchLast(@NotNull final String string, final char symbol)
 	{
 		Objects.requireNonNull(string);
-		Objects.requireNonNull(symbol);
 
 		return Stringi.searchLast(string, List.of(symbol));
 	}
@@ -314,11 +311,9 @@ public final class Stringi
 	 * @throws IllegalArgumentException если {@code length} меньше нуля.
 	 */
 	@NotNull
-	public static String repeatToLength(@NotNull final String string,
-										@NotNull @Range(from = 0, to = Integer.MAX_VALUE) final Integer length)
+	public static String repeatToLength(@NotNull final String string, final int length)
 	{
 		Objects.requireNonNull(string);
-		Objects.requireNonNull(length);
 
 		if (length < 0) {
 			throw new IllegalArgumentException();
@@ -413,8 +408,7 @@ public final class Stringi
 	 * @param string строка.
 	 * @return количество разнообразных символов.
 	 */
-	@NotNull
-	public static Integer countVariousSymbols(@NotNull final String string)
+	public static int countVariousSymbols(@NotNull final String string)
 	{
 		Objects.requireNonNull(string);
 
@@ -423,7 +417,7 @@ public final class Stringi
 		for (char symbol : string.toCharArray()) {
 			variousSymbols.add(symbol);
 		}
-		
+
 		return variousSymbols.size();
 	}
 
@@ -488,8 +482,6 @@ public final class Stringi
 	@NotNull
 	public static String glue(@Nullable final Character @NotNull [] symbols)
 	{
-		Objects.requireNonNull(symbols);
-
 		return Stringi.glue(symbols, "");
 	}
 
@@ -501,8 +493,7 @@ public final class Stringi
 	 * @return строку из элементов массива.
 	 */
 	@NotNull
-	public static String glue(@Nullable final Character @NotNull [] symbols,
-							  @NotNull final String separator)
+	public static String glue(@Nullable final Character @NotNull [] symbols, @NotNull final String separator)
 	{
 		Objects.requireNonNull(symbols);
 		Objects.requireNonNull(separator);
@@ -609,12 +600,10 @@ public final class Stringi
 	 */
 	@NotNull
 	public static String fillLeft(@NotNull final String string,
-								  @NotNull final String filler,
-								  @NotNull @Range(from = 0, to = Integer.MAX_VALUE) final Integer length)
+								  @NotNull final String filler, final int length)
 	{
 		Objects.requireNonNull(string);
 		Objects.requireNonNull(filler);
-		Objects.requireNonNull(length);
 
 		if (length < 0) {
 			throw new IllegalArgumentException();
@@ -637,13 +626,10 @@ public final class Stringi
 	 * @throws IllegalArgumentException если {@code length} меньше нуля.
 	 */
 	@NotNull
-	public static String fill(@NotNull final String string,
-							  @NotNull final String filler,
-							  @NotNull @Range(from = 0, to = Integer.MAX_VALUE) final Integer length)
+	public static String fill(@NotNull final String string, @NotNull final String filler, final int length)
 	{
 		Objects.requireNonNull(string);
 		Objects.requireNonNull(filler);
-		Objects.requireNonNull(length);
 
 		if (length < 0) {
 			throw new IllegalArgumentException();
@@ -667,13 +653,10 @@ public final class Stringi
 	 * @throws IllegalArgumentException если {@code length} меньше нуля.
 	 */
 	@NotNull
-	public static String fillRight(@NotNull final String string,
-								   @NotNull final String filler,
-								   @NotNull @Range(from = 0, to = Integer.MAX_VALUE) final Integer length)
+	public static String fillRight(@NotNull final String string, @NotNull final String filler, final int length)
 	{
 		Objects.requireNonNull(string);
 		Objects.requireNonNull(filler);
-		Objects.requireNonNull(length);
 
 		if (length < 0) {
 			throw new IllegalArgumentException();
@@ -774,14 +757,8 @@ public final class Stringi
 	 * @throws IllegalArgumentException если {@code from} или {@code to} меньше нуля.
 	 * @throws IndexOutOfBoundsException если {@code from} или {@code to} больше размера массива.
 	 */
-	private static void swapValuesInArray(@Nullable final Character @NotNull [] array,
-										  @NotNull @Range(from = 0, to = Integer.MAX_VALUE) final Integer from,
-										  @NotNull @Range(from = 0, to = Integer.MAX_VALUE) final Integer in)
+	private static void swapValuesInArray(@Nullable final Character @NotNull [] array, final int from, final int in)
 	{
-		Objects.requireNonNull(array);
-		Objects.requireNonNull(from);
-		Objects.requireNonNull(in);
-
 		if (from < 0 || in < 0) {
 			throw new IllegalArgumentException();
 		}
