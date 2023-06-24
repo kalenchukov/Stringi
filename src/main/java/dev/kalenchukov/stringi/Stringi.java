@@ -160,7 +160,7 @@ public final class Stringi
 	 *
 	 * @param string строка.
 	 * @param symbol искомый символ.
-	 * @return позицию первого вхождения символа в строке или {@code null} если символ не найден.
+	 * @return позицию первого вхождения {@code symbol} в {@code string} или {@code null} если {@code symbol} не найден.
 	 */
 	@Nullable
 	public static Integer searchFirst(@NotNull final String string, final char symbol)
@@ -175,7 +175,7 @@ public final class Stringi
 	 *
 	 * @param string строка.
 	 * @param symbol искомый символ.
-	 * @return позицию последнего вхождения символа в строке или {@code null} если символ не найден.
+	 * @return позицию последнего вхождения {@code symbol} в {@code string} или {@code null} если {@code symbol} не найден.
 	 */
 	@Nullable
 	public static Integer searchLast(@NotNull final String string, final char symbol)
@@ -222,7 +222,7 @@ public final class Stringi
 	 * Выполняет поиск первой буквы в строке.
 	 *
 	 * @param string строка.
-	 * @return позицию первой буквы в строке или {@code null} если ни один из символов не найден.
+	 * @return позицию первой буквы в {@code string} или {@code null} если букв нет.
 	 */
 	@Nullable
 	public static Integer searchFirstLetter(@NotNull final String string)
@@ -248,7 +248,7 @@ public final class Stringi
 	 * Выполняет поиск последней буквы в строке.
 	 *
 	 * @param string строка.
-	 * @return позицию последней буквы в строке или {@code null} если ни один из символов не найден.
+	 * @return позицию последней буквы в {@code string} или {@code null} если букв нет.
 	 */
 	@Nullable
 	public static Integer searchLastLetter(@NotNull final String string)
@@ -275,7 +275,8 @@ public final class Stringi
 	 *
 	 * @param string строка.
 	 * @param symbols коллекция искомых символов.
-	 * @return позицию последнего вхождения одного из символов в строке или {@code null}, если ни один из символов не найден.
+	 * @return позицию последнего вхождения одного из {@code symbols} в {@code string} или {@code null},
+	 * если ни один из {@code symbols} не найден.
 	 */
 	@Nullable
 	public static Integer searchLast(@NotNull final String string, @NotNull final List<@NotNull Character> symbols)
@@ -425,7 +426,7 @@ public final class Stringi
 	 * Проверяет, является ли строка палиндромом.
 	 *
 	 * @param string строка.
-	 * @return {@code true}, если строка является палиндромом, иначе {@code False}.
+	 * @return {@code true}, если {@code string} является палиндромом, иначе {@code False}.
 	 */
 	public static boolean isPalindrome(@NotNull final String string)
 	{
@@ -436,7 +437,7 @@ public final class Stringi
 	 * Проверяет, является ли строка палиндромом без учёта регистра букв.
 	 *
 	 * @param string строка.
-	 * @return {@code true}, если строка является палиндромом, иначе {@code False}.
+	 * @return {@code true}, если {@code string} является палиндромом, иначе {@code False}.
 	 */
 	public static boolean isPalindromeIgnoreCase(@NotNull final String string)
 	{
