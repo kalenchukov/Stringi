@@ -33,7 +33,7 @@
 	<version>1.5.0</version>
 
 	<name>Stringi</name>
-	<description>Набор методов для работы со строками под шуточным названием "стринги"</description>
+	<description>Набор методов для работы со строками под шуточным названием «стринги»</description>
 	<url>https://github.com/kalenchukov/Stringi</url>
 
 	<licenses>
