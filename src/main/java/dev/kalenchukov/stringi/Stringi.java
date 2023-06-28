@@ -47,6 +47,7 @@ public final class Stringi
 	 *
 	 * @param string строка.
 	 * @return строку, в которой регистр первого символа преобразован в прописной.
+	 * @throws NullPointerException если в качестве {@code string} передан {@code null}.
 	 */
 	@NotNull
 	public static String firstToUpperCase(@NotNull final String string)
@@ -65,6 +66,7 @@ public final class Stringi
 	 *
 	 * @param string строка.
 	 * @return строку, в которой регистр первого символа преобразован в строчный.
+	 * @throws NullPointerException если в качестве {@code string} передан {@code null}.
 	 */
 	@NotNull
 	public static String firstToLowerCase(@NotNull final String string)
@@ -83,6 +85,7 @@ public final class Stringi
 	 *
 	 * @param string строка.
 	 * @return возвращает строку, в которой регистр первой буквы прописной.
+	 * @throws NullPointerException если в качестве {@code string} передан {@code null}.
 	 */
 	@NotNull
 	public static String firstLetterToUpperCase(@NotNull final String string)
@@ -109,6 +112,7 @@ public final class Stringi
 	 *
 	 * @param string строка.
 	 * @return возвращает строку, в которой регистр первой буквы строчный.
+	 * @throws NullPointerException если в качестве {@code string} передан {@code null}.
 	 */
 	@NotNull
 	public static String firstLetterToLowerCase(@NotNull final String string)
@@ -135,6 +139,7 @@ public final class Stringi
 	 *
 	 * @param string строка.
 	 * @return строку, в которой регистр букв преобразован в противоположный.
+	 * @throws NullPointerException если в качестве {@code string} передан {@code null}.
 	 */
 	@NotNull
 	public static String reverseCase(@NotNull final String string)
@@ -161,6 +166,7 @@ public final class Stringi
 	 * @param string строка.
 	 * @param symbol искомый символ.
 	 * @return позицию первого вхождения {@code symbol} в {@code string} или {@code null} если {@code symbol} не найден.
+	 * @throws NullPointerException если в качестве {@code string} передан {@code null}.
 	 */
 	@Nullable
 	public static Integer searchFirst(@NotNull final String string, final char symbol)
@@ -176,6 +182,7 @@ public final class Stringi
 	 * @param string строка.
 	 * @param symbol искомый символ.
 	 * @return позицию последнего вхождения {@code symbol} в {@code string} или {@code null} если {@code symbol} не найден.
+	 * @throws NullPointerException если в качестве {@code string} передан {@code null}.
 	 */
 	@Nullable
 	public static Integer searchLast(@NotNull final String string, final char symbol)
@@ -191,7 +198,9 @@ public final class Stringi
 	 * @param string строка.
 	 * @param symbols коллекция искомых символов.
 	 * @return позицию первого вхождения одного из символов в строке или {@code null} если
-	 * ни один из символов не найден.
+	 * ни один из символов из {@code symbols} не найден.
+	 * @throws NullPointerException если в качестве {@code string} передан {@code null}.
+	 * @throws NullPointerException если в качестве {@code symbols} передан {@code null}.
 	 */
 	@Nullable
 	public static Integer searchFirst(@NotNull final String string, @NotNull final List<@NotNull Character> symbols)
@@ -223,6 +232,7 @@ public final class Stringi
 	 *
 	 * @param string строка.
 	 * @return позицию первой буквы в {@code string} или {@code null} если букв нет.
+	 * @throws NullPointerException если в качестве {@code string} передан {@code null}.
 	 */
 	@Nullable
 	public static Integer searchFirstLetter(@NotNull final String string)
@@ -249,6 +259,7 @@ public final class Stringi
 	 *
 	 * @param string строка.
 	 * @return позицию последней буквы в {@code string} или {@code null} если букв нет.
+	 * @throws NullPointerException если в качестве {@code string} передан {@code null}.
 	 */
 	@Nullable
 	public static Integer searchLastLetter(@NotNull final String string)
@@ -277,6 +288,8 @@ public final class Stringi
 	 * @param symbols коллекция искомых символов.
 	 * @return позицию последнего вхождения одного из {@code symbols} в {@code string} или {@code null},
 	 * если ни один из {@code symbols} не найден.
+	 * @throws NullPointerException если в качестве {@code string} передан {@code null}.
+	 * @throws NullPointerException если в качестве {@code symbols} передан {@code null}.
 	 */
 	@Nullable
 	public static Integer searchLast(@NotNull final String string, @NotNull final List<@NotNull Character> symbols)
@@ -309,7 +322,8 @@ public final class Stringi
 	 * @param string строка.
 	 * @param length количество символов.
 	 * @return строку, повторенную до {@code length} символов.
-	 * @throws IllegalArgumentException если {@code length} меньше нуля.
+	 * @throws IllegalArgumentException если {@code length} меньше 0.
+	 * @throws NullPointerException если в качестве {@code string} передан {@code null}.
 	 */
 	@NotNull
 	public static String repeatToLength(@NotNull final String string, final int length)
@@ -350,6 +364,7 @@ public final class Stringi
 	 *
 	 * @param string строка.
 	 * @return строку, в которой порядок всех символов изменён случайным образом.
+	 * @throws NullPointerException если в качестве {@code string} передан {@code null}.
 	 */
 	@NotNull
 	public static String shuffle(@NotNull final String string)
@@ -380,6 +395,7 @@ public final class Stringi
 	 *
 	 * @param string строка.
 	 * @return строку, в которой все символы расположены в обратном порядке.
+	 * @throws NullPointerException если в качестве {@code string} передан {@code null}.
 	 */
 	@NotNull
 	public static String reverse(@NotNull final String string)
@@ -408,6 +424,7 @@ public final class Stringi
 	 *
 	 * @param string строка.
 	 * @return количество разнообразных символов.
+	 * @throws NullPointerException если в качестве {@code string} передан {@code null}.
 	 */
 	public static int countVariousSymbols(@NotNull final String string)
 	{
@@ -449,6 +466,7 @@ public final class Stringi
 	 *
 	 * @param symbols коллекция символов.
 	 * @return строку из элементов коллекции.
+	 * @throws NullPointerException если в качестве {@code symbols} передан {@code null}.
 	 */
 	@NotNull
 	public static String glue(@NotNull final List<@Nullable Character> symbols)
@@ -464,6 +482,8 @@ public final class Stringi
 	 * @param symbols коллекция символов.
 	 * @param separator разделитель.
 	 * @return строку из элементов коллекции.
+	 * @throws NullPointerException если в качестве {@code symbols} передан {@code null}.
+	 * @throws NullPointerException если в качестве {@code separator} передан {@code null}.
 	 */
 	@NotNull
 	public static String glue(@NotNull final List<@Nullable Character> symbols, @NotNull final String separator)
@@ -492,6 +512,8 @@ public final class Stringi
 	 * @param symbols массив символов.
 	 * @param separator разделитель символов.
 	 * @return строку из элементов массива.
+	 * @throws NullPointerException если в качестве {@code symbols} передан {@code null}.
+	 * @throws NullPointerException если в качестве {@code separator} передан {@code null}.
 	 */
 	@NotNull
 	public static String glue(@Nullable final Character @NotNull [] symbols, @NotNull final String separator)
@@ -512,6 +534,7 @@ public final class Stringi
 	 *
 	 * @param strings коллекция строк.
 	 * @return строку из элементов коллекции.
+	 * @throws NullPointerException если в качестве {@code strings} передан {@code null}.
 	 */
 	@NotNull
 	public static String join(@NotNull final List<@Nullable String> strings)
@@ -527,6 +550,8 @@ public final class Stringi
 	 * @param strings коллекция строк.
 	 * @param separator разделитель.
 	 * @return строку из элементов коллекции.
+	 * @throws NullPointerException если в качестве {@code strings} передан {@code null}.
+	 * @throws NullPointerException если в качестве {@code separator} передан {@code null}.
 	 */
 	@NotNull
 	public static String join(@NotNull final List<@Nullable String> strings, @NotNull final String separator)
@@ -542,6 +567,7 @@ public final class Stringi
 	 *
 	 * @param strings массив строк.
 	 * @return строку из элементов массива.
+	 * @throws NullPointerException если в качестве {@code strings} передан {@code null}.
 	 */
 	@NotNull
 	public static String join(@Nullable final String @NotNull [] strings)
@@ -557,6 +583,8 @@ public final class Stringi
 	 * @param strings массив строк.
 	 * @param separator разделитель.
 	 * @return строку из элементов массива.
+	 * @throws NullPointerException если в качестве {@code strings} передан {@code null}.
+	 * @throws NullPointerException если в качестве {@code separator} передан {@code null}.
 	 */
 	@NotNull
 	public static String join(@Nullable final String @NotNull [] strings, @NotNull final String separator)
@@ -597,7 +625,9 @@ public final class Stringi
 	 * @param filler наполнитель.
 	 * @param length количество символов.
 	 * @return исходную строку, дополненную строкой {@code filler} слева до {@code length} символов.
-	 * @throws IllegalArgumentException если {@code length} меньше нуля.
+	 * @throws NullPointerException если в качестве {@code string} передан {@code null}.
+	 * @throws NullPointerException если в качестве {@code filler} передан {@code null}.
+	 * @throws IllegalArgumentException если {@code length} меньше 0.
 	 */
 	@NotNull
 	public static String fillLeft(@NotNull final String string,
@@ -624,7 +654,9 @@ public final class Stringi
 	 * @param filler наполнитель.
 	 * @param length количество символов.
 	 * @return исходную строку, дополненную строкой {@code filler} слева и справа до {@code length} символов.
-	 * @throws IllegalArgumentException если {@code length} меньше нуля.
+	 * @throws NullPointerException если в качестве {@code string} передан {@code null}.
+	 * @throws NullPointerException если в качестве {@code filler} передан {@code null}.
+	 * @throws IllegalArgumentException если {@code length} меньше 0.
 	 */
 	@NotNull
 	public static String fill(@NotNull final String string, @NotNull final String filler, final int length)
@@ -651,7 +683,9 @@ public final class Stringi
 	 * @param filler наполнитель.
 	 * @param length количество символов.
 	 * @return исходную строку, дополненную строкой {@code filler} справа до {@code length} символов.
-	 * @throws IllegalArgumentException если {@code length} меньше нуля.
+	 * @throws NullPointerException если в качестве {@code string} передан {@code null}.
+	 * @throws NullPointerException если в качестве {@code filler} передан {@code null}.
+	 * @throws IllegalArgumentException если {@code length} меньше 0.
 	 */
 	@NotNull
 	public static String fillRight(@NotNull final String string, @NotNull final String filler, final int length)
@@ -675,6 +709,7 @@ public final class Stringi
 	 *
 	 * @param string строка.
 	 * @return исходную строку, с удалёнными символами пустого пространства слева.
+	 * @throws NullPointerException если в качестве {@code string} передан {@code null}.
 	 */
 	@NotNull
 	public static String trimLeft(@NotNull final String string)
@@ -700,6 +735,7 @@ public final class Stringi
 	 *
 	 * @param string строка.
 	 * @return исходную строку, с удалёнными символами пустого пространства справа.
+	 * @throws NullPointerException если в качестве {@code string} передан {@code null}.
 	 */
 	@NotNull
 	public static String trimRight(@NotNull final String string)
@@ -725,6 +761,7 @@ public final class Stringi
 	 *
 	 * @param string строка.
 	 * @return коллекцию символов.
+	 * @throws NullPointerException если в качестве {@code string} передан {@code null}.
 	 */
 	@Unmodifiable
 	@NotNull
@@ -740,6 +777,7 @@ public final class Stringi
 	 *
 	 * @param string строка.
 	 * @return массив символов.
+	 * @throws NullPointerException если в качестве {@code string} передан {@code null}.
 	 */
 	@NotNull
 	public static Character @NotNull [] toCharArray(@NotNull final String string)
@@ -755,8 +793,8 @@ public final class Stringi
 	 * @param array массив.
 	 * @param from индекс массива из которого необходимо переместить значение.
 	 * @param in индекс массива в который необходимо переместить значение.
-	 * @throws IllegalArgumentException если {@code from} или {@code to} меньше нуля.
-	 * @throws IndexOutOfBoundsException если {@code from} или {@code to} больше размера массива.
+	 * @throws IllegalArgumentException если {@code from} или {@code to} меньше 0.
+	 * @throws IndexOutOfBoundsException если {@code from} или {@code to} выходят за пределы количества элементов в массиве.
 	 */
 	private static void swapValuesInArray(@Nullable final Character @NotNull [] array, final int from, final int in)
 	{

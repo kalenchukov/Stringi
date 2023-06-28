@@ -536,7 +536,7 @@ public class StringiTest
 		}
 
 		/**
-		 * Проверка метода {@link Stringi#repeatToLength(String, int)} с нулевым значением.
+		 * Проверка метода {@link Stringi#repeatToLength(String, int)} с {@code null}.
 		 */
 		@Test
 		public void repeatToLengthLengthZero()
@@ -942,7 +942,7 @@ public class StringiTest
 		}
 
 		/**
-		 * Проверка метода {@link Stringi#fillLeft(String, String, int)} с нулевым значением.
+		 * Проверка метода {@link Stringi#fillLeft(String, String, int)} с {@code null}.
 		 */
 		@Test
 		public void fillLeftLengthZero()
@@ -1016,7 +1016,7 @@ public class StringiTest
 		}
 
 		/**
-		 * Проверка метода {@link Stringi#fill(String, String, int)} нулевым значением.
+		 * Проверка метода {@link Stringi#fill(String, String, int)} с {@code null}.
 		 */
 		@Test
 		public void fillLengthZero()
@@ -1103,7 +1103,7 @@ public class StringiTest
 		}
 
 		/**
-		 * Проверка метода {@link Stringi#fillRight(String, String, int)} с нулевым значением.
+		 * Проверка метода {@link Stringi#fillRight(String, String, int)} с {@code null}.
 		 */
 		@Test
 		public void fillRightLengthZero()
