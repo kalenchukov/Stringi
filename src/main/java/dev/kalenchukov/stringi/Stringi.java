@@ -29,6 +29,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.Unmodifiable;
 
 import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * Класс работы со строками под шуточным названием «стринги».
@@ -377,12 +378,11 @@ public final class Stringi
 
 		final Character[] characters = Stringi.toCharArray(string);
 		final int coefficient = (int) (characters.length * 2.5);
-		final Random random = new Random();
 
 		for (int iterationShuffle = 0; iterationShuffle < coefficient; iterationShuffle++)
 		{
-			int indexFrom = random.nextInt(characters.length);
-			int indexIn = random.nextInt(characters.length);
+			int indexFrom = ThreadLocalRandom.current().nextInt(characters.length);
+			int indexIn = ThreadLocalRandom.current().nextInt(characters.length);
 
 			Stringi.swapValuesInArray(characters, indexFrom, indexIn);
 		}
