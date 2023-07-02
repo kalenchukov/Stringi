@@ -379,12 +379,11 @@ public final class Stringi
 		final Character[] characters = Stringi.toCharArray(string);
 		final int coefficient = (int) (characters.length * 2.5);
 
-		for (int iterationShuffle = 0; iterationShuffle < coefficient; iterationShuffle++)
-		{
-			int indexFrom = ThreadLocalRandom.current().nextInt(characters.length);
-			int indexIn = ThreadLocalRandom.current().nextInt(characters.length);
+		for (int i = 0; i < coefficient; i++) {
+			int rndIndexFrom = ThreadLocalRandom.current().nextInt(characters.length);
+			int rndIndexIn = ThreadLocalRandom.current().nextInt(characters.length);
 
-			Stringi.swapValuesInArray(characters, indexFrom, indexIn);
+			Stringi.swapValuesInArray(characters, rndIndexFrom, rndIndexIn);
 		}
 
 		return Stringi.glue(characters);
