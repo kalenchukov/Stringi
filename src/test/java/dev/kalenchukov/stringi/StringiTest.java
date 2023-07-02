@@ -41,6 +41,14 @@ import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 public class StringiTest
 {
 	/**
+	 * Класс проверки статических методов.
+	 *
+	 * @author Алексей Каленчуков
+	 */
+	@Nested
+	public class Static
+	{
+	/**
 	 * Класс проверки метода {@link Stringi#firstToLowerCase(String)}.
 	 *
 	 * @author Алексей Каленчуков
@@ -1629,5 +1637,6 @@ public class StringiTest
 
 			assertThat(actualString).isEqualTo("56776843245");
 		}
+	}
 	}
 }
