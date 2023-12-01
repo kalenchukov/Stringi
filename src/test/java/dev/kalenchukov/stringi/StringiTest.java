@@ -73,7 +73,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#firstToLowerCase(String)} с пустым значением.
 		 */
 		@Test
-		public void firstToLowerCaseEmpty()
+		public void firstToLowerCaseWithValueEmpty()
 		{
 			String value = "";
 
@@ -86,7 +86,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#firstToLowerCase(String)} с одной буквой в значении.
 		 */
 		@Test
-		public void firstToLowerCaseOneChar()
+		public void firstToLowerCaseWithValueOneChar()
 		{
 			String value = "П";
 
@@ -99,7 +99,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#firstToLowerCase(String)} если первый символ значения не буква.
 		 */
 		@Test
-		public void firstToLowerCaseFirstNotChar()
+		public void firstToLowerCaseWithFirstNotChar()
 		{
 			String value = "_ПРИВЕТ";
 
@@ -134,7 +134,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#firstToUpperCase(String)} с пустым значением.
 		 */
 		@Test
-		public void firstToUpperCaseEmpty()
+		public void firstToUpperCaseWithValueEmpty()
 		{
 			String value = "";
 
@@ -147,7 +147,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#firstToUpperCase(String)} с одной буквой в значении.
 		 */
 		@Test
-		public void firstToUpperCaseOneChar()
+		public void firstToUpperCaseWithOneChar()
 		{
 			String value = "п";
 
@@ -160,7 +160,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#firstToUpperCase(String)} если первый символ значения не буква.
 		 */
 		@Test
-		public void firstToUpperCaseFirstNotChar()
+		public void firstToUpperCaseWithFirstNotChar()
 		{
 			String value = "_привет";
 
@@ -195,7 +195,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#firstLetterToUpperCase(String)} с пустым значением.
 		 */
 		@Test
-		public void firstLetterToUpperCaseEmpty()
+		public void firstLetterToUpperCaseWithValueEmpty()
 		{
 			String value = "";
 
@@ -208,7 +208,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#firstLetterToUpperCase(String)}с одной буквой в значении.
 		 */
 		@Test
-		public void firstLetterToUpperCaseOneChar()
+		public void firstLetterToUpperCaseWithOneChar()
 		{
 			String value = "п";
 
@@ -221,7 +221,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#firstLetterToUpperCase(String)} если первый символ значения не буква.
 		 */
 		@Test
-		public void firstLetterToUpperCaseFirstNotChar()
+		public void firstLetterToUpperCaseWithFirstNotChar()
 		{
 			String value = "_-привет";
 
@@ -234,7 +234,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#firstLetterToUpperCase(String)} если в значении нет букв.
 		 */
 		@Test
-		public void firstLetterToUpperCaseNotChar()
+		public void firstLetterToUpperCaseWithNotChar()
 		{
 			String value = "_-/*-/-/*";
 
@@ -269,7 +269,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#firstLetterToLowerCase(String)} с пустым значением.
 		 */
 		@Test
-		public void firstLetterToLowerCaseEmpty()
+		public void firstLetterToLowerCaseWithValueEmpty()
 		{
 			String value = "";
 
@@ -282,7 +282,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#firstLetterToLowerCase(String)}с одной буквой в значении.
 		 */
 		@Test
-		public void firstLetterToLowerCaseOneChar()
+		public void firstLetterToLowerCaseWithOneChar()
 		{
 			String value = "П";
 
@@ -295,7 +295,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#firstLetterToLowerCase(String)} если первый символ значения не буква.
 		 */
 		@Test
-		public void firstLetterToLowerCaseFirstNotChar()
+		public void firstLetterToLowerCaseWithFirstNotChar()
 		{
 			String value = "_-ПРИВЕТ";
 
@@ -308,7 +308,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#firstLetterToLowerCase(String)} если в значении нет букв.
 		 */
 		@Test
-		public void firstLetterToLowerCaseNotChar()
+		public void firstLetterToLowerCaseWithNotChar()
 		{
 			String value = "_-/*-/-/*";
 
@@ -343,7 +343,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#searchFirst(String, List)} с пустым списком.
 		 */
 		@Test
-		public void searchFirstEmpty()
+		public void searchFirstWithValueEmpty()
 		{
 			String value = "Мама, мы все тяжело больны - песня группы Кино.";
 
@@ -356,7 +356,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#searchFirst(String, List)} с первым искомым символом в строке.
 		 */
 		@Test
-		public void searchFirstFirstLetter()
+		public void searchFirstWithFirstLetter()
 		{
 			String value = "Мама, мы все тяжело больны - песня группы Кино.";
 
@@ -369,7 +369,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#searchFirst(String, List)} с несколькими искомыми символами.
 		 */
 		@Test
-		public void searchFirstManyLetter()
+		public void searchFirstWithManyLetter()
 		{
 			String value = "Мама, мы все тяжело больны - песня группы Кино.";
 
@@ -404,7 +404,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#searchFirst(String, char)} с отсутствием искомого символа.
 		 */
 		@Test
-		public void searchFirstNotSymbols()
+		public void searchFirstWithNotSymbols()
 		{
 			String value = "Красно-жёлтые дни - песня группы Кино";
 
@@ -439,7 +439,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#searchLast(String, List)} с пустым списком.
 		 */
 		@Test
-		public void searchLastEmpty()
+		public void searchLastWithValueEmpty()
 		{
 			String value = "Мама, мы все тяжело больны - песня группы Кино.";
 
@@ -452,7 +452,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#searchLast(String, List)} с первым искомым символом в строке.
 		 */
 		@Test
-		public void searchLastFirstLetter()
+		public void searchLastWithFirstLetter()
 		{
 			String value = "Мама, мы все тяжело больны - песня группы Кино.";
 
@@ -465,7 +465,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#searchLast(String, List)} с несколькими искомыми символами.
 		 */
 		@Test
-		public void searchLastManyLetter()
+		public void searchLastWithManyLetter()
 		{
 			String value = "Мама, мы все тяжело больны - песня группы Кино.";
 
@@ -499,7 +499,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#searchLast(String, char)} с отсутствием искомого символа.
 		 */
 		@Test
-		public void searchLastNotSymbols()
+		public void searchLastWithNotSymbols()
 		{
 			String value = "Красно-жёлтые дни - песня группы Кино";
 
@@ -534,7 +534,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#repeatToLength(String, int)} с отрицательным значением.
 		 */
 		@Test
-		public void repeatToLengthLengthNegative()
+		public void repeatToLengthWithLengthNegative()
 		{
 			String value = "Без десяти";
 
@@ -544,10 +544,10 @@ public class StringiTest
 		}
 
 		/**
-		 * Проверка метода {@link Stringi#repeatToLength(String, int)} с {@code null}.
+		 * Проверка метода {@link Stringi#repeatToLength(String, int)} с значением в виде {@code null}.
 		 */
 		@Test
-		public void repeatToLengthLengthZero()
+		public void repeatToLengthWithLengthZero()
 		{
 			String value = "Без десяти";
 
@@ -582,7 +582,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#shuffle(String)} с пустым значением.
 		 */
 		@Test
-		public void shuffleEmpty()
+		public void shuffleWithValueEmpty()
 		{
 			String value = "";
 
@@ -596,7 +596,7 @@ public class StringiTest
 		 * после перемешивания символов в строке.
 		 */
 		@Test
-		public void shuffleEqualsLength()
+		public void shuffleWithEqualsLength()
 		{
 			String value = "Когда твоя девушка больна";
 
@@ -631,7 +631,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#reverse(String)} с пустым значением.
 		 */
 		@Test
-		public void reverseEmpty()
+		public void reverseWithValueEmpty()
 		{
 			String value = "";
 
@@ -666,7 +666,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#countVariousSymbols(String)} с пустым значением.
 		 */
 		@Test
-		public void countVariousSymbolsEmpty()
+		public void countVariousSymbolsWithValueEmpty()
 		{
 			String value = "";
 
@@ -679,7 +679,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#countVariousSymbols(String)} с переносом строки.
 		 */
 		@Test
-		public void countVariousSymbolsReturnLine()
+		public void countVariousSymbolsWithReturnLine()
 		{
 			String value = "Я хочу быть кочегаром\n";
 
@@ -714,7 +714,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#isPalindrome(String)} с некорректным значением.
 		 */
 		@Test
-		public void isPalindromeNotCorrect()
+		public void isPalindromeWithValueInvalid()
 		{
 			String value = "МАЛЫШ";
 
@@ -749,7 +749,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#isPalindromeIgnoreCase(String)} с некорректным значением.
 		 */
 		@Test
-		public void isPalindromeIgnoreCaseNotCorrect()
+		public void isPalindromeIgnoreCaseWithValueInvalid()
 		{
 			String value = "Малыш";
 
@@ -781,10 +781,10 @@ public class StringiTest
 		}
 
 		/**
-		 * Проверка метода {@link Stringi#join(List)} со значением {@code null}.
+		 * Проверка метода {@link Stringi#join(List)} со значением содержащим {@code null}.
 		 */
 		@Test
-		public void joinNull()
+		public void joinWithValueNull()
 		{
 			List<String> values = new ArrayList<>();
 			values.add("Белый");
@@ -800,7 +800,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#join(List)} без значений.
 		 */
 		@Test
-		public void joinEmpty()
+		public void joinWithValueEmpty()
 		{
 			List<String> value = List.of();
 
@@ -835,7 +835,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#join(List, String)} с пустым значением.
 		 */
 		@Test
-		public void joinEmpty()
+		public void joinWithValueEmpty()
 		{
 			List<String> value = List.of();
 
@@ -867,10 +867,10 @@ public class StringiTest
 		}
 
 		/**
-		 * Проверка метода {@link Stringi#join(String[])} со значением {@code null}.
+		 * Проверка метода {@link Stringi#join(String[])} со значением содержащим {@code null}.
 		 */
 		@Test
-		public void joinNull()
+		public void joinWithValueNull()
 		{
 			String[] value = new String[] {"K", "I", null, "N", "O"};
 
@@ -883,7 +883,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#join(String[])} без значений.
 		 */
 		@Test
-		public void joinEmpty()
+		public void joinWithValueEmpty()
 		{
 			String[] value = new String[] {};
 
@@ -918,7 +918,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#join(String[], String)} с пустым значением.
 		 */
 		@Test
-		public void joinEmpty()
+		public void joinWithValueEmpty()
 		{
 			String[] value = new String[]{};
 
@@ -950,10 +950,10 @@ public class StringiTest
 		}
 
 		/**
-		 * Проверка метода {@link Stringi#fillLeft(String, String, int)} с {@code null}.
+		 * Проверка метода {@link Stringi#fillLeft(String, String, int)} с значением в виде {@code null}.
 		 */
 		@Test
-		public void fillLeftLengthZero()
+		public void fillLeftWithLengthZero()
 		{
 			String value = "КИНО";
 
@@ -966,7 +966,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#fillLeft(String, String, int)} с пустым значением.
 		 */
 		@Test
-		public void fillLeftFillerEmpty()
+		public void fillLeftFillerWithValueEmpty()
 		{
 			String value = "КИНО";
 
@@ -979,7 +979,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#fillLeft(String, String, int)} с пустым значением.
 		 */
 		@Test
-		public void fillLeftStringEmpty()
+		public void fillLeftStringWithValueEmpty()
 		{
 			String value = "";
 
@@ -992,7 +992,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#fillLeft(String, String, int)} с отрицательным значением.
 		 */
 		@Test
-		public void fillLeftLengthNegative()
+		public void fillLeftWithLengthNegative()
 		{
 			String value = "КИНО";
 
@@ -1024,10 +1024,10 @@ public class StringiTest
 		}
 
 		/**
-		 * Проверка метода {@link Stringi#fill(String, String, int)} с {@code null}.
+		 * Проверка метода {@link Stringi#fill(String, String, int)} с значением в виде {@code null}.
 		 */
 		@Test
-		public void fillLengthZero()
+		public void fillWithLengthZero()
 		{
 			String value = "КИНО";
 
@@ -1040,7 +1040,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#fill(String, String, int)} с пустым значением.
 		 */
 		@Test
-		public void fillFillerEmpty()
+		public void fillFillerWithValueEmpty()
 		{
 			String value = "КИНО";
 
@@ -1053,7 +1053,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#fill(String, String, int)} с пустым значением.
 		 */
 		@Test
-		public void fillStringEmpty()
+		public void fillStringWithValueEmpty()
 		{
 			String value = "";
 
@@ -1066,7 +1066,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#fill(String, String, int)} с отрицательным значением.
 		 */
 		@Test
-		public void fillLengthNegative()
+		public void fillWithLengthNegative()
 		{
 			String value = "КИНО";
 
@@ -1079,7 +1079,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#fill(String, String, int)} с нечётным значением.
 		 */
 		@Test
-		public void fillLengthUneven()
+		public void fillWithLengthUneven()
 		{
 			String value = "КИНО";
 
@@ -1111,10 +1111,10 @@ public class StringiTest
 		}
 
 		/**
-		 * Проверка метода {@link Stringi#fillRight(String, String, int)} с {@code null}.
+		 * Проверка метода {@link Stringi#fillRight(String, String, int)} с значением в виде {@code null}.
 		 */
 		@Test
-		public void fillRightLengthZero()
+		public void fillRightWithLengthZero()
 		{
 			String value = "КИНО";
 
@@ -1127,7 +1127,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#fillRight(String, String, int)} с пустым значением.
 		 */
 		@Test
-		public void fillRightFillerEmpty()
+		public void fillRightFillerWithValueEmpty()
 		{
 			String value = "КИНО";
 
@@ -1140,7 +1140,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#fillRight(String, String, int)} с пустым значением.
 		 */
 		@Test
-		public void fillRightStringEmpty()
+		public void fillRightStringWithValueEmpty()
 		{
 			String value = "";
 
@@ -1153,7 +1153,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#fillRight(String, String, int)} с отрицательным значением.
 		 */
 		@Test
-		public void fillRightLengthNegative()
+		public void fillRightWithLengthNegative()
 		{
 			String value = "КИНО";
 
@@ -1188,7 +1188,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#trimLeft(String)} с пустым значением.
 		 */
 		@Test
-		public void trimLeftEmpty()
+		public void trimLeftWithValueEmpty()
 		{
 			String value = "";
 
@@ -1201,7 +1201,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#trimLeft(String)} только с символами пустого пространства.
 		 */
 		@Test
-		public void trimLeftAllWhitespace()
+		public void trimLeftWithAllWhitespace()
 		{
 			String value = "\t\n \t\r";
 
@@ -1214,7 +1214,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#trimLeft(String)} с отсутствием символов пустого пространства.
 		 */
 		@Test
-		public void trimLeftNotWhitespace()
+		public void trimLeftWithNotWhitespace()
 		{
 			String value = "Видели ночь";
 
@@ -1249,7 +1249,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#trimRight(String)} с пустым значением.
 		 */
 		@Test
-		public void trimRightEmpty()
+		public void trimRightWithValueEmpty()
 		{
 			String value = "";
 
@@ -1262,7 +1262,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#trimRight(String)} только с символами пустого пространства.
 		 */
 		@Test
-		public void trimRightAllWhitespace()
+		public void trimRightWithAllWhitespace()
 		{
 			String value = "\t\n \t\r";
 
@@ -1275,7 +1275,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#trimRight(String)} с отсутствием символов пустого пространства.
 		 */
 		@Test
-		public void trimRightNotWhitespace()
+		public void trimRightWithNotWhitespace()
 		{
 			String value = "Видели ночь";
 
@@ -1306,21 +1306,21 @@ public class StringiTest
 
 			List<Character> actualList = Stringi.toCharList(value);
 
-			assertThat(actualList).containsSequence(expectedList);
+			assertThat(actualList).containsExactlyElementsOf(expectedList);
 		}
 
 		/**
 		 * Проверка метода {@link Stringi#toCharList(String)}.
 		 */
 		@Test
-		public void toCharListEmpty()
+		public void toCharListWithValueEmpty()
 		{
 			String value = "";
 			List<Character> expectedList = List.of();
 
 			List<Character> actualList = Stringi.toCharList(value);
 
-			assertThat(actualList).containsSequence(expectedList);
+			assertThat(actualList).containsExactlyElementsOf(expectedList);
 		}
 	}
 
@@ -1352,7 +1352,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#toCharArray(String)} с пустым значением.
 		 */
 		@Test
-		public void toCharArrayEmpty()
+		public void toCharArrayWithValueEmpty()
 		{
 			String value = "";
 			Character[] expectedArray = {};
@@ -1385,10 +1385,10 @@ public class StringiTest
 		}
 
 		/**
-		 * Проверка метода {@link Stringi#glue(List)} со значением {@code null}.
+		 * Проверка метода {@link Stringi#glue(List)} со значением содержащим {@code null}.
 		 */
 		@Test
-		public void glueNull()
+		public void glueWithValueNull()
 		{
 			List<Character> value = new ArrayList<>();
 			value.add('A');
@@ -1406,7 +1406,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#glue(List)} без значений.
 		 */
 		@Test
-		public void glueEmpty()
+		public void glueWithValueEmpty()
 		{
 			List<Character> value = List.of();
 
@@ -1441,7 +1441,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#glue(List, String)} с пустым значением.
 		 */
 		@Test
-		public void glueEmpty()
+		public void glueWithValueEmpty()
 		{
 			List<Character> value = List.of();
 
@@ -1473,10 +1473,10 @@ public class StringiTest
 		}
 
 		/**
-		 * Проверка метода {@link Stringi#glue(Character[])} со значением {@code null}.
+		 * Проверка метода {@link Stringi#glue(Character[])} со значением содержащим {@code null}.
 		 */
 		@Test
-		public void glueNull()
+		public void glueWithValueNull()
 		{
 			Character[] value = new Character[] {'T', null, 'N', 'T'};
 
@@ -1489,7 +1489,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#glue(Character[])} с пустым массивом.
 		 */
 		@Test
-		public void glueEmpty()
+		public void glueWithValueEmpty()
 		{
 			Character[] value = new Character[] {};
 
@@ -1524,7 +1524,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#glue(Character[], String)} с пустым значением.
 		 */
 		@Test
-		public void glueEmpty()
+		public void glueWithValueEmpty()
 		{
 			Character[] value = new Character[]{};
 
@@ -1559,7 +1559,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#searchFirstLetter(String)} с отсутствием букв.
 		 */
 		@Test
-		public void searchFirstLetterNotLetter()
+		public void searchFirstLetterWithNotLetter()
 		{
 			String value = "+++++++++++++";
 
@@ -1594,7 +1594,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#searchLastLetter(String)} с отсутствием букв.
 		 */
 		@Test
-		public void searchLastLetterNotLetter()
+		public void searchLastLetterWithNotLetter()
 		{
 			String value = "##############";
 
@@ -1629,7 +1629,7 @@ public class StringiTest
 		 * Проверка метода {@link Stringi#reverseCase(String)} с отсутствием букв.
 		 */
 		@Test
-		public void reverseCaseNotLetter()
+		public void reverseCaseWithNotLetter()
 		{
 			String value = "56776843245";
 
